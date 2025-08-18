@@ -1,0 +1,674 @@
+/* =======================================================
+   COMPONENTES – ORGANIZADOS Y MEJORADOS
+   ======================================================= */
+
+/* Variables para el tema claro */
+:root {
+  --s-6: 1rem;
+  --s-7: 1.25rem;
+  --s-8: 1.5rem;
+  --s-9: 1.75rem;
+  --surface-border: rgba(201, 170, 113, 0.2);
+  --text-gold: #C9AA71;
+  --t: 0.28s cubic-bezier(.4,0,.2,1);
+  
+  /* Nuevas variables para mejor organización */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(201, 170, 113, 0.2);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --card-shadow-hover: 0 16px 48px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================================
+   TARJETAS DE SERVICIO - ORGANIZADAS
+   ================================================ */
+.service-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--card-border);
+  padding: var(--s-9);
+  border-radius: 24px;
+  box-shadow: var(--card-shadow);
+  transition: all var(--t);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 280px;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,170,113,0.08) 0%, transparent 50%);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 4px;
+  background: var(--gradient-gold);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  box-shadow: 0 4px 16px rgba(201,170,113,0.4);
+}
+
+.service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(201,170,113,0.4);
+}
+
+.service-icon {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--gradient-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111;
+  font-size: 2rem;
+  box-shadow: var(--shadow-gold);
+  margin-bottom: var(--s-7);
+  position: relative;
+  z-index: 2;
+  transition: all var(--t);
+}
+
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(201,170,113,0.4);
+}
+
+.service-card h3 {
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--text-dark);
+  margin-bottom: var(--s-6);
+  position: relative;
+  z-index: 2;
+  line-height: 1.3;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: auto;
+  position: relative;
+  z-index: 2;
+  font-size: 1rem;
+}
+
+.service-link {
+  margin-top: var(--s-7);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-6);
+  font-weight: 700;
+  color: var(--primary-color);
+  padding: var(--s-6) var(--s-7);
+  border-radius: 16px;
+  background: rgba(201,170,113,0.15);
+  transition: all var(--t);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+  border: 1px solid rgba(201,170,113,0.3);
+}
+
+.service-link:hover {
+  transform: translateX(8px);
+  background: rgba(201,170,113,0.25);
+  border-color: var(--primary-color);
+}
+
+/* ================================================
+   TESTIMONIOS - ORGANIZADOS Y CONSISTENTES
+   ================================================ */
+.testimonial-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  color: var(--text-base);
+  padding: var(--s-9);
+  border-radius: 28px;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+  transition: all var(--t);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 320px;
+}
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(201,170,113,0.1) 0%, transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.15);
+  border-color: rgba(201,170,113,0.4);
+}
+
+.testimonial-image-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: var(--s-7);
+  background: linear-gradient(135deg, #e8eaed, #d9dce1);
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 0 0 8px rgba(201,170,113,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c7a88;
+  font-size: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stars {
+  color: var(--accent-color);
+  margin-bottom: var(--s-7);
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+}
+
+.testimonial-content {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-content p {
+  color: var(--text-base);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: var(--s-7);
+  quotes: '"' '"';
+}
+
+.testimonial-content p::before {
+  content: open-quote;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.testimonial-content p::after {
+  content: close-quote;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.testimonial-content h4 {
+  color: var(--primary-color);
+  font-weight: 800;
+  margin-bottom: var(--s-6);
+  font-size: 1.1rem;
+}
+
+.testimonial-content span {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* ================================================
+   EQUIPO - ORGANIZADOS
+   ================================================ */
+.team-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: all var(--t);
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(201,170,113,0.05) 0%, transparent 60%);
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.team-card:hover {
+  transform: translateY(-12px);
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(201,170,113,0.4);
+}
+
+.team-image-placeholder {
+  height: 300px;
+  background: linear-gradient(135deg, #e8eaed, #d9dce1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c7a88;
+  font-size: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.team-image-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.1) 100%);
+}
+
+.team-info {
+  padding: var(--s-8);
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.team-info h3 {
+  font-weight: 800;
+  font-size: 1.3rem;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: var(--s-6);
+  line-height: 1.2;
+}
+
+.team-position {
+  color: var(--text-gold);
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: var(--s-6);
+}
+
+.team-description {
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: auto;
+  font-size: 0.95rem;
+}
+
+.team-social {
+  display: flex;
+  gap: var(--s-6);
+  margin-top: var(--s-7);
+  justify-content: center;
+}
+
+.team-social a {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(201,170,113,0.15);
+  color: var(--primary-color);
+  transition: all var(--t);
+  border: 1px solid rgba(201,170,113,0.3);
+}
+
+.team-social a:hover {
+  background: var(--gradient-gold);
+  color: #111;
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-gold);
+  border-color: transparent;
+}
+
+/* ================================================
+   FORMULARIOS - ORGANIZADOS
+   ================================================ */
+.form-group {
+  margin-bottom: var(--s-8);
+}
+
+.form-group label {
+  display: block;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: var(--s-6);
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: var(--s-7) var(--s-8);
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  color: var(--text-dark);
+  transition: all var(--t);
+  box-shadow: var(--shadow-sm);
+  font-size: 1rem;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(201,170,113,0.2);
+  background: rgba(255,255,255,0.95);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 140px;
+  font-family: inherit;
+}
+
+/* ================================================
+   ALERTAS Y NOTIFICACIONES - ORGANIZADAS
+   ================================================ */
+.alert {
+  padding: var(--s-7) var(--s-8);
+  border-radius: 16px;
+  border: 1px solid transparent;
+  margin-bottom: var(--s-7);
+  backdrop-filter: blur(10px);
+  font-weight: 500;
+}
+
+.alert-success {
+  background: rgba(29, 126, 73, 0.1);
+  border-color: rgba(29, 126, 73, 0.3);
+  color: #1d7e49;
+}
+
+.alert-error {
+  background: rgba(173, 48, 54, 0.1);
+  border-color: rgba(173, 48, 54, 0.3);
+  color: #ad3036;
+}
+
+.alert-warning {
+  background: rgba(148, 116, 0, 0.1);
+  border-color: rgba(148, 116, 0, 0.3);
+  color: #947400;
+}
+
+.alert-info {
+  background: rgba(201, 170, 113, 0.1);
+  border-color: rgba(201, 170, 113, 0.3);
+  color: var(--primary-color);
+}
+
+/* ================================================
+   BADGES - ORGANIZADOS
+   ================================================ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--s-6) var(--s-7);
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.badge-primary {
+  background: var(--gradient-gold);
+  color: #111;
+  box-shadow: var(--shadow-gold);
+}
+
+.badge-secondary {
+  background: rgba(201,170,113,0.15);
+  color: var(--primary-color);
+  border: 1px solid rgba(201,170,113,0.4);
+}
+
+.badge-success {
+  background: rgba(29, 126, 73, 0.15);
+  color: #1d7e49;
+  border: 1px solid rgba(29, 126, 73, 0.4);
+}
+
+.badge-warning {
+  background: rgba(148, 116, 0, 0.15);
+  color: #947400;
+  border: 1px solid rgba(148, 116, 0, 0.4);
+}
+
+.badge-error {
+  background: rgba(173, 48, 54, 0.15);
+  color: #ad3036;
+  border: 1px solid rgba(173, 48, 54, 0.4);
+}
+
+/* ================================================
+   CARDS GENÉRICAS - ORGANIZADAS
+   ================================================ */
+.card {
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition: all var(--t);
+  border: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--card-shadow-hover);
+  border-color: rgba(201,170,113,0.4);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  padding: var(--s-8);
+  border-bottom: 1px solid var(--card-border);
+  background: rgba(201,170,113,0.08);
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.card-body {
+  padding: var(--s-8);
+  color: var(--text-base);
+  flex: 1;
+  line-height: 1.6;
+}
+
+.card-footer {
+  padding: var(--s-8);
+  border-top: 1px solid var(--card-border);
+  background: rgba(201,170,113,0.05);
+}
+
+/* ================================================
+   BREADCRUMBS - ORGANIZADOS
+   ================================================ */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--s-6);
+  margin-bottom: var(--s-8);
+  font-size: 0.95rem;
+  padding: var(--s-7) var(--s-8);
+  background: var(--card-bg);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: var(--t);
+  padding: var(--s-6);
+  border-radius: 8px;
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-color);
+  background: rgba(201,170,113,0.1);
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+  opacity: 0.5;
+}
+
+.breadcrumb-current {
+  color: var(--primary-color);
+  font-weight: 700;
+  background: rgba(201,170,113,0.15);
+  padding: var(--s-6);
+  border-radius: 8px;
+}
+
+/* ================================================
+   UTILIDADES ESPECIALES
+   ================================================ */
+.text-center {
+  text-align: center;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(201, 170, 113, 0.3);
+}
+
+.gold-border {
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-gold);
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(250,247,241,0.95) 100%);
+  border: 2px solid var(--primary-color);
+  box-shadow: var(--shadow-gold);
+  position: relative;
+  backdrop-filter: blur(15px);
+}
+
+.premium-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(201, 170, 113, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* ================================================
+   RESPONSIVE PARA COMPONENTES
+   ================================================ */
+@media (max-width: 768px) {
+  .service-card,
+  .testimonial-card {
+    padding: var(--s-8);
+    min-height: auto;
+  }
+  
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    font-size: 1.8rem;
+  }
+  
+  .testimonial-image-placeholder {
+    width: 80px;
+    height: 80px;
+    font-size: 1.5rem;
+  }
+  
+  .team-image-placeholder {
+    height: 250px;
+    font-size: 2.5rem;
+  }
+  
+  .team-info {
+    padding: var(--s-7);
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card,
+  .testimonial-card {
+    padding: var(--s-7);
+  }
+  
+  .team-info {
+    padding: var(--s-6);
+  }
+  
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 1.6rem;
+  }
+  
+  .testimonial-image-placeholder {
+    width: 70px;
+    height: 70px;
+    font-size: 1.3rem;
+  }
+  
+  .team-image-placeholder {
+    height: 200px;
+    font-size: 2rem;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: var(--s-6) var(--s-7);
+  }
+}
