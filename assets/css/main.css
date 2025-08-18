@@ -167,10 +167,11 @@ button{
   object-fit: cover;
   object-position: center center;
   filter: saturate(1.05) contrast(1.04) brightness(1.02);
-  opacity: .35;
+  opacity: 0.8 !important; 
   z-index: -1;
   will-change: transform;
 }
+
 
 /* Corrección para diferentes relaciones de aspecto */
 @media (aspect-ratio > 16/9) {
@@ -202,11 +203,14 @@ button{
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 1;
-  background:
+  background: transparent !important;
+  /* background:
     radial-gradient(ellipse at 50% 40%, rgba(255,255,255,.88) 0 30%, rgba(255,255,255,.52) 50%, rgba(255,255,255,0) 75%),
-    linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.15));
+    linear-gradient(180deg, rgba(255,255,255,.4), rgba(255,255,255,.15)); */
   mix-blend-mode: screen;
+  opacity: 0; /* bajar (o eliminar) */
+    mix-blend-mode: normal; /* opcional: elimina el efecto 'screen' */
+    z-index: 1;
 }
 
 .bg-shine {
@@ -214,10 +218,11 @@ button{
   inset: -30%;
   z-index: 2;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 70%);
+  background: transparent !important;
+/*   background: linear-gradient(135deg, rgba(255,255,255,0) 30%, rgba(255,255,255,.35) 50%, rgba(255,255,255,0) 70%); */
   transform: translate3d(-35%,-35%,0);
   animation: shineSweep 8s cubic-bezier(.4,0,.2,1) infinite;
-  opacity: .8;
+  /* opacity: 0.15; */
   mix-blend-mode: screen;
   will-change: transform;
 }
@@ -258,8 +263,8 @@ button{
     object-fit: cover !important;
     object-position: center center !important;
     filter: saturate(1.05) contrast(1.04) brightness(1.02) !important;
-    opacity: 0.35 !important;
-    z-index: -1 !important;
+    opacity: 0 !important;
+    z-index: 0 !important;
     will-change: transform !important;
     display: block !important;
     visibility: visible !important;
@@ -647,7 +652,8 @@ main {
 }
 
 .hero p{ 
-  color: var(--text-muted); 
+  font-weight: bold;
+  color: var(--text-dark); 
   max-width: 56ch; 
   font-size: var(--font-size-lg);
   line-height: 1.7;
@@ -663,7 +669,7 @@ main {
 }
 
 .stat{
-  background: rgba(255,255,255,0.9);
+  background: rgb(255 255 255 / 48%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(201,170,113,.15);
   box-shadow: var(--shadow-md);
@@ -702,7 +708,7 @@ main {
   font-weight: 800; 
   font-size: 1.4rem; 
   color: var(--text-dark);
-  background: var(--gradient-gold);
+  background: var(--primary-600);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -770,7 +776,7 @@ main {
 .btn-secondary{
   background: transparent; 
   color: var(--text-dark);
-  border: 2px solid rgba(201,170,113,.4);
+      border: 2px solid rgb(121 95 47 / 41%);
   padding: .85rem 1.05rem; 
   border-radius: var(--radius-pill);
   font-weight: 600; 
@@ -977,7 +983,7 @@ main {
 }
 
 .about p{ 
-  color: var(--text-muted); 
+  color: var(--text-dark); 
   margin: 0 0 var(--space-xl); 
   font-size: var(--font-size-lg);
 }
@@ -991,7 +997,7 @@ main {
   display: flex; 
   gap: var(--space-lg); 
   align-items: flex-start;
-  background: rgba(255,255,255,.9);
+  background: rgb(255 255 255 / 44%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(201,170,113,.15);
   border-radius: var(--radius-lg); 
@@ -1032,7 +1038,20 @@ main {
 
 .feature p{ 
   margin: 0; 
-  color: var(--text-light); 
+  color: var(--text-dark); 
+}
+
+/*revsion opacidad*/
+
+.float,
+.hero .float,
+.hero [style*="animation: float"],
+.hero [style*="background: rgba(201,170,113)"],
+.hero div[style*="width: 4px"],
+.hero div[style*="height: 4px"] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
 }
 
 /* ------------------------------
@@ -1081,7 +1100,7 @@ main {
 
 /* Tarjeta de testimonio dentro del slide */
 .testimonial-card {
-    background: var(--card-bg);
+    background: rgb(255 255 255 / 38%);
     backdrop-filter: blur(15px);
     color: var(--text-base);
     padding: var(--s-9);
@@ -1348,7 +1367,7 @@ main {
 }
 
 .cta-content p{ 
-  color: var(--text-muted); 
+  color: var(--text-dark); 
   margin: 0 0 1.1rem;
   font-size: var(--font-size-lg);
 }
@@ -1818,16 +1837,199 @@ main {
   align-items: start;
 }
 
+/* ================================================
+   CORRECCIÓN URGENTE - VIDEO REEL FORMATO VERTICAL
+   ================================================ */
+
+/* Asegurar que el contenedor de la imagen esté centrado */
+.about.about--compact .about-image {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* Contenedor del video - FORMATO REEL VERTICAL */
+.about-video-container {
+    width: 100% !important;
+    max-width: 240px !important; /* Ancho máximo para reel */
+    aspect-ratio: 9 / 16 !important; /* Formato vertical obligatorio */
+    height: auto !important;
+    min-height: 0 !important;
+    border-radius: 24px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,.15),
+        0 0 0 3px rgba(201,170,113,.3) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    background: #000 !important;
+    margin: 0 auto !important; /* Centrar el video */
+}
+
+/* Video dentro del contenedor - FORZAR DIMENSIONES */
+.about-video-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+    border-radius: 24px !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+}
+
+/* Hover effect del contenedor */
+.about-video-container:hover {
+    transform: scale(1.05) translateY(-8px) !important;
+    box-shadow: 
+        0 30px 60px rgba(0,0,0,.2),
+        0 0 0 4px rgba(201,170,113,.5) !important;
+}
+
+/* Overlay con controles */
+.video-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0,0,0,0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 5 !important;
+    border-radius: 24px !important;
+}
+
+.about-video-container:hover .video-overlay {
+    opacity: 1 !important;
+}
+
+/* Botón de play/pause */
+.video-play-pause {
+    background: rgba(255,255,255,0.95) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 60px !important;
+    height: 60px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-size: 1.5rem !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2) !important;
+}
+
+.video-play-pause:hover {
+    background: var(--gradient-gold) !important;
+    color: #111 !important;
+    transform: scale(1.1) !important;
+}
+
+/* Indicador de sonido */
+.video-sound-hint {
+    position: absolute !important;
+    bottom: 15px !important;
+    left: 15px !important;
+    right: 15px !important;
+    background: rgba(0,0,0,0.8) !important;
+    color: white !important;
+    padding: 8px 12px !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+    transition: all 0.3s ease !important;
+    z-index: 6 !important;
+}
+
+.video-sound-hint.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.video-sound-hint i {
+    font-size: 0.9rem !important;
+    color: var(--accent-color) !important;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .about-video-container {
+        max-width: 200px !important;
+        aspect-ratio: 9 / 16 !important; /* Mantener formato reel */
+    }
+    
+    .video-play-pause {
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 1.2rem !important;
+    }
+    
+    .video-sound-hint {
+        bottom: 10px !important;
+        left: 10px !important;
+        right: 10px !important;
+        padding: 6px 10px !important;
+        font-size: 0.75rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-video-container {
+        max-width: 180px !important;
+        aspect-ratio: 9 / 16 !important;
+    }
+    
+    .video-play-pause {
+        width: 45px !important;
+        height: 45px !important;
+        font-size: 1rem !important;
+    }
+}
+
+/* IMPORTANTE: Sobrescribir cualquier otro CSS que interfiera */
+.about.about--compact .about-video-container {
+    width: 100% !important;
+    max-width: 240px !important;
+    aspect-ratio: 9 / 16 !important;
+}
+
+/* Ocultar el placeholder si existe */
+.about-image-placeholder {
+    display: none !important;
+}
 /* Placeholder izquierdo: tamaño controlado */
-.about.about--compact .about-image{ display:flex; }
+.about.about--compact .about-image{ display:flex; justify-content: center !important;
+    align-items: center !important; }
 .about.about--compact .about-image .about-image-placeholder{
-  width: 100%;
-  max-width: 320px;            /* límite real del ancho */
-  aspect-ratio: 4 / 3;
-  height: auto;
-  min-height: 0 !important;    /* anula min-height heredado */
-  padding: var(--space-lg);
-  border-radius: var(--radius-lg);
+     width: 100%;
+    max-width: 240px; /* Más angosto para formato vertical */
+    aspect-ratio: 9 / 16; /* Formato reel vertical */
+    height: auto;
+    min-height: 0 !important;
+    padding: var(--space-lg);
+    border-radius: var(--radius-xl); /* Más redondeado como reel */
+    background: linear-gradient(135deg, 
+        rgba(226,232,240,0.9), 
+        rgba(203,213,224,0.9), 
+        rgba(160,174,192,0.9)
+    );
+    border: 3px solid rgba(201,170,113,.4); /* Borde más grueso */
+    box-shadow: 
+        0 20px 40px rgba(0,0,0,.12),
+        0 0 0 1px rgba(201,170,113,.2); /* Sombra más dramática */
+    position: relative;
+    overflow: hidden;
 }
 
 /* Ícono y texto del placeholder más chicos */

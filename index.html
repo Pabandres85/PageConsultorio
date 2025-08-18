@@ -28,7 +28,7 @@
   <div class="bg-video" aria-hidden="true">
     <video id="bgVideo" autoplay muted loop playsinline preload="auto"
       poster="assets/images/gallery/poster_diamante.jpg">
-      <source src="assets/images/gallery/video_diamante4.mp4" type="video/mp4" />
+      <source src="assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
       Tu navegador no soporta videos en HTML5.
     </video>
     <div class="bg-vignette"></div>
@@ -44,9 +44,9 @@
         <ul class="nav-links">
           <li><a href="#inicio" class="active">Inicio</a></li>
           <li><a href="pages/servicios.html">Servicios</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="../index.html#nosotros">Nosotros</a></li>
           <li><a href="pages/equipo.html">Equipo</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="../index.html#testimonios">Testimonios</a></li>
           <li><a href="pages/contacto.html">Contacto</a></li>
         </ul>
       </nav>
@@ -68,7 +68,7 @@
 
         <div class="hero-stats" aria-label="Indicadores">
           <div class="stat">
-            <span class="stat-number">2500+</span>
+            <span class="stat-number">100+</span>
             <span class="stat-label">Pacientes Felices</span>
           </div>
           <div class="stat">
@@ -133,15 +133,43 @@
     </div>
   </section>
 
-  <!-- SECCIÓN SOBRE NOSOTROS - MEJORADA -->
-   <section id="nosotros" class="about about--compact">
+  <!-- SECCIÓN SOBRE NOSOTROS - MEJORADA CON VIDEO -->
+<section id="nosotros" class="about about--compact">
   <div class="container">
     <div class="about-container">
       <div class="about-image">
-        <div class="about-image-placeholder" aria-hidden="true">
-          <div class="placeholder-content">
-            <i class="fas fa-play-circle fa-4x" aria-hidden="true"></i>
-            <p>Tour Virtual<br />de Nuestra Clínica</p>
+        <!-- VIDEO REAL en formato reel - REEMPLAZA EL PLACEHOLDER -->
+        <div class="about-video-container" aria-hidden="true">
+          <video 
+            id="promoVideo" 
+            autoplay 
+            muted 
+            loop 
+            playsinline 
+            preload="auto"
+            poster="assets/images/gallery/poster_videpromo1.jpg">
+            <source src="assets/images/gallery/videpromo1.mp4" type="video/mp4" />
+            <source src="assets/images/gallery/videpromo1.webm" type="video/webm" />
+            <!-- Fallback para navegadores antiguos -->
+            <div class="video-fallback">
+              <div class="placeholder-content">
+                <i class="fas fa-play-circle fa-4x" aria-hidden="true"></i>
+                <p>Tour Virtual<br />de Nuestra Clínica</p>
+              </div>
+            </div>
+          </video>
+          
+          <!-- Overlay opcional con controles -->
+          <div class="video-overlay">
+            <button class="video-play-pause" aria-label="Reproducir/Pausar video">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          
+          <!-- Indicador de "Tap para sonido" -->
+          <div class="video-sound-hint">
+            <i class="fas fa-volume-up"></i>
+            <span>Toca para activar sonido</span>
           </div>
         </div>
       </div>
@@ -149,7 +177,6 @@
       <div class="about-content">
         <h2>¿Por qué elegir Smile Luxury Studio?</h2>
         <p>Con más de <strong>10 años de experiencia</strong>, nos hemos consolidado como la clínica dental de referencia en la ciudad. Nuestro compromiso es brindar tratamientos de la más alta calidad en un ambiente exclusivo y confortable, utilizando la tecnología más avanzada del mercado.</p>
-
 
         <div class="about-features">
           <div class="feature">
@@ -218,7 +245,7 @@
 </section>
 
   <!-- SECCIÓN TESTIMONIOS -->
-  <section class="testimonials">
+  <section id="testimonios" class="testimonials">
   <div class="container">
     <h2 class="section-title">Lo que dicen nuestros pacientes</h2>
     <div class="title-underline"></div>
@@ -382,7 +409,7 @@
         <p>Agenda tu consulta gratuita y descubre cómo podemos transformar tu sonrisa</p>
         <div class="cta-buttons">
           <a href="pages/contacto.html" class="btn-primary">Agendar Consulta Gratuita</a>
-          <a href="tel:+1234567890" class="btn-secondary"><i class="fas fa-phone" aria-hidden="true"></i> Llamar Ahora</a>
+          <a href="tel:+573168866812" class="btn-secondary"><i class="fas fa-phone" aria-hidden="true"></i> Llamar Ahora</a>
         </div>
       </div>
     </div>

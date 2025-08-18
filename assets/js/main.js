@@ -1510,7 +1510,7 @@ function toggleMobileMenuManual() {
 }
 
 // ================================================
-// VIDEO DE FONDO - JAVASCRIPT PARA MÓVILES
+// VIDEO DE FONDO - JAVASCRIPT CORREGIDO SIN OPACIDAD
 // ================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -1536,7 +1536,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.setupIntersectionObserver();
             this.handleVisibilityChange();
             
-            console.log('✅ Video de fondo inicializado para móvil');
+            console.log('✅ Video de fondo inicializado sin opacidad');
         },
         
         // Configurar video para móviles
@@ -1549,7 +1549,7 @@ document.addEventListener('DOMContentLoaded', () => {
             this.video.setAttribute('loop', 'true');
             this.video.muted = true; // Forzar mudo
             
-            // Forzar estilos
+            // Forzar estilos - OPACIDAD CORREGIDA
             this.video.style.cssText = `
                 position: absolute !important;
                 top: 50% !important;
@@ -1561,7 +1561,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 transform: translate(-50%, -50%) scale(1.1) !important;
                 object-fit: cover !important;
                 object-position: center center !important;
-                opacity: 0.3 !important;
+                opacity: 0.8 !important;
                 z-index: -1 !important;
                 display: block !important;
                 visibility: visible !important;
@@ -1569,7 +1569,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Eventos del video
             this.video.addEventListener('loadeddata', () => {
-                console.log('📹 Video cargado');
+                console.log('📹 Video cargado completamente visible');
                 this.playVideo();
             });
             
@@ -1602,7 +1602,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if (playPromise !== undefined) {
                     await playPromise;
-                    console.log('▶️ Video reproduciéndose');
+                    console.log('▶️ Video reproduciéndose completamente visible');
                     this.isVisible = true;
                 }
             } catch (error) {
@@ -1702,6 +1702,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Container:', !!this.container);
             console.log('Video paused:', this.video?.paused);
             console.log('Video muted:', this.video?.muted);
+            console.log('Video opacity:', this.video?.style.opacity);
             console.log('Video source:', this.video?.src);
             console.log('Is mobile:', window.innerWidth <= 768);
             console.log('Video visible:', this.isVisible);
@@ -1714,7 +1715,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hacer accesible globalmente
     window.videoController = videoController;
     
-    // Función de corrección manual
+    // Función de corrección manual - CORREGIDA
     window.fixVideoBackground = function() {
         const video = document.querySelector('.bg-video video');
         const container = document.querySelector('.bg-video');
@@ -1737,7 +1738,7 @@ document.addEventListener('DOMContentLoaded', () => {
             background: linear-gradient(135deg, #f7f8fb 0%, #f5f6f8 50%, #eef1f5 100%) !important;
         `;
         
-        // Forzar estilos del video
+        // Forzar estilos del video - SIN OPACIDAD
         video.style.cssText = `
             position: absolute !important;
             top: 50% !important;
@@ -1749,7 +1750,7 @@ document.addEventListener('DOMContentLoaded', () => {
             transform: translate(-50%, -50%) scale(1.1) !important;
             object-fit: cover !important;
             object-position: center center !important;
-            opacity: 0.3 !important;
+            opacity: 0.8 !important;
             z-index: -1 !important;
             display: block !important;
             visibility: visible !important;
@@ -1764,7 +1765,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Intentar reproducir
         video.play().then(() => {
-            console.log('✅ Video corregido y reproduciéndose');
+            console.log('✅ Video corregido y reproduciéndose SIN opacidad');
         }).catch(error => {
             console.log('⚠️ Video no se puede reproducir:', error.message);
             videoController.showFallbackBackground();
@@ -1806,6 +1807,365 @@ document.addEventListener('visibilitychange', () => {
     }
 });
 
-console.log('✅ JavaScript del video de fondo cargado');
+// ================================================
+// ================================================
+// VIDEO REEL - JAVASCRIPT COMPLETO
+// ================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    const promoVideoController = {
+        video: null,
+        playButton: null,
+        soundHint: null,
+        container: null,
+        overlay: null,
+        isPlaying: false,
+        isMuted: true,
+        
+        // Inicializar
+        init() {
+            this.video = document.querySelector('#promoVideo');
+            this.container = document.querySelector('.about-video-container');
+            
+            if (!this.video || !this.container) {
+                console.log('⚠️ Video reel no encontrado - creando elementos');
+                this.createVideoElements();
+                return;
+            }
+            
+            this.createControls();
+            this.setupVideo();
+            this.setupEventListeners();
+            this.setupIntersectionObserver();
+            
+            console.log('✅ Video reel inicializado con controles');
+        },
+        
+        // Crear elementos si no existen
+        createVideoElements() {
+            const video = document.querySelector('.about-video-container video');
+            if (video) {
+                this.video = video;
+                this.container = document.querySelector('.about-video-container');
+                this.createControls();
+                this.setupVideo();
+                this.setupEventListeners();
+                console.log('✅ Elementos encontrados y configurados');
+            }
+        },
+        
+        // Crear controles
+        createControls() {
+            if (!this.container) return;
+            
+            // Crear overlay si no existe
+            this.overlay = this.container.querySelector('.video-overlay');
+            if (!this.overlay) {
+                this.overlay = document.createElement('div');
+                this.overlay.className = 'video-overlay';
+                this.container.appendChild(this.overlay);
+            }
+            
+            // Crear botón play/pause si no existe
+            this.playButton = this.overlay.querySelector('.video-play-pause');
+            if (!this.playButton) {
+                this.playButton = document.createElement('button');
+                this.playButton.className = 'video-play-pause';
+                this.playButton.innerHTML = '<i class="fas fa-pause"></i>';
+                this.playButton.setAttribute('aria-label', 'Reproducir/Pausar video');
+                this.overlay.appendChild(this.playButton);
+            }
+            
+            // Crear hint de sonido si no existe
+            this.soundHint = this.container.querySelector('.video-sound-hint');
+            if (!this.soundHint) {
+                this.soundHint = document.createElement('div');
+                this.soundHint.className = 'video-sound-hint show';
+                this.soundHint.innerHTML = '<i class="fas fa-volume-up"></i><span>Toca para activar sonido</span>';
+                this.container.appendChild(this.soundHint);
+            }
+        },
+        
+        // Configurar video
+        setupVideo() {
+            if (!this.video) return;
+            
+            // Atributos para móvil
+            this.video.setAttribute('playsinline', 'true');
+            this.video.setAttribute('webkit-playsinline', 'true');
+            this.video.setAttribute('muted', 'true');
+            this.video.muted = true;
+            this.isMuted = true;
+            
+            // Intentar autoplay después de un momento
+            setTimeout(() => {
+                this.playVideo();
+            }, 1000);
+            
+            // Mostrar hint de sonido después de 3 segundos
+            setTimeout(() => {
+                this.showSoundHint();
+            }, 3000);
+        },
+        
+        // Event listeners
+        setupEventListeners() {
+            if (!this.video || !this.container) return;
+            
+            // Click en botón play/pause
+            if (this.playButton) {
+                this.playButton.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    this.togglePlayPause();
+                });
+            }
+            
+            // Click en video para play/pause
+            this.video.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.togglePlayPause();
+            });
+            
+            // Click en container para activar sonido
+            this.container.addEventListener('click', (e) => {
+                if (this.isMuted && (e.target === this.container || e.target === this.video)) {
+                    this.toggleSound();
+                }
+            });
+            
+            // Doble click para toggle sonido
+            this.container.addEventListener('dblclick', (e) => {
+                e.preventDefault();
+                this.toggleSound();
+            });
+            
+            // Eventos del video
+            this.video.addEventListener('play', () => {
+                this.isPlaying = true;
+                this.updatePlayButton();
+            });
+            
+            this.video.addEventListener('pause', () => {
+                this.isPlaying = false;
+                this.updatePlayButton();
+            });
+            
+            this.video.addEventListener('loadeddata', () => {
+                console.log('📹 Video reel cargado');
+            });
+            
+            this.video.addEventListener('error', (e) => {
+                console.log('❌ Error cargando video reel:', e);
+            });
+            
+            // Touch events para móvil
+            let touchStartTime = 0;
+            this.container.addEventListener('touchstart', (e) => {
+                touchStartTime = Date.now();
+            });
+            
+            this.container.addEventListener('touchend', (e) => {
+                const touchDuration = Date.now() - touchStartTime;
+                if (touchDuration < 300) { // Tap rápido
+                    if (this.isMuted) {
+                        this.toggleSound();
+                    } else {
+                        this.togglePlayPause();
+                    }
+                }
+            });
+        },
+        
+        // Observer para reproducir cuando está visible
+        setupIntersectionObserver() {
+            if (!this.container) return;
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
+                        this.playVideo();
+                    } else if (entry.intersectionRatio < 0.1) {
+                        this.pauseVideo();
+                    }
+                });
+            }, {
+                threshold: [0, 0.1, 0.3, 0.7],
+                rootMargin: '50px'
+            });
+            
+            observer.observe(this.container);
+        },
+        
+        // Reproducir video
+        async playVideo() {
+            if (!this.video) return;
+            
+            try {
+                this.video.muted = this.isMuted;
+                const playPromise = this.video.play();
+                
+                if (playPromise !== undefined) {
+                    await playPromise;
+                    console.log('▶️ Video reel reproduciéndose');
+                    this.isPlaying = true;
+                    this.updatePlayButton();
+                }
+            } catch (error) {
+                console.log('⚠️ Error reproduciendo video reel:', error.message);
+            }
+        },
+        
+        // Pausar video
+        pauseVideo() {
+            if (this.video && !this.video.paused) {
+                this.video.pause();
+                console.log('⏸️ Video reel pausado');
+                this.isPlaying = false;
+                this.updatePlayButton();
+            }
+        },
+        
+        // Toggle play/pause
+        togglePlayPause() {
+            if (!this.video) return;
+            
+            if (this.video.paused) {
+                this.playVideo();
+            } else {
+                this.pauseVideo();
+            }
+        },
+        
+        // Toggle sonido
+        toggleSound() {
+            if (!this.video) return;
+            
+            this.isMuted = !this.isMuted;
+            this.video.muted = this.isMuted;
+            
+            if (!this.isMuted) {
+                this.video.volume = 0.7; // Volumen al 70%
+                this.hideSoundHint();
+                this.showTemporaryMessage('🔊 Sonido activado');
+                console.log('🔊 Sonido activado');
+            } else {
+                this.showSoundHint();
+                this.showTemporaryMessage('🔇 Sonido desactivado');
+                console.log('🔇 Sonido desactivado');
+            }
+        },
+        
+        // Actualizar icono del botón
+        updatePlayButton() {
+            if (!this.playButton) return;
+            
+            const icon = this.playButton.querySelector('i');
+            if (icon) {
+                if (this.isPlaying) {
+                    icon.className = 'fas fa-pause';
+                } else {
+                    icon.className = 'fas fa-play';
+                }
+            }
+        },
+        
+        // Mostrar hint de sonido
+        showSoundHint() {
+            if (this.soundHint && this.isMuted) {
+                this.soundHint.classList.add('show');
+                this.soundHint.innerHTML = '<i class="fas fa-volume-up"></i><span>Toca para activar sonido</span>';
+            }
+        },
+        
+        // Ocultar hint de sonido
+        hideSoundHint() {
+            if (this.soundHint) {
+                this.soundHint.classList.remove('show');
+            }
+        },
+        
+        // Mostrar mensaje temporal
+        showTemporaryMessage(message) {
+            if (!this.soundHint) return;
+            
+            const originalContent = this.soundHint.innerHTML;
+            this.soundHint.innerHTML = `<span>${message}</span>`;
+            this.soundHint.classList.add('show');
+            
+            setTimeout(() => {
+                if (this.isMuted) {
+                    this.soundHint.innerHTML = originalContent;
+                } else {
+                    this.soundHint.classList.remove('show');
+                }
+            }, 2000);
+        },
+        
+        // Debug
+        debug() {
+            console.log('=== DEBUG VIDEO REEL ===');
+            console.log('Video:', !!this.video);
+            console.log('Container:', !!this.container);
+            console.log('Playing:', this.isPlaying);
+            console.log('Muted:', this.isMuted);
+            console.log('Video src:', this.video?.src);
+            console.log('Video duration:', this.video?.duration);
+            console.log('Controls:', {
+                overlay: !!this.overlay,
+                playButton: !!this.playButton,
+                soundHint: !!this.soundHint
+            });
+        }
+    };
+    
+    // Inicializar
+    promoVideoController.init();
+    
+    // Hacer accesible globalmente
+    window.promoVideoController = promoVideoController;
+    
+    // Controles de teclado
+    document.addEventListener('keydown', (e) => {
+        if (!promoVideoController.video) return;
+        
+        // Solo si no hay un input activo
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') {
+            return;
+        }
+        
+        switch(e.key.toLowerCase()) {
+            case ' ': // Barra espaciadora
+            case 'k': // Tecla K
+                e.preventDefault();
+                promoVideoController.togglePlayPause();
+                break;
+                
+            case 'm': // Tecla M para mute/unmute
+                e.preventDefault();
+                promoVideoController.toggleSound();
+                break;
+        }
+    });
+    
+    // Pausar cuando la página no está visible
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            promoVideoController.pauseVideo();
+        } else {
+            setTimeout(() => {
+                promoVideoController.playVideo();
+            }, 500);
+        }
+    });
+    
+    console.log('✅ Video reel completamente inicializado');
+    console.log('🎮 Controles disponibles:');
+    console.log('   - Click/Tap: Play/Pause');
+    console.log('   - Doble click/tap: Toggle sonido');
+    console.log('   - Hover: Ver controles');
+    console.log('   - Espacio/K: Play/Pause');
+    console.log('   - M: Toggle sonido');
+});
 
 window.SmileLuxuryStudio = SmileLuxuryStudio;
