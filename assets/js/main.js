@@ -1509,6 +1509,303 @@ function toggleMobileMenuManual() {
     }
 }
 
-console.log('✅ JavaScript del menú móvil cargado completamente');
+// ================================================
+// VIDEO DE FONDO - JAVASCRIPT PARA MÓVILES
+// ================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // Configuración del video de fondo
+    const videoController = {
+        video: null,
+        container: null,
+        isVisible: false,
+        
+        // Inicializar
+        init() {
+            this.video = document.querySelector('.bg-video video');
+            this.container = document.querySelector('.bg-video');
+            
+            if (!this.video || !this.container) {
+                console.log('⚠️ Video de fondo no encontrado');
+                this.createFallbackBackground();
+                return;
+            }
+            
+            this.setupVideo();
+            this.setupIntersectionObserver();
+            this.handleVisibilityChange();
+            
+            console.log('✅ Video de fondo inicializado para móvil');
+        },
+        
+        // Configurar video para móviles
+        setupVideo() {
+            // Atributos necesarios para móviles
+            this.video.setAttribute('playsinline', 'true');
+            this.video.setAttribute('webkit-playsinline', 'true');
+            this.video.setAttribute('muted', 'true');
+            this.video.setAttribute('autoplay', 'true');
+            this.video.setAttribute('loop', 'true');
+            this.video.muted = true; // Forzar mudo
+            
+            // Forzar estilos
+            this.video.style.cssText = `
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                min-width: 100vw !important;
+                min-height: 100vh !important;
+                width: auto !important;
+                height: auto !important;
+                transform: translate(-50%, -50%) scale(1.1) !important;
+                object-fit: cover !important;
+                object-position: center center !important;
+                opacity: 0.3 !important;
+                z-index: -1 !important;
+                display: block !important;
+                visibility: visible !important;
+            `;
+            
+            // Eventos del video
+            this.video.addEventListener('loadeddata', () => {
+                console.log('📹 Video cargado');
+                this.playVideo();
+            });
+            
+            this.video.addEventListener('canplay', () => {
+                this.playVideo();
+            });
+            
+            this.video.addEventListener('ended', () => {
+                this.video.currentTime = 0;
+                this.playVideo();
+            });
+            
+            // Forzar reproducción inicial
+            setTimeout(() => {
+                this.playVideo();
+            }, 1000);
+        },
+        
+        // Reproducir video
+        async playVideo() {
+            if (!this.video) return;
+            
+            try {
+                // Asegurar que esté mudo antes de reproducir
+                this.video.muted = true;
+                this.video.volume = 0;
+                
+                // Intentar reproducir
+                const playPromise = this.video.play();
+                
+                if (playPromise !== undefined) {
+                    await playPromise;
+                    console.log('▶️ Video reproduciéndose');
+                    this.isVisible = true;
+                }
+            } catch (error) {
+                console.log('⚠️ Error reproduciendo video:', error.message);
+                // Si falla, mostrar background alternativo
+                this.showFallbackBackground();
+            }
+        },
+        
+        // Pausar video cuando no está visible
+        pauseVideo() {
+            if (this.video && !this.video.paused) {
+                this.video.pause();
+                console.log('⏸️ Video pausado');
+            }
+        },
+        
+        // Observer para optimizar performance
+        setupIntersectionObserver() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        this.playVideo();
+                    } else {
+                        // Solo pausar si está muy fuera de vista
+                        if (entry.intersectionRatio < 0.1) {
+                            this.pauseVideo();
+                        }
+                    }
+                });
+            }, {
+                threshold: [0, 0.1, 0.5],
+                rootMargin: '100px'
+            });
+            
+            if (this.container) {
+                observer.observe(this.container);
+            }
+        },
+        
+        // Manejar cambios de visibilidad de la página
+        handleVisibilityChange() {
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    this.pauseVideo();
+                } else {
+                    setTimeout(() => {
+                        this.playVideo();
+                    }, 500);
+                }
+            });
+        },
+        
+        // Background de respaldo si no hay video
+        createFallbackBackground() {
+            if (!document.querySelector('.bg-video')) {
+                const bgDiv = document.createElement('div');
+                bgDiv.className = 'bg-video';
+                bgDiv.style.cssText = `
+                    position: fixed !important;
+                    top: 0 !important;
+                    left: 0 !important;
+                    right: 0 !important;
+                    bottom: 0 !important;
+                    background: linear-gradient(135deg, 
+                        rgba(201, 170, 113, 0.1) 0%, 
+                        rgba(44, 90, 160, 0.05) 25%,
+                        rgba(255, 255, 255, 0.05) 50%,
+                        rgba(201, 170, 113, 0.08) 75%,
+                        rgba(44, 90, 160, 0.03) 100%) !important;
+                    z-index: -1 !important;
+                `;
+                document.body.insertBefore(bgDiv, document.body.firstChild);
+                console.log('🎨 Background de respaldo creado');
+            }
+        },
+        
+        // Mostrar background alternativo si video falla
+        showFallbackBackground() {
+            if (this.container) {
+                this.container.style.background = `
+                    linear-gradient(135deg, 
+                        rgba(201, 170, 113, 0.1) 0%, 
+                        rgba(44, 90, 160, 0.05) 25%,
+                        rgba(255, 255, 255, 0.05) 50%,
+                        rgba(201, 170, 113, 0.08) 75%,
+                        rgba(44, 90, 160, 0.03) 100%)
+                `;
+                console.log('🎨 Background alternativo activado');
+            }
+        },
+        
+        // Función para debugging
+        debug() {
+            console.log('=== DEBUG VIDEO ===');
+            console.log('Video element:', !!this.video);
+            console.log('Container:', !!this.container);
+            console.log('Video paused:', this.video?.paused);
+            console.log('Video muted:', this.video?.muted);
+            console.log('Video source:', this.video?.src);
+            console.log('Is mobile:', window.innerWidth <= 768);
+            console.log('Video visible:', this.isVisible);
+        }
+    };
+    
+    // Inicializar video
+    videoController.init();
+    
+    // Hacer accesible globalmente
+    window.videoController = videoController;
+    
+    // Función de corrección manual
+    window.fixVideoBackground = function() {
+        const video = document.querySelector('.bg-video video');
+        const container = document.querySelector('.bg-video');
+        
+        if (!video || !container) {
+            console.log('❌ Video no encontrado, creando background alternativo');
+            videoController.createFallbackBackground();
+            return;
+        }
+        
+        // Forzar estilos del container
+        container.style.cssText = `
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            z-index: -1 !important;
+            overflow: hidden !important;
+            background: linear-gradient(135deg, #f7f8fb 0%, #f5f6f8 50%, #eef1f5 100%) !important;
+        `;
+        
+        // Forzar estilos del video
+        video.style.cssText = `
+            position: absolute !important;
+            top: 50% !important;
+            left: 50% !important;
+            min-width: 100vw !important;
+            min-height: 100vh !important;
+            width: auto !important;
+            height: auto !important;
+            transform: translate(-50%, -50%) scale(1.1) !important;
+            object-fit: cover !important;
+            object-position: center center !important;
+            opacity: 0.3 !important;
+            z-index: -1 !important;
+            display: block !important;
+            visibility: visible !important;
+        `;
+        
+        // Configurar atributos
+        video.setAttribute('playsinline', 'true');
+        video.setAttribute('muted', 'true');
+        video.setAttribute('autoplay', 'true');
+        video.setAttribute('loop', 'true');
+        video.muted = true;
+        
+        // Intentar reproducir
+        video.play().then(() => {
+            console.log('✅ Video corregido y reproduciéndose');
+        }).catch(error => {
+            console.log('⚠️ Video no se puede reproducir:', error.message);
+            videoController.showFallbackBackground();
+        });
+    };
+    
+    // Auto-corrección después de 3 segundos
+    setTimeout(() => {
+        if (!videoController.isVisible) {
+            console.log('🔄 Auto-corrección del video...');
+            window.fixVideoBackground();
+        }
+    }, 3000);
+});
+
+// ================================================
+// OPTIMIZACIONES ADICIONALES PARA MÓVIL
+// ================================================
+
+// Ajustar video en resize
+window.addEventListener('resize', () => {
+    const video = document.querySelector('.bg-video video');
+    if (video && window.innerWidth <= 768) {
+        // Reajustar escala en móvil según orientación
+        const isPortrait = window.innerHeight > window.innerWidth;
+        const scale = isPortrait ? '1.2' : '1.05';
+        
+        video.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        console.log(`📱 Video reajustado para móvil (escala: ${scale})`);
+    }
+});
+
+// Reanudar video cuando la página se vuelve visible
+document.addEventListener('visibilitychange', () => {
+    if (!document.hidden && window.videoController) {
+        setTimeout(() => {
+            window.videoController.playVideo();
+        }, 500);
+    }
+});
+
+console.log('✅ JavaScript del video de fondo cargado');
 
 window.SmileLuxuryStudio = SmileLuxuryStudio;
