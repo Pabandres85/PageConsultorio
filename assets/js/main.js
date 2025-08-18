@@ -2168,4 +2168,315 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('   - M: Toggle sonido');
 });
 
-window.SmileLuxuryStudio = SmileLuxuryStudio;
+ /*CHATBOT */
+
+class DentalChatbotRefined {
+    constructor() {
+        this.isOpen = false;
+        this.hasInteracted = false;
+        this.messageCount = 0;
+        
+        this.elements = {
+            chatbot: document.getElementById('dentalChatbot'),
+            toggle: document.getElementById('chatbotToggle'),
+            window: document.getElementById('chatbotWindow'),
+            messages: document.getElementById('chatMessages'),
+            notification: document.getElementById('chatNotification'),
+            typingIndicator: document.getElementById('typingIndicator')
+        };
+
+        // Datos de la clínica - PERSONALIZA AQUÍ
+        this.clinicData = {
+            name: 'Smile Luxury Studio',
+            phone: '+573168866812',
+            email: 'dra.patriciamunozop@gmail.com',
+            address: 'Carrera 55 # 9-88 Camino Real, Cali',
+            hours: 'Lun-Vie: 8AM-6PM',
+            whatsappMessage: 'Hola, me interesa información sobre sus servicios dentales'
+        };
+
+        // Base de conocimiento refinada
+        this.knowledge = {
+            servicios: {
+                trigger: ['servicios', 'tratamientos', 'que hacen', 'especialidades'],
+                response: '🦷 Principales servicios:\n\n• Estética Dental\n• Implantología\n• Ortodoncia\n• Odontología General\n\n¿Te interesa alguno?',
+                options: ['Estética Dental', 'Implantes', 'Ortodoncia', 'Más info']
+            },
+            precios: {
+                trigger: ['precio', 'costo', 'cuanto cuesta', 'tarifas'],
+                response: '💰 Precios personalizados según tratamiento.\n\n✨ ¡Consulta inicial GRATIS!\n\n¿Agendamos una evaluación?',
+                options: ['Consulta gratis', 'Llamar ahora', 'WhatsApp']
+            },
+            citas: {
+                trigger: ['cita', 'agendar', 'reservar', 'turno'],
+                response: '📅 Agenda tu cita:\n\n📱 WhatsApp (más rápido)\n📞 +57 (316) 886-6812\n💻 Formulario web\n\n⏰ Lun-Vie: 8AM-6PM',
+                options: ['WhatsApp', 'Llamar', 'Formulario']
+            },
+            ubicacion: {
+                trigger: ['donde', 'ubicacion', 'direccion'],
+                response: '📍 Carrera 55 # 9-88\nCamino Real, Cali\n\n🚗 Fácil acceso\n🅿️ Parqueadero disponible',
+                options: ['Google Maps', 'Indicaciones', 'WhatsApp']
+            },
+            emergencias: {
+                trigger: ['urgencia', 'emergencia', 'dolor', 'duele'],
+                response: '🚨 Emergencias:\n\n📞 LLAMA: +57 (316) 886-6812\n💬 WhatsApp 24/7\n\n⚡ Atención urgente disponible',
+                options: ['Llamar URGENTE', 'WhatsApp', 'Síntomas']
+            }
+        };
+
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.showWelcomeMessage();
+        this.startNotificationAnimation();
+        console.log('🦷 Chatbot Refinado inicializado');
+    }
+
+    setupEventListeners() {
+        if (!this.elements.toggle) return;
+
+        // Toggle del chat
+        this.elements.toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.toggleChat();
+        });
+
+        // Cerrar con ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeChat();
+            }
+        });
+
+        // Click fuera para cerrar
+        document.addEventListener('click', (e) => {
+            if (this.isOpen && !this.elements.chatbot.contains(e.target)) {
+                this.closeChat();
+            }
+        });
+    }
+
+    toggleChat() {
+        if (this.isOpen) {
+            this.closeChat();
+        } else {
+            this.openChat();
+        }
+    }
+
+    openChat() {
+        this.isOpen = true;
+        this.elements.window.classList.add('active');
+        this.elements.toggle.classList.add('active');
+        
+        if (this.elements.notification) {
+            this.elements.notification.style.display = 'none';
+        }
+        
+        if (!this.hasInteracted) {
+            this.hasInteracted = true;
+            setTimeout(() => {
+                this.showInitialOptions();
+            }, 600);
+        }
+
+        this.scrollToBottom();
+        console.log('💬 Chat refinado abierto');
+    }
+
+    closeChat() {
+        this.isOpen = false;
+        this.elements.window.classList.remove('active');
+        this.elements.toggle.classList.remove('active');
+        console.log('❌ Chat cerrado');
+    }
+
+    showWelcomeMessage() {
+        const welcomeMessage = {
+            type: 'bot',
+            text: '¡Hola! 👋 Asistente virtual de Smile Luxury Studio.\n\n¿En qué puedo ayudarte?',
+            time: this.getCurrentTime()
+        };
+
+        this.addMessage(welcomeMessage);
+    }
+
+    showInitialOptions() {
+        const optionsMessage = {
+            type: 'bot',
+            text: 'Pregúntame sobre:',
+            options: [
+                'Servicios',
+                'Agendar cita',
+                'Precios',
+                'Ubicación'
+            ],
+            time: this.getCurrentTime()
+        };
+
+        this.addMessage(optionsMessage);
+    }
+
+    addMessage(message) {
+        if (!this.elements.messages) return;
+
+        const messageEl = document.createElement('div');
+        messageEl.className = `chat-message ${message.type}`;
+        
+        const avatar = message.type === 'bot' ? 
+            '<i class="fas fa-tooth"></i>' : 
+            '<i class="fas fa-user"></i>';
+
+        messageEl.innerHTML = `
+            <div class="message-avatar">${avatar}</div>
+            <div class="message-content">
+                <div class="message-text">${message.text.replace(/\n/g, '<br>')}</div>
+                <div class="message-time">${message.time}</div>
+                ${message.options ? this.createQuickOptions(message.options) : ''}
+            </div>
+        `;
+
+        this.elements.messages.appendChild(messageEl);
+        this.scrollToBottom();
+        this.messageCount++;
+    }
+
+    createQuickOptions(options) {
+        const optionsHtml = options.map(option => 
+            `<div class="quick-option" onclick="window.dentalChatbotRefined.handleOptionClick('${option}')">${option}</div>`
+        ).join('');
+
+        return `<div class="quick-options">${optionsHtml}</div>`;
+    }
+
+    handleOptionClick(option) {
+        // Agregar mensaje del usuario
+        this.addMessage({
+            type: 'user',
+            text: option,
+            time: this.getCurrentTime()
+        });
+
+        // Mostrar indicador de escritura
+        this.showTypingIndicator();
+
+        // Procesar respuesta
+        setTimeout(() => {
+            this.processUserInput(option);
+        }, 800);
+    }
+
+    processUserInput(input) {
+        this.hideTypingIndicator();
+        
+        const normalizedInput = input.toLowerCase();
+        let response = null;
+
+        // Buscar en la base de conocimiento
+        for (const [key, data] of Object.entries(this.knowledge)) {
+            if (data.trigger.some(trigger => normalizedInput.includes(trigger))) {
+                response = {
+                    type: 'bot',
+                    text: data.response,
+                    options: data.options,
+                    time: this.getCurrentTime()
+                };
+                break;
+            }
+        }
+
+        // Respuesta por defecto
+        if (!response) {
+            response = {
+                type: 'bot',
+                text: '🤔 Te conecto con nuestro equipo para mejor información.\n\n¿Prefieres WhatsApp o llamada?',
+                options: ['WhatsApp', 'Llamar', 'Más servicios'],
+                time: this.getCurrentTime()
+            };
+        }
+
+        this.addMessage(response);
+    }
+
+    showTypingIndicator() {
+        if (this.elements.typingIndicator) {
+            this.elements.typingIndicator.classList.add('active');
+            this.scrollToBottom();
+        }
+    }
+
+    hideTypingIndicator() {
+        if (this.elements.typingIndicator) {
+            this.elements.typingIndicator.classList.remove('active');
+        }
+    }
+
+    getCurrentTime() {
+        return new Date().toLocaleTimeString('es-CO', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    }
+
+    scrollToBottom() {
+        if (this.elements.messages) {
+            setTimeout(() => {
+                this.elements.messages.scrollTop = this.elements.messages.scrollHeight;
+            }, 50);
+        }
+    }
+
+    startNotificationAnimation() {
+        if (!this.hasInteracted && !this.isOpen) {
+            setTimeout(() => {
+                if (!this.hasInteracted && !this.isOpen && this.elements.notification) {
+                    this.elements.notification.style.display = 'flex';
+                    this.startNotificationAnimation();
+                }
+            }, 25000);
+        }
+    }
+}
+
+// Funciones globales optimizadas
+function openWhatsApp() {
+    const chatbot = window.dentalChatbotRefined;
+    if (!chatbot) return;
+    
+    const message = encodeURIComponent(chatbot.clinicData.whatsappMessage);
+    const whatsappUrl = `https://wa.me/${chatbot.clinicData.phone.replace(/\D/g, '')}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+    console.log('📱 WhatsApp abierto');
+}
+
+function openContactForm() {
+    const currentPath = window.location.pathname;
+    
+    if (currentPath.includes('/pages/')) {
+        window.location.href = 'contacto.html';
+    } else {
+        window.location.href = 'pages/contacto.html';
+    }
+    
+    console.log('📋 Formulario de contacto abierto');
+}
+
+// Inicializar chatbot refinado
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        if (document.getElementById('dentalChatbot')) {
+            window.dentalChatbotRefined = new DentalChatbotRefined();
+            console.log('🚀 Chatbot Dental Refinado cargado');
+        }
+    }, 800);
+});
+
+// Función de personalización
+function customizeChatbotRefined(config) {
+    if (window.dentalChatbotRefined && config) {
+        Object.assign(window.dentalChatbotRefined.clinicData, config);
+        console.log('⚙️ Chatbot refinado personalizado');
+    }
+}

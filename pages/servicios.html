@@ -438,6 +438,67 @@
         </div>
     </section>
 
+    <div class="dental-chatbot" id="dentalChatbot">
+    <!-- Botón flotante compacto -->
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir chat">
+        <i class="fas fa-comments"></i>
+        <i class="fas fa-times"></i>
+        <div class="chatbot-notification" id="chatNotification">1</div>
+    </button>
+
+    <!-- Ventana del chat compacta -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <!-- Header compacto -->
+        <div class="chatbot-header">
+            <div class="chatbot-avatar">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <div class="chatbot-info">
+                <h3>Dra. Patricia Muñoz</h3>
+                <div class="chatbot-status">
+                    <div class="status-dot"></div>
+                    <span>En línea</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de mensajes compacta -->
+        <div class="chatbot-messages" id="chatMessages">
+            <!-- Los mensajes se generan dinámicamente -->
+        </div>
+
+        <!-- Indicador de escritura refinado -->
+        <div class="typing-indicator" id="typingIndicator">
+            <div class="message-avatar">
+                <i class="fas fa-tooth"></i>
+            </div>
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+            <span>Escribiendo...</span>
+        </div>
+
+        <!-- Footer compacto -->
+        <div class="chatbot-footer">
+            <div class="action-buttons">
+                <button class="action-btn primary" onclick="openContactForm()">
+                    <i class="fas fa-calendar-alt"></i>
+                    Agendar
+                </button>
+                <button class="action-btn secondary" onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </button>
+            </div>
+            <div class="footer-text">
+                🦷 Smile Luxury Studio
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
