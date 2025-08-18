@@ -1,5 +1,5 @@
 /**
- * SMILE LUXURY STUDIO - JAVASCRIPT PRINCIPAL
+ * Diamonds Smile - JAVASCRIPT PRINCIPAL
  * ==========================================
  */
 
@@ -23,7 +23,7 @@ const SmileLuxuryStudio = {
     
     // Inicialización
     init() {
-        console.log('🦷 Iniciando Smile Luxury Studio...');
+        console.log('🦷 Iniciando Diamonds Smile...');
         this.cacheElements();
         this.bindEvents();
         this.initComponents();

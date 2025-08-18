@@ -1,5 +1,5 @@
 /**
- * SMILE LUXURY STUDIO - ANIMACIONES AVANZADAS
+ * Diamonds Smile - ANIMACIONES AVANZADAS
  * ================================================
  * Versión Final Integrada con todas las correcciones
  */
@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================================================
   // LOGGING Y DEBUGGING
   // ================================================
-  console.log('✅ Smile Luxury Studio - Animaciones iniciadas');
+  console.log('✅ Diamonds Smile - Animaciones iniciadas');
   console.log('🎯 Funciones disponibles: window.fixAnimations()');
   
   // Debug info

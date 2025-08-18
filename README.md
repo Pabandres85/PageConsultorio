@@ -1,8 +1,8 @@
-# 🦷 Smile Luxury Studio
+# 🦷 Diamonds Smile
 
 > Sitio web profesional para clínica dental de lujo
 
-![Smile Luxury Studio](https://img.shields.io/badge/Smile%20Luxury%20Studio-Dental%20Clinic-blue)
+![Diamonds Smile](https://img.shields.io/badge/Smile%20Luxury%20Studio-Dental%20Clinic-blue)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
@@ -10,7 +10,7 @@
 
 ## 📋 Descripción
 
-**Smile Luxury Studio** es un sitio web moderno y elegante para una clínica dental de lujo. Diseñado con enfoque en la experiencia del usuario, responsive design y tecnologías web modernas.
+**Diamonds Smile** es un sitio web moderno y elegante para una clínica dental de lujo. Diseñado con enfoque en la experiencia del usuario, responsive design y tecnologías web modernas.
 
 ### ✨ Características Principales
 
@@ -210,7 +210,7 @@ Este proyecto está bajo la Licencia MIT. Ver `LICENSE` para más detalles.
 
 <div align="center">
 
-**🦷 Smile Luxury Studio - Donde la tecnología se encuentra con la sonrisa perfecta**
+**🦷 Diamonds Smile - Donde la tecnología se encuentra con la sonrisa perfecta**
 
 ![Stars](https://img.shields.io/github/stars/tu-usuario/smile-luxury-studio?style=social)
 ![Forks](https://img.shields.io/github/forks/tu-usuario/smile-luxury-studio?style=social)
