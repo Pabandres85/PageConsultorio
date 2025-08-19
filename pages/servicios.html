@@ -17,41 +17,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="servicios-page">
-      <!-- Fondo con video diamante -->
-  <div class="bg-video" aria-hidden="true">
-    <video id="bgVideo" autoplay muted loop playsinline preload="auto"
-      poster="../assets/images/gallery/poster_diamante.jpg">
-      <source src="../assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
-      Tu navegador no soporta videos en HTML5.
-    </video>
-    <div class="bg-vignette"></div>
-    <div class="bg-shine"></div>
-  </div>
-    <!-- HEADER Y NAVEGACIÓN -->
-   <header class="header">
-    <div class="header-container">
-        <a href="../index.html" class="logo">Diamond Smiles</a>
-        
-     <nav class="nav">
-    <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="servicios.html" class="active">Servicios</a></li>
-        <li><a href="../index.html#nosotros">Nosotros</a></li>
-        <li><a href="equipo.html">Equipo</a></li>
-        <li><a href="../index.html#testimonios">Testimonios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
-</nav>
-        
-        <a href="#contacto" class="cta-button">Reservar Cita</a>
-        
-        <button class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+    <!-- Fondo con video diamante -->
+    <div class="bg-video" aria-hidden="true">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto"
+            poster="../assets/images/gallery/poster_diamante.jpg">
+            <source src="../assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
+            Tu navegador no soporta videos en HTML5.
+        </video>
+        <div class="bg-vignette"></div>
+        <div class="bg-shine"></div>
     </div>
-</header>
+
+    <!-- HEADER Y NAVEGACIÓN -->
+    <header class="header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">Diamond Smiles</a>
+            
+            <nav class="nav">
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="servicios.html" class="active">Servicios</a></li>
+                    <li><a href="../index.html#nosotros">Nosotros</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="../index.html#testimonios">Testimonios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <a href="contacto.html" class="cta-button">Reservar Cita</a>
+            
+            <button class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
 
     <!-- HERO SERVICIOS -->
     <section class="page-hero">
@@ -59,11 +60,140 @@
             <div class="page-hero-content">
                 <h1>Nuestros <span class="highlight">Servicios Dentales</span></h1>
                 <p>Ofrecemos una amplia gama de tratamientos dentales con la más alta calidad y tecnología de vanguardia para cuidar tu salud bucal y mejorar tu sonrisa.</p>
+                
+                <!-- Servicio Premium Destacado -->
+                <div class="premium-highlight">
+                    <div class="premium-badge">
+                        <i class="fas fa-gem"></i> Exclusivo
+                    </div>
+                    <h3>Carillas Diamond Exclusive</h3>
+                    <p>Nuestro tratamiento más exclusivo con técnicas especiales de tallado diamante</p>
+                    <a href="carillas-diamond.html" class="btn-premium">
+                        <i class="fas fa-crown"></i>
+                        Descubrir Más
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICIOS PRINCIPALES -->
+    <!-- SERVICIOS PRINCIPALES CON PRECIOS -->
+    <section class="services-pricing">
+        <div class="container">
+            <h2 class="section-title">Servicios con Precios</h2>
+            <div class="pricing-grid">
+                
+                <!-- Valoración Odontológica -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Valoración Odontológica</h3>
+                    <div class="price">$50,000</div>
+                    <p>Realizamos una valoración integral que une salud bucal y estética, ofreciendo soluciones personalizadas y tratamientos precisos gracias a nuestro laboratorio propio.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Evaluación completa</li>
+                        <li><i class="fas fa-check"></i> Diagnóstico personalizado</li>
+                        <li><i class="fas fa-check"></i> Plan de tratamiento</li>
+                        <li><i class="fas fa-check"></i> Ambiente acogedor</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn">Agendar Valoración</a>
+                </div>
+
+                <!-- Limpieza Dental Profunda -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-sparkles"></i>
+                    </div>
+                    <h3>Limpieza Dental Profunda</h3>
+                    <div class="price">$150,000</div>
+                    <p>Nuestra limpieza dental profunda con scaler elimina eficazmente la placa blanda y calcificada, tanto encima como debajo de la línea de las encías.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Scaler ultrasónico</li>
+                        <li><i class="fas fa-check"></i> Eliminación de placa</li>
+                        <li><i class="fas fa-check"></i> Prevención periodontal</li>
+                        <li><i class="fas fa-check"></i> Equipos avanzados</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn">Reservar Limpieza</a>
+                </div>
+
+                <!-- Manejo de Bruxismo TTM -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Manejo de Bruxismo TTM</h3>
+                    <div class="price">$580,000</div>
+                    <p>¡Recupera el equilibrio y bienestar de tu mandíbula! Tratamos dolores de cabeza, tensión mandibular y trastornos temporomandibulares.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Diagnóstico preciso</li>
+                        <li><i class="fas fa-check"></i> Tratamiento personalizado</li>
+                        <li><i class="fas fa-check"></i> Alivio del dolor</li>
+                        <li><i class="fas fa-check"></i> Mejora funcional</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn">Consultar TTM</a>
+                </div>
+
+                <!-- Diseño de Sonrisa -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Más Popular</div>
+                    <div class="pricing-icon">
+                        <i class="fas fa-smile-beam"></i>
+                    </div>
+                    <h3>Diseño de Sonrisa</h3>
+                    <div class="price">$2,200,000</div>
+                    <p>Transforma tu sonrisa con nuestro servicio personalizado en resina o cerámica. Nos adaptamos a tus necesidades para lograr un resultado natural y duradero.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Diseño personalizado</li>
+                        <li><i class="fas fa-check"></i> Resina o cerámica</li>
+                        <li><i class="fas fa-check"></i> Resultado natural</li>
+                        <li><i class="fas fa-check"></i> Laboratorio propio</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn">Diseñar Sonrisa</a>
+                </div>
+
+                <!-- Diseño de Sonrisa Resina Impresa -->
+                <div class="pricing-card premium">
+                    <div class="premium-badge">
+                        <i class="fas fa-crown"></i> Premium
+                    </div>
+                    <div class="pricing-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Diseño de Sonrisa Resina Impresa</h3>
+                    <div class="price">$4,000,000</div>
+                    <p>¡Renueva tu sonrisa con carillas en resinas impresas! Diseñadas a la medida para lograr un acabado natural, estético y duradero.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Carillas impresas 3D</li>
+                        <li><i class="fas fa-check"></i> Tecnología de vanguardia</li>
+                        <li><i class="fas fa-check"></i> Acabado natural</li>
+                        <li><i class="fas fa-check"></i> Transformación rápida</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn premium-btn">Solicitar Premium</a>
+                </div>
+
+                <!-- Rehabilitación Oral -->
+                <div class="pricing-card">
+                    <div class="pricing-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Rehabilitación Oral</h3>
+                    <div class="price">Consultar</div>
+                    <p>La rehabilitación oral restaura la funcionalidad y estética dental con tratamientos personalizados, como coronas, puentes e implantes.</p>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Tratamiento integral</li>
+                        <li><i class="fas fa-check"></i> Coronas y puentes</li>
+                        <li><i class="fas fa-check"></i> Implantes dentales</li>
+                        <li><i class="fas fa-check"></i> Soluciones duraderas</li>
+                    </ul>
+                    <a href="contacto.html" class="pricing-btn">Consultar Precio</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS PRINCIPALES DETALLADOS -->
     <section class="services-detailed">
         <div class="container">
             
@@ -430,7 +560,7 @@
                 <p>Agenda una consulta gratuita y descubre el tratamiento perfecto para ti</p>
                 <div class="cta-buttons">
                     <a href="contacto.html" class="btn-primary">Agendar Consulta Gratuita</a>
-                    <a href="tel:+1234567890" class="btn-secondary">
+                    <a href="tel:+573168866812" class="btn-secondary">
                         <i class="fas fa-phone"></i> Llamar Ahora
                     </a>
                 </div>
@@ -438,133 +568,131 @@
         </div>
     </section>
 
-   <!-- CHATBOT -->
-  <div class="dental-chatbot" id="dentalChatbot">
-    <!-- Botón flotante compacto -->
-    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir chat">
-        <i class="fas fa-comments"></i>
-        <i class="fas fa-times"></i>
-        <div class="chatbot-notification" id="chatNotification">1</div>
-    </button>
+    <!-- CHATBOT -->
+    <div class="dental-chatbot" id="dentalChatbot">
+        <!-- Botón flotante compacto -->
+        <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir chat">
+            <i class="fas fa-comments"></i>
+            <i class="fas fa-times"></i>
+            <div class="chatbot-notification" id="chatNotification">1</div>
+        </button>
 
-    <!-- Ventana del chat compacta -->
-    <div class="chatbot-window" id="chatbotWindow">
-        <!-- Header compacto -->
-        <div class="chatbot-header">
-            <div class="chatbot-avatar">
-                <i class="fas fa-tooth"></i>
+        <!-- Ventana del chat compacta -->
+        <div class="chatbot-window" id="chatbotWindow">
+            <!-- Header compacto -->
+            <div class="chatbot-header">
+                <div class="chatbot-avatar">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <div class="chatbot-info">
+                    <h3>Dra. Diana Patricia Muñoz</h3>
+                    <div class="chatbot-status">
+                        <div class="status-dot"></div>
+                        <span>En línea</span>
+                    </div>
+                </div>
             </div>
-            <div class="chatbot-info">
-                <h3>Dra. Diana Patricia Muñoz</h3>
-                <div class="chatbot-status">
-                    <div class="status-dot"></div>
-                    <span>En línea</span>
+
+            <!-- Área de mensajes compacta -->
+            <div class="chatbot-messages" id="chatMessages">
+                <!-- Los mensajes se generan dinámicamente -->
+            </div>
+
+            <!-- Indicador de escritura refinado -->
+            <div class="typing-indicator" id="typingIndicator">
+                <div class="message-avatar">
+                    <i class="fas fa-tooth"></i>
+                </div>
+                <div class="typing-dots">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+                <span>Escribiendo...</span>
+            </div>
+
+            <!-- Footer compacto -->
+            <div class="chatbot-footer">
+                <div class="action-buttons">
+                    <button class="action-btn primary" onclick="openContactForm()">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar
+                    </button>
+                    <button class="action-btn secondary" onclick="openWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        WhatsApp
+                    </button>
+                </div>
+                <div class="footer-text">
+                    🦷 Diamond Smiles
                 </div>
             </div>
         </div>
-
-        <!-- Área de mensajes compacta -->
-        <div class="chatbot-messages" id="chatMessages">
-            <!-- Los mensajes se generan dinámicamente -->
-        </div>
-
-        <!-- Indicador de escritura refinado -->
-        <div class="typing-indicator" id="typingIndicator">
-            <div class="message-avatar">
-                <i class="fas fa-tooth"></i>
-            </div>
-            <div class="typing-dots">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-            <span>Escribiendo...</span>
-        </div>
-
-        <!-- Footer compacto -->
-        <div class="chatbot-footer">
-            <div class="action-buttons">
-                <button class="action-btn primary" onclick="openContactForm()">
-                    <i class="fas fa-calendar-alt"></i>
-                    Agendar
-                </button>
-                <button class="action-btn secondary" onclick="openWhatsApp()">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp
-                </button>
-            </div>
-            <div class="footer-text">
-                🦷 Diamond Smiles
-            </div>
-        </div>
     </div>
-</div>
 
     <!-- FOOTER -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3><i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles</h3>
-          <p>Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
-          <div class="social-links">
-            <div class="social-links">
-                <a href="https://facebook.com/smileluxurystudio" aria-label="Facebook">
-                  <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales" aria-label="WhatsApp">
-                  <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
-                  <i class="fab fa-tiktok"></i>
-                </a>
-              </div>
-          </div>
-        </div>
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles</h3>
+                    <p>Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/smileluxurystudio" aria-label="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+                </div>
 
-        <div class="footer-section">
-          <h4>Servicios</h4>
-          <ul>
-            <li><a href="pages/servicios.html#general">Odontología General</a></li>
-            <li><a href="pages/servicios.html#estetica">Estética Dental</a></li>
-            <li><a href="pages/servicios.html#ortodoncia">Ortodoncia</a></li>
-            <li><a href="pages/servicios.html#implantes">Implantología</a></li>
-          </ul>
-        </div>
+                <div class="footer-section">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#estetica">Estética Dental</a></li>
+                        <li><a href="#implantes">Implantología</a></li>
+                        <li><a href="#ortodoncia">Ortodoncia</a></li>
+                        <li><a href="carillas-diamond.html">Carillas Diamond</a></li>
+                    </ul>
+                </div>
 
-        <div class="footer-section">
-          <h4>Navegación</h4>
-          <ul>
-            <li><a href="#nosotros">Sobre nosotros</a></li>
-            <li><a href="pages/equipo.html">Nuestro equipo</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
-          </ul>
-        </div>
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="../index.html#nosotros">Sobre nosotros</a></li>
+                        <li><a href="equipo.html">Nuestro equipo</a></li>
+                        <li><a href="../index.html#testimonios">Testimonios</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
 
-        <div class="footer-section">
-          <h4>Contacto</h4>
-          <div class="contact-info">
-           <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
-            <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
-            <p><i class="fas fa-envelope"></i> dra.patriciamunozop@gmail.com</p>
-            <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM </p>
-          </div>
-        </div>
-      </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
+                        <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
+                        <p><i class="fas fa-envelope"></i> dra.patriciamunozop@gmail.com</p>
+                        <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM </p>
+                    </div>
+                </div>
+            </div>
 
-      <div class="footer-bottom">
-        <p>&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
-        <div class="footer-links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
+                <div class="footer-links">
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Política de Privacidad</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
     <!-- JavaScript -->
     <script src="../assets/js/main.js"></script>

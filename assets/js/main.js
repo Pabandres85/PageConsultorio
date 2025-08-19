@@ -2215,7 +2215,7 @@ class DentalChatbotRefined {
             },
             ubicacion: {
                 trigger: ['donde', 'ubicacion', 'ubicación', 'direccion', 'dirección', 'donde estan', 'donde están', 'como llegar'],
-                response: '📍 Nos encuentras en:\n\n🏥 Carrera 55 # 9-88\nCamino Real, Cali, Colombia\n\n🚗 Fácil acceso y parqueadero\n🕒 Lun-Vie: 8AM-6PM\n\n¿Cómo prefieres llegar?',
+                response: '📍 Nos encuentras en:\n\n🏥 Carrera 55 # 9-88\nCamino Real, Cali, Colombia\n\n🚗 Fácil acceso\n🕒 Lun-Vie: 8AM-6PM\n\n¿Cómo prefieres llegar?',
                 options: ['Ver en Google Maps', 'Página de Contacto', 'Indicaciones WhatsApp', 'Llamar']
             },
             emergencias: {

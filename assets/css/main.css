@@ -727,7 +727,7 @@ main {
 }
 
 .stat-label{ 
-  color: var(--text-light); 
+  color: var(--text-dark); 
   font-size: .85rem;
   font-weight: 500;
 }
@@ -984,7 +984,7 @@ main {
 
 .about p{ 
   color: var(--text-dark); 
-  margin: 0 0 var(--space-xl); 
+  /* margin: 0 0 var(--space-xl);  */
   font-size: var(--font-size-lg);
 }
 
@@ -2907,4 +2907,1160 @@ main {
 
 .chatbot-toggle:hover::after {
     opacity: 1;
+}
+
+/*carillas diamond*/
+/* ================================================
+   CARILLAS DIAMOND EXCLUSIVE - ESTILO COHERENTE
+   ================================================ */
+
+/* Variables adicionales para elementos premium */
+:root {
+    --premium-gold: #FFD700;
+    --premium-shine: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+    --premium-glow: 0 0 20px rgba(255, 215, 0, 0.4);
+    --premium-shadow: 0 12px 40px rgba(255, 215, 0, 0.25);
+}
+
+/* ================================================
+   ELEMENTOS PREMIUM DEL HEADER
+   ================================================ */
+.exclusive-badge {
+    font-size: 0.65rem;
+    background: var(--gradient-gold);
+    color: #111;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-weight: 700;
+    margin-left: 8px;
+    box-shadow: 0 2px 8px rgba(201,170,113,0.3);
+    animation: premiumBadgePulse 3s ease-in-out infinite;
+}
+
+@keyframes premiumBadgePulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.cta-premium {
+    background: var(--gradient-gold);
+    color: #111;
+    border: 2px solid rgba(255,215,0,0.5);
+    box-shadow: var(--shadow-gold);
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.cta-premium:hover::before {
+    left: 100%;
+}
+
+.cta-premium:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-gold), var(--premium-glow);
+}
+
+/* ================================================
+   HERO PREMIUM (manteniendo estructura original)
+   ================================================ */
+.premium-hero {
+    position: relative;
+}
+
+.premium-badge-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--gradient-gold);
+    color: #111;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-xl);
+    box-shadow: var(--shadow-gold);
+    animation: premiumFloat 4s ease-in-out infinite;
+}
+
+@keyframes premiumFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+}
+
+.premium-stats .premium-stat {
+    background: rgb(255 255 255 / 19%);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,215,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-stat::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+.premium-stat:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--premium-shadow);
+}
+
+.premium-stat .stat-number {
+    background: darkgoldenrod;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Botones Premium */
+.btn-premium {
+    background: var(--gradient-gold);
+    color: #111;
+    border: 2px solid rgba(255,215,0,0.5);
+    box-shadow: var(--shadow-gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-premium::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.btn-premium:hover::before {
+    left: 100%;
+}
+
+.btn-premium:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold), var(--premium-glow);
+}
+
+.btn-premium-outline {
+    background: transparent;
+    color: var(--text-dark);
+    border: 2px solid rgba(255,215,0,0.6);
+    backdrop-filter: blur(10px);
+}
+
+.btn-premium-outline:hover {
+    background: rgba(255,215,0,0.1);
+    border-color: var(--premium-gold);
+    color: var(--text-dark);
+}
+
+/* Features Mini */
+.premium-features-mini {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-2xl);
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.feature-mini {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: rgb(255 255 255 / 14%);
+    backdrop-filter: blur(10px);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: 12px;
+    border: 1px solid rgba(255,215,0,0.3);
+    color: var(--text-dark);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+    transition: all var(--transition);
+}
+
+.feature-mini:hover {
+    background: rgba(255,215,0,0.2);
+    transform: translateY(-3px);
+    box-shadow: var(--premium-glow);
+}
+
+.feature-mini i {
+    color: var(--shadow-gold);
+    font-size: 1rem;
+}
+
+/* ================================================
+   IMAGEN PREMIUM (manteniendo estructura original)
+   ================================================ */
+.premium-image {
+    position: relative;
+}
+
+.premium-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.premium-placeholder {
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.15) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 215, 0, 0.15) 100%);
+    border: 3px solid var(--premium-gold);
+    box-shadow: var(--premium-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,215,0,0.3), transparent);
+    animation: premiumShine 3s infinite;
+}
+
+@keyframes premiumShine {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+.premium-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: var(--premium-shadow), var(--premium-glow);
+}
+
+.premium-note {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--premium-gold);
+    font-weight: 600;
+    background: rgba(255,215,0,0.2);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-pill);
+    margin-top: var(--space-sm);
+    border: 1px solid rgba(255,215,0,0.4);
+}
+
+.premium-frame {
+    position: absolute;
+    inset: -8px;
+    border: 2px solid transparent;
+    border-radius: 30px;
+    background: linear-gradient(
+45deg, #6d5e334d, transparent, #8f7f502e);
+    background-size: 300% 300%;
+    animation: premiumFrameAnimation 4s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes premiumFrameAnimation {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* ================================================
+   SECCIÓN PREMIUM (manteniendo estructura de services)
+   ================================================ */
+.premium-section {
+    background: rgb(255 255 255 / 0%);
+    position: relative;
+}
+
+.premium-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffd70000, transparent);
+}
+
+.premium-section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--gradient-gold);
+    color: #111;
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-pill);
+    font-weight: 700;
+    font-size: var(--font-size-sm);
+    margin: 0 auto var(--space-xl);
+    box-shadow: var(--shadow-gold);
+    display: flex;
+    justify-content: center;
+    width: max-content;
+}
+
+.premium-underline {
+    background: var(--premium-shine);
+    box-shadow: var(--premium-glow);
+}
+
+.premium-grid .premium-card {
+    background: rgb(255 255 255 / 11%);
+    border: 2px solid rgba(255,215,0,0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-gold);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    box-shadow: 0 4px 16px rgba(255,215,0,0.4);
+}
+
+.premium-card:hover {
+    border-color: var(--premium-gold);
+    box-shadow: var(--premium-shadow);
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.premium-icon {
+    background: var(--premium-shine);
+    color: #111;
+    box-shadow: var(--premium-shadow);
+    border: 3px solid rgba(255,215,0,0.3);
+}
+
+.premium-card:hover .premium-icon {
+    transform: scale(1.1);
+    box-shadow: var(--premium-shadow), var(--premium-glow);
+}
+
+.premium-detail {
+    font-size: var(--font-size-sm);
+    color: #73560e;
+    font-weight: 600;
+    background: rgb(107 82 36 / 11%);
+    padding: var(--space-xs) var(--space-md);
+    border-radius: var(--radius-pill);
+    margin-top: var(--space-md);
+    text-align: center;
+    border:1px solid rgb(223 180 85 / 23%);
+}
+
+/* ================================================
+   IMAGEN SECTION PREMIUM
+   ================================================ */
+.premium-image-section {
+    margin-top: var(--space-3xl);
+    display: flex;
+    justify-content: center;
+}
+
+.premium-image-container-large {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+.premium-placeholder-large {
+    height: clamp(350px, 40vw, 450px);
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 215, 0, 0.1) 100%);
+    border: 3px solid var(--premium-gold);
+    box-shadow: var(--premium-shadow);
+}
+
+/* ================================================
+   CHATBOT PREMIUM
+   ================================================ */
+.dental-chatbot .chatbot-toggle {
+    background: var(--gradient-gold);
+    color: #111;
+    box-shadow: var(--premium-shadow);
+}
+
+.dental-chatbot .chatbot-toggle:hover {
+    box-shadow: var(--premium-shadow), var(--premium-glow);
+}
+
+.dental-chatbot .chatbot-notification {
+    background: var(--premium-gold);
+    color: #111;
+    font-weight: 900;
+    font-size: 0.6rem;
+}
+
+/* ================================================
+   PROCESO PREMIUM (manteniendo estructura about)
+   ================================================ */
+.premium-process {
+  /*   background: rgba(255,255,255,0.3);
+    backdrop-filter: blur(20px); */
+}
+
+.process-intro {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--text-base);
+    margin-bottom: var(--space-3xl);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.premium-process-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+}
+
+.premium-video-section {
+    position: relative;
+}
+
+.premium-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.premium-video-placeholder {
+    height: clamp(400px, 45vw, 500px);
+    background: linear-gradient(135deg, 
+        rgba(255, 215, 0, 0.1) 0%, 
+        rgba(255, 255, 255, 0.9) 50%, 
+        rgba(255, 215, 0, 0.1) 100%);
+    border: 3px solid var(--premium-gold);
+    box-shadow: var(--premium-shadow);
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.premium-video-placeholder:hover {
+    transform: scale(1.02);
+    box-shadow: var(--premium-shadow), var(--premium-glow);
+}
+
+.premium-play-button {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #d1ba838f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #111;
+    font-size: 1.8rem;
+    margin: 0 auto var(--space-lg);
+    box-shadow: var(--premium-shadow);
+    transition: all var(--transition);
+    animation: premiumPlayPulse 2s ease-in-out infinite;
+}
+
+@keyframes premiumPlayPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.premium-video-placeholder:hover .premium-play-button {
+    transform: scale(1.2);
+    box-shadow: var(--premium-shadow), var(--premium-glow);
+}
+
+.premium-video-placeholder .placeholder-content h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--premium-shadow);
+    margin-bottom: var(--space-sm);
+}
+
+.premium-video-placeholder .placeholder-content p {
+    color: var(--text-base);
+    font-size: var(--font-size-base);
+    margin-bottom: var(--space-sm);
+    font-weight: 600;
+}
+
+/* Steps Premium */
+.premium-steps-content {
+    position: relative;
+}
+
+.premium-steps {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.premium-step {
+    background: rgb(255 255 255 / 18%);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgba(255,215,0,0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    gap: var(--space-lg);
+    align-items: flex-start;
+    transition: all var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-gold);
+    box-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+.premium-step:hover {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: var(--premium-gold);
+    transform: translateX(8px);
+    box-shadow: var(--premium-glow);
+}
+
+.premium-step-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: darkgoldenrod;
+    line-height: 1;
+    margin-right: var(--space-md);
+    flex-shrink: 0;
+    text-shadow: 0 2px 8px rgba(255,215,0,0.3);
+    font-family: 'Inter', sans-serif;
+}
+
+.premium-step h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--space-sm);
+}
+
+.premium-step p {
+    color: var(--text-base);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ================================================
+   RESPONSIVE PREMIUM PROCESS
+   ================================================ */
+@media (max-width: 1024px) {
+    .premium-process-container {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+        text-align: center;
+    }
+    
+    .premium-video-container {
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-video-placeholder {
+        height: clamp(300px, 40vw, 400px);
+    }
+    
+    .premium-play-button {
+        width: 70px;
+        height: 70px;
+        font-size: 1.5rem;
+    }
+    
+    .premium-step {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--space-md);
+        padding: var(--space-lg);
+    }
+    
+    .premium-step-number {
+        font-size: 2rem;
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-video-container {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+    
+    .premium-video-placeholder {
+        height: clamp(250px, 35vw, 300px);
+    }
+    
+    .premium-step {
+        padding: var(--space-md);
+    }
+    
+    .premium-step-number {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 1024px) {
+    .premium-features-mini {
+        justify-content: center;
+    }
+    
+    .premium-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .premium-features-mini {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-mini {
+        justify-content: center;
+        min-width: 200px;
+    }
+    
+    .premium-image-container,
+    .premium-image-container-large {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+    
+    .premium-placeholder,
+    .premium-placeholder-large {
+        height: clamp(250px, 35vw, 300px);
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-badge-hero {
+        padding: var(--space-xs) var(--space-md);
+        font-size: 0.8rem;
+    }
+    
+    .premium-section-badge {
+        padding: var(--space-xs) var(--space-md);
+        font-size: 0.8rem;
+    }
+    
+    .premium-stats {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+    
+    .premium-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/*image hero*/
+
+
+/* ================================================
+   HERO CARILLAS DIAMOND - EFECTOS ELEGANTES
+   ================================================ */
+
+/* Contenedor de la imagen hero */
+.hero-image-container {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(201, 170, 113, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-image-container:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.2),
+        0 0 0 2px rgba(201, 170, 113, 0.4),
+        0 0 30px rgba(201, 170, 113, 0.3);
+}
+
+/* Imagen principal con efectos */
+.hero-image-main {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    
+    /* Efectos sutiles en la imagen */
+    filter: 
+        brightness(1.05)
+        contrast(1.1)
+        saturate(1.1);
+    
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image-container:hover .hero-image-main {
+    filter: 
+        brightness(1.1)
+        contrast(1.15)
+        saturate(1.15);
+}
+
+/* Overlay elegante y sutil */
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(201, 170, 113, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        rgba(201, 170, 113, 0.08) 70%,
+        rgba(255, 215, 0, 0.06) 100%
+    );
+    border-radius: 20px;
+    z-index: 3;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.hero-image-container:hover::before {
+    opacity: 0.5;
+}
+
+/* Efecto de brillo diamante */
+.hero-image-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 40%,
+        rgba(255, 215, 0, 0.4) 50%,
+        rgba(255, 255, 255, 0.3) 60%,
+        transparent 70%
+    );
+    border-radius: 20px;
+    z-index: 4;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.6s ease;
+    pointer-events: none;
+}
+
+.hero-image-container:hover::after {
+    opacity: 1;
+    animation: diamondShine 2s ease-in-out;
+}
+
+@keyframes diamondShine {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Marco dorado elegante */
+.hero-image-container {
+    position: relative;
+}
+
+.hero-image-container::before {
+    box-shadow: inset 0 0 0 2px rgba(201, 170, 113, 0.3);
+}
+
+/* Efecto de difuminado en los bordes */
+.hero-image-main {
+    mask: 
+        linear-gradient(to right, black 0%, black 90%, transparent 100%),
+        linear-gradient(to bottom, black 0%, black 90%, transparent 100%),
+        linear-gradient(to left, black 0%, black 90%, transparent 100%),
+        linear-gradient(to top, black 0%, black 90%, transparent 100%);
+    mask-composite: intersect;
+    -webkit-mask: 
+        linear-gradient(to right, black 0%, black 95%, rgba(0,0,0,0.8) 100%),
+        linear-gradient(to bottom, black 0%, black 95%, rgba(0,0,0,0.8) 100%),
+        linear-gradient(to left, black 0%, black 95%, rgba(0,0,0,0.8) 100%),
+        linear-gradient(to top, black 0%, black 95%, rgba(0,0,0,0.8) 100%);
+    -webkit-mask-composite: source-in;
+}
+
+/* Reflejo sutil en la imagen */
+.hero-image-container {
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.1) 0%,
+            rgba(201, 170, 113, 0.05) 25%,
+            rgba(255, 215, 0, 0.03) 50%,
+            rgba(201, 170, 113, 0.05) 75%,
+            rgba(255, 255, 255, 0.1) 100%
+        );
+    padding: 3px;
+}
+
+/* ================================================
+   EFECTOS ADICIONALES PARA ELEGANCIA
+   ================================================ */
+
+/* Sombra proyectada elegante */
+.hero-image {
+    position: relative;
+    filter: drop-shadow(0 15px 35px rgba(201, 170, 113, 0.2));
+}
+
+/* Efecto de flotación sutil */
+.hero-image-container {
+    animation: elegantFloat 6s ease-in-out infinite;
+}
+
+@keyframes elegantFloat {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.hero-image-container:hover {
+    animation-play-state: paused;
+}
+
+/* ================================================
+   RESPONSIVE hero image
+   ================================================ */
+
+@media (max-width: 768px) {
+    .hero-image-container {
+        border-radius: 16px;
+        box-shadow: 
+            0 15px 40px rgba(0, 0, 0, 0.12),
+            0 0 0 1px rgba(201, 170, 113, 0.15);
+    }
+    
+    .hero-image-main {
+        border-radius: 16px;
+        max-height: 350px;
+    }
+    
+    .hero-image-container:hover {
+        transform: translateY(-4px) scale(1.01);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image-container {
+        border-radius: 12px;
+    }
+    
+    .hero-image-main {
+        border-radius: 12px;
+        max-height: 280px;
+    }
+}
+/*video contenedor*/
+
+/* ================================================
+   VIDEO HERO DIAMOND - CONTENEDOR PREMIUM
+   ================================================ */
+
+.premium-video-container {
+    width: 100% !important;
+    max-width: 450px !important;
+    aspect-ratio: 16 / 9 !important;
+    height: auto !important;
+    border-radius: 20px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,.15),
+        0 0 0 3px rgba(255,215,0,.3) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    cursor: pointer !important;
+    background: #000 !important;
+    margin: 0 auto !important;
+}
+
+/* Video principal */
+.premium-video-container video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    display: block !important;
+    border-radius: 20px !important;
+    
+    /* Efectos de video premium */
+    filter: 
+        brightness(1.1)
+        contrast(1.15)
+        saturate(1.2) !important;
+    
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hover effect del contenedor */
+.premium-video-container:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: 
+        0 30px 80px rgba(0,0,0,.2),
+        0 0 0 4px rgba(255,215,0,.5),
+        0 0 30px rgba(255,215,0,.4) !important;
+}
+
+.premium-video-container:hover video {
+    filter: 
+        brightness(1.15)
+        contrast(1.2)
+        saturate(1.25) !important;
+}
+
+/* Overlay con controles */
+.premium-video-container .video-overlay {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    background: rgba(0,0,0,0.4) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.3s ease !important;
+    z-index: 5 !important;
+    border-radius: 20px !important;
+}
+
+.premium-video-container:hover .video-overlay {
+    opacity: 1 !important;
+}
+
+/* Botón de play/pause premium */
+.premium-video-container .video-play-pause {
+    background: var(--gradient-gold) !important;
+    border: 3px solid rgba(255,215,0,0.8) !important;
+    border-radius: 50% !important;
+    width: 80px !important;
+    height: 80px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-size: 1.8rem !important;
+    color: #111 !important;
+    box-shadow: 
+        0 8px 25px rgba(255,215,0,0.4),
+        0 0 20px rgba(255,215,0,0.3) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.premium-video-container .video-play-pause::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: -100% !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent) !important;
+    transition: left 0.6s ease !important;
+}
+
+.premium-video-container .video-play-pause:hover::before {
+    left: 100% !important;
+}
+
+.premium-video-container .video-play-pause:hover {
+    background: var(--premium-shine) !important;
+    transform: scale(1.1) !important;
+    box-shadow: 
+        0 12px 35px rgba(255,215,0,0.5),
+        0 0 30px rgba(255,215,0,0.4) !important;
+    border-color: #FFD700 !important;
+}
+
+/* Badge de video exclusivo */
+.video-exclusive-badge {
+    position: absolute !important;
+    top: 20px !important;
+    left: 20px !important;
+    background: var(--gradient-gold) !important;
+    color: #111 !important;
+    padding: 8px 16px !important;
+    border-radius: 20px !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    box-shadow: 
+        0 4px 15px rgba(255,215,0,0.3),
+        0 0 20px rgba(255,215,0,0.2) !important;
+    z-index: 6 !important;
+    animation: exclusiveBadgePulse 3s ease-in-out infinite !important;
+}
+
+@keyframes exclusiveBadgePulse {
+    0%, 100% { 
+        transform: scale(1); 
+        box-shadow: 0 4px 15px rgba(255,215,0,0.3), 0 0 20px rgba(255,215,0,0.2);
+    }
+    50% { 
+        transform: scale(1.05); 
+        box-shadow: 0 6px 20px rgba(255,215,0,0.4), 0 0 25px rgba(255,215,0,0.3);
+    }
+}
+
+.video-exclusive-badge i {
+    font-size: 1rem !important;
+    animation: crownSpin 4s linear infinite !important;
+}
+
+@keyframes crownSpin {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Indicador de sonido para video hero */
+.premium-video-container .video-sound-hint {
+    position: absolute !important;
+    bottom: 20px !important;
+    left: 20px !important;
+    right: 20px !important;
+    background: rgba(0,0,0,0.8) !important;
+    color: white !important;
+    padding: 10px 16px !important;
+    border-radius: 25px !important;
+    font-size: 0.8rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    opacity: 0 !important;
+    transform: translateY(10px) !important;
+    transition: all 0.4s ease !important;
+    z-index: 6 !important;
+    font-weight: 600 !important;
+    border: 2px solid rgba(255,215,0,0.3) !important;
+}
+
+.premium-video-container .video-sound-hint.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.premium-video-container .video-sound-hint i {
+    font-size: 1rem !important;
+    color: var(--premium-gold) !important;
+    animation: soundPulse 2s ease-in-out infinite !important;
+}
+
+@keyframes soundPulse {
+    0%, 100% { 
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    50% { 
+        transform: scale(1.1); 
+        opacity: 0.8; 
+    }
+}
+
+/* Efecto de brillo diamante en el video */
+.premium-video-container::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.2) 40%,
+        rgba(255, 215, 0, 0.3) 50%,
+        rgba(255, 255, 255, 0.2) 60%,
+        transparent 70%
+    ) !important;
+    border-radius: 20px !important;
+    z-index: 7 !important;
+    opacity: 0 !important;
+    transform: translate(-50%, -50%) rotate(45deg) !important;
+    transition: all 0.8s ease !important;
+    pointer-events: none !important;
+}
+
+.premium-video-container:hover::after {
+    opacity: 1 !important;
+    animation: videoDiamondShine 2s ease-in-out !important;
+}
+
+@keyframes videoDiamondShine {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(0.8);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+        opacity: 0;
+    }
 }
