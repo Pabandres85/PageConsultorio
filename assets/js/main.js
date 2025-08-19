@@ -2159,8 +2159,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    console.log('✅ Video reel completamente inicializado');
-    console.log('🎮 Controles disponibles:');
+    console.log(' Video reel completamente inicializado');
+    console.log(' Controles disponibles:');
     console.log('   - Click/Tap: Play/Pause');
     console.log('   - Doble click/tap: Toggle sonido');
     console.log('   - Hover: Ver controles');
@@ -2168,7 +2168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log('   - M: Toggle sonido');
 });
 
- /*CHATBOT */
+ /*CHATBOT COMPLETO  */
 
 class DentalChatbotRefined {
     constructor() {
@@ -2185,17 +2185,18 @@ class DentalChatbotRefined {
             typingIndicator: document.getElementById('typingIndicator')
         };
 
-        // Datos de la clínica - PERSONALIZA AQUÍ
+        // Datos de la clínica
         this.clinicData = {
-            name: 'Smile Luxury Studio',
+            name: 'Diamond Smiles',
             phone: '+573168866812',
             email: 'dra.patriciamunozop@gmail.com',
             address: 'Carrera 55 # 9-88 Camino Real, Cali',
             hours: 'Lun-Vie: 8AM-6PM',
-            whatsappMessage: 'Hola, me interesa información sobre sus servicios dentales'
+            whatsappMessage: 'Hola, me interesa información sobre sus servicios dentales',
+            googleMapsUrl: 'https://maps.google.com/?q=Carrera+55+9-88+Camino+Real,+Cali,+Colombia'
         };
 
-        // Base de conocimiento refinada
+        // Base de conocimiento 
         this.knowledge = {
             servicios: {
                 trigger: ['servicios', 'tratamientos', 'que hacen', 'especialidades'],
@@ -2204,8 +2205,8 @@ class DentalChatbotRefined {
             },
             precios: {
                 trigger: ['precio', 'costo', 'cuanto cuesta', 'tarifas'],
-                response: '💰 Precios personalizados según tratamiento.\n\n✨ ¡Consulta inicial GRATIS!\n\n¿Agendamos una evaluación?',
-                options: ['Consulta gratis', 'Llamar ahora', 'WhatsApp']
+                response: '💰 Precios personalizados según tratamiento.\n\n✨ ¡Consulta Personalizada!\n\n¿Agendamos una evaluación?',
+                options: ['Consulta Personalizada', 'Llamar ahora', 'WhatsApp']
             },
             citas: {
                 trigger: ['cita', 'agendar', 'reservar', 'turno'],
@@ -2213,9 +2214,9 @@ class DentalChatbotRefined {
                 options: ['WhatsApp', 'Llamar', 'Formulario']
             },
             ubicacion: {
-                trigger: ['donde', 'ubicacion', 'direccion'],
-                response: '📍 Carrera 55 # 9-88\nCamino Real, Cali\n\n🚗 Fácil acceso\n🅿️ Parqueadero disponible',
-                options: ['Google Maps', 'Indicaciones', 'WhatsApp']
+                trigger: ['donde', 'ubicacion', 'ubicación', 'direccion', 'dirección', 'donde estan', 'donde están', 'como llegar'],
+                response: '📍 Nos encuentras en:\n\n🏥 Carrera 55 # 9-88\nCamino Real, Cali, Colombia\n\n🚗 Fácil acceso y parqueadero\n🕒 Lun-Vie: 8AM-6PM\n\n¿Cómo prefieres llegar?',
+                options: ['Ver en Google Maps', 'Página de Contacto', 'Indicaciones WhatsApp', 'Llamar']
             },
             emergencias: {
                 trigger: ['urgencia', 'emergencia', 'dolor', 'duele'],
@@ -2296,7 +2297,7 @@ class DentalChatbotRefined {
     showWelcomeMessage() {
         const welcomeMessage = {
             type: 'bot',
-            text: '¡Hola! 👋 Asistente virtual de Smile Luxury Studio.\n\n¿En qué puedo ayudarte?',
+            text: '¡Hola! 👋 Asistente virtual de Diamond Smiles.\n\n¿En qué puedo ayudarte?',
             time: this.getCurrentTime()
         };
 
@@ -2359,6 +2360,11 @@ class DentalChatbotRefined {
             time: this.getCurrentTime()
         });
 
+        // NUEVO: Manejar opciones especiales primero
+        if (this.handleSpecialOptions(option)) {
+            return;
+        }
+
         // Mostrar indicador de escritura
         this.showTypingIndicator();
 
@@ -2366,6 +2372,158 @@ class DentalChatbotRefined {
         setTimeout(() => {
             this.processUserInput(option);
         }, 800);
+    }
+
+    // FUNCIÓN COMPLETA: Manejar opciones especiales
+    handleSpecialOptions(option) {
+        switch(option.toLowerCase()) {
+            case 'ver en google maps':
+            case 'google maps':
+                window.open(this.clinicData.googleMapsUrl, '_blank');
+                this.addMessage({
+                    type: 'bot',
+                    text: '🗺️ Abriendo Google Maps...\n\n¿Necesitas algo más?',
+                    options: ['WhatsApp', 'Llamar', 'Página de Contacto', 'Más servicios'],
+                    time: this.getCurrentTime()
+                });
+                console.log('🗺️ Google Maps abierto');
+                return true;
+
+            case 'página de contacto':
+            case 'pagina de contacto':
+                const currentPath = window.location.pathname;
+                if (currentPath.includes('/pages/')) {
+                    window.location.href = 'contacto.html';
+                } else {
+                    window.location.href = 'pages/contacto.html';
+                }
+                this.addMessage({
+                    type: 'bot',
+                    text: '📋 Abriendo página de contacto con mapa interactivo...\n\n¿Te ayudo con algo más?',
+                    options: ['WhatsApp', 'Llamar', 'Más servicios'],
+                    time: this.getCurrentTime()
+                });
+                console.log('📋 Página de contacto abierta');
+                return true;
+
+            case 'indicaciones whatsapp':
+                const locationMessage = `Hola! Me puedes enviar la ubicación exacta de Diamond Smiles? Necesito indicaciones para llegar a ${this.clinicData.address}`;
+                const message = encodeURIComponent(locationMessage);
+                const whatsappUrl = `https://wa.me/${this.clinicData.phone.replace(/\D/g, '')}?text=${message}`;
+                window.open(whatsappUrl, '_blank');
+                this.addMessage({
+                    type: 'bot',
+                    text: '📱 Enviando ubicación por WhatsApp...\n\n¿Algo más en lo que pueda ayudarte?',
+                    options: ['Agendar cita', 'Más servicios'],
+                    time: this.getCurrentTime()
+                });
+                console.log('📍 Ubicación solicitada por WhatsApp');
+                return true;
+
+            case 'whatsapp':
+                const msg = encodeURIComponent(this.clinicData.whatsappMessage);
+                const wUrl = `https://wa.me/${this.clinicData.phone.replace(/\D/g, '')}?text=${msg}`;
+                window.open(wUrl, '_blank');
+                this.addMessage({
+                    type: 'bot',
+                    text: '💬 Abriendo WhatsApp...\n\nTe atenderemos enseguida!',
+                    time: this.getCurrentTime()
+                });
+                console.log('📱 WhatsApp abierto');
+                return true;
+
+            case 'llamar':
+            case 'llamar ahora':
+            case 'llamar urgente':
+                window.location.href = `tel:${this.clinicData.phone}`;
+                this.addMessage({
+                    type: 'bot',
+                    text: '📞 Iniciando llamada...\n\nTe esperamos!',
+                    time: this.getCurrentTime()
+                });
+                console.log('📞 Iniciando llamada');
+                return true;
+
+            case 'formulario':
+                const cPath = window.location.pathname;
+                if (cPath.includes('/pages/')) {
+                    window.location.href = 'contacto.html';
+                } else {
+                    window.location.href = 'pages/contacto.html';
+                }
+                this.addMessage({
+                    type: 'bot',
+                    text: '📝 Abriendo formulario de contacto...',
+                    time: this.getCurrentTime()
+                });
+                console.log('📝 Formulario abierto');
+                return true;
+
+            case 'estética dental':
+            case 'estetica dental':
+                this.addMessage({
+                    type: 'bot',
+                    text: '✨ Estética Dental:\n\n• Blanqueamiento profesional\n• Carillas de porcelana\n• Diseño de sonrisa\n• Resinas estéticas\n\n¿Te interesa algún tratamiento específico?',
+                    options: ['Blanqueamiento', 'Carillas', 'Diseño de sonrisa', 'Agendar consulta'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            case 'implantes':
+            case 'implantología':
+                this.addMessage({
+                    type: 'bot',
+                    text: '🦷 Implantología:\n\n• Implantes unitarios\n• Prótesis sobre implantes\n• All-on-4\n• Carga inmediata\n\n¿Necesitas reemplazar alguna pieza dental?',
+                    options: ['Una pieza', 'Varias piezas', 'All-on-4', 'Consulta evaluación'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            case 'ortodoncia':
+                this.addMessage({
+                    type: 'bot',
+                    text: '🦷 Ortodoncia:\n\n• Brackets metálicos\n• Brackets estéticos\n• Invisalign\n• Ortodoncia interceptiva\n\n¿Qué tipo de tratamiento te interesa?',
+                    options: ['Brackets invisibles', 'Invisalign', 'Para niños', 'Consulta evaluación'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            case 'más info':
+            case 'mas info':
+            case 'más servicios':
+            case 'mas servicios':
+                this.addMessage({
+                    type: 'bot',
+                    text: '🦷 Otros servicios:\n\n• Endodoncia\n• Cirugía oral\n• Periodoncia\n• Odontopediatría\n• Profilaxis\n\n¿Te interesa alguno?',
+                    options: ['Endodoncia', 'Cirugía oral', 'Limpieza dental', 'Niños'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            case 'consulta personalizada':
+            case 'consulta evaluación':
+            case 'agendar consulta':
+                this.addMessage({
+                    type: 'bot',
+                    text: '📅 ¡Perfecto! Agenda tu consulta personalizada:\n\n✨ Primera consulta SIN COSTO\n📋 Evaluación completa\n💡 Plan de tratamiento\n\n¿Cómo prefieres agendar?',
+                    options: ['WhatsApp', 'Llamar', 'Formulario web'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            case 'síntomas':
+            case 'sintomas':
+                this.addMessage({
+                    type: 'bot',
+                    text: '🚨 Síntomas de emergencia dental:\n\n• Dolor intenso\n• Hinchazón facial\n• Sangrado abundante\n• Trauma dental\n• Diente fracturado\n\n¿Presentas alguno de estos?',
+                    options: ['Sí, es urgente', 'No es urgente', 'Llamar ahora', 'WhatsApp'],
+                    time: this.getCurrentTime()
+                });
+                return true;
+
+            default:
+                return false;
+        }
     }
 
     processUserInput(input) {
@@ -2468,7 +2626,7 @@ document.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
         if (document.getElementById('dentalChatbot')) {
             window.dentalChatbotRefined = new DentalChatbotRefined();
-            console.log('🚀 Chatbot Dental Refinado cargado');
+            console.log('🚀 Chatbot Dental Refinado completamente funcional');
         }
     }, 800);
 });
@@ -2477,6 +2635,30 @@ document.addEventListener('DOMContentLoaded', () => {
 function customizeChatbotRefined(config) {
     if (window.dentalChatbotRefined && config) {
         Object.assign(window.dentalChatbotRefined.clinicData, config);
-        console.log('⚙️ Chatbot refinado personalizado');
+        console.log('⚙️ Chatbot personalizado');
     }
+}
+
+// Función de debug
+function debugChatbot() {
+    const chatbot = window.dentalChatbotRefined;
+    
+    if (!chatbot) {
+        console.log('❌ Chatbot no encontrado');
+        return;
+    }
+    
+    console.log('=== DEBUG CHATBOT ===');
+    console.log('✅ Chatbot inicializado:', !!chatbot);
+    console.log('✅ Elementos encontrados:', Object.keys(chatbot.elements).filter(key => chatbot.elements[key]));
+    console.log('✅ Base de conocimiento:', Object.keys(chatbot.knowledge));
+    console.log('✅ Datos clínica:', chatbot.clinicData);
+    console.log('✅ Google Maps URL:', chatbot.clinicData.googleMapsUrl);
+    console.log('✅ Función especial:', typeof chatbot.handleSpecialOptions);
+    
+    // Test específico de ubicación
+    console.log('🧪 Test ubicación:');
+    console.log('- Triggers:', chatbot.knowledge.ubicacion?.trigger);
+    console.log('- Response:', !!chatbot.knowledge.ubicacion?.response);
+    console.log('- Options:', chatbot.knowledge.ubicacion?.options);
 }
