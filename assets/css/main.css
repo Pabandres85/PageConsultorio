@@ -4062,5 +4062,92 @@ main {
     100% {
         transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
         opacity: 0;
-    }
+    }}
+
+    /* ===== Contacto – estilos solo para esta sección ===== */
+.contact-info-section{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: clamp(16px,3vw,32px);
+  margin-top: 20px;
 }
+.contact-info-section .info-card{
+  background: rgb(255 255 255 / 11%);
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(201,170,113,.25);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.08);
+}
+.contact-info-section h3{
+  display:flex; align-items:center; gap:10px;
+  margin:0 0 12px; font-weight:800; font-size:1.15rem;
+}
+.contact-info-section h3 i{ color:#C9AA71; }
+
+/* Ubicación */
+.location-info .address{ margin:0 0 10px; line-height:1.6; }
+.location-info .address strong{ font-size:1rem; }
+.google-map-container{ margin-top: 12px; }
+.map-actions{ display:flex; gap:12px; margin-top:12px; flex-wrap:wrap; }
+.map-button{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 14px; border-radius:12px; font-weight:700;
+  background: rgba(201,170,113,.12); color:#6b552e; text-decoration:none;
+  border:1px solid rgba(201,170,113,.35);
+}
+.map-button:hover{ background: rgba(201,170,113,.2); transform: translateY(-1px); }
+
+/* Horarios */
+.schedule{ display:grid; gap:8px; margin-top:6px; }
+.schedule-item{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:10px 12px; border-radius:12px;
+  background:rgba(255,255,255,.6);
+  border:1px dashed rgba(201,170,113,.35);
+}
+.schedule-item .day{ font-weight:700; }
+.schedule-item .time{ font-weight:600; color:#444; }
+.schedule-item.closed .time{ color:#6b552e; }
+
+/* Urgencias */
+.emergency-info{
+  margin-top:16px; padding:14px; border-radius:14px;
+  background: linear-gradient(135deg, rgba(173,48,54,.06), rgba(201,170,113,.08));
+  border:1px solid rgba(173,48,54,.2);
+}
+.emergency-info h4{
+  margin:0 0 6px; display:flex; align-items:center; gap:8px; color:#ad3036;
+}
+.emergency-phone{
+  display:inline-flex; align-items:center; gap:8px;
+  margin:6px 0 4px; padding:8px 12px; border-radius:10px;
+  color:#ad3036; text-decoration:none; font-weight:800;
+  background:rgba(173,48,54,.08); border:1px solid rgba(173,48,54,.25);
+}
+.emergency-phone:hover{ background:rgba(173,48,54,.12); }
+
+/* Otros medios */
+.contact-methods{ display:grid; gap:10px; margin-top:8px; }
+.contact-method{
+  display:flex; align-items:center; gap:12px; padding:12px; border-radius:14px;
+  background:rgba(201,170,113,.08); border:1px solid rgba(201,170,113,.25);
+  color:#333; text-decoration:none;
+}
+.contact-method i{
+  width:38px; height:38px; border-radius:50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,#f2e5c9,#e7d5ac); color:#111;
+}
+.contact-method strong{ display:block; font-weight:800; }
+.contact-method span{ display:block; font-size:.95rem; color:#555; }
+.contact-method.whatsapp i{ background:#25D366; color:#fff; }
+.contact-method:hover{ background:rgba(201,170,113,.15); }
+
+@media (max-width: 900px){
+  .contact-info-section{ grid-template-columns:1fr; }
+}
+
+
+
+
