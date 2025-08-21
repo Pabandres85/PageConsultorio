@@ -4250,7 +4250,7 @@ main {
 .team-group { margin-top: clamp(16px,3vw,32px); }
 .team-group .group-title{
   font-weight: 800; margin: 0 0 12px;
-  background: linear-gradient(90deg,#C9AA71,#E7D5AC);
+  background: linear-gradient(90deg, #69532b, #E7D5AC);
   -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
 }
 .team-grid{
