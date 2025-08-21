@@ -4113,17 +4113,17 @@ main {
 /* Urgencias */
 .emergency-info{
   margin-top:16px; padding:14px; border-radius:14px;
-  background: linear-gradient(135deg, rgba(173,48,54,.06), rgba(201,170,113,.08));
+  background: linear-gradient(135deg, rgb(143 127 87 / 8%), rgba(201, 170, 113, .08));
   border:1px solid rgba(173,48,54,.2);
 }
 .emergency-info h4{
-  margin:0 0 6px; display:flex; align-items:center; gap:8px; color:#ad3036;
+  margin:0 0 6px; display:flex; align-items:center; gap:8px; color:#7f5c1d;;
 }
 .emergency-phone{
   display:inline-flex; align-items:center; gap:8px;
   margin:6px 0 4px; padding:8px 12px; border-radius:10px;
-  color:#ad3036; text-decoration:none; font-weight:800;
-  background:rgba(173,48,54,.08); border:1px solid rgba(173,48,54,.25);
+  color:#7f5c1d;; text-decoration:none; font-weight:800;
+  background:rgb(173 136 48 / 10%);border:1px solid rgb(173 136 48 / 10%);
 }
 .emergency-phone:hover{ background:rgba(173,48,54,.12); }
 
@@ -4148,6 +4148,100 @@ main {
   .contact-info-section{ grid-template-columns:1fr; }
 }
 
+/* ===== Redes header – estilo destacado ===== */
+.header .social-links{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+}
+
+.header .social-links a{
+  width:40px; height:40px;
+  border-radius:999px;
+  display:inline-flex; align-items:center; justify-content:center;
+  font-size:18px; line-height:1;
+  color:#6b552e;
+  background:rgba(201,170,113,.12);
+  border:1px solid rgba(201,170,113,.45);
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+  position:relative; overflow:hidden;
+}
+
+/* halo dorado */
+.header .social-links a::before{
+  content:"";
+  position:absolute; inset:-2px;
+  border-radius:inherit;
+  background:radial-gradient(circle at 30% 30%, rgba(201,170,113,.28), transparent 55%);
+  opacity:.0; transition:opacity .18s ease;
+}
+
+/* Hover/focus genérico */
+.header .social-links a:hover,
+.header .social-links a:focus-visible{
+  transform:translateY(-2px) scale(1.05);
+  box-shadow:0 10px 28px rgba(0,0,0,.12);
+}
+.header .social-links a:hover::before,
+.header .social-links a:focus-visible::before{ opacity:.8; }
+
+/* Colores de marca al hover */
+.header .social-links a[aria-label="Facebook"]:hover{ 
+  background:#1877F2; color:#fff; border-color:#1877F2;
+}
+.header .social-links a[aria-label="Instagram"]:hover{
+  background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+  color:#fff; border-color:#DD2A7B;
+}
+.header .social-links a[aria-label="WhatsApp"]{
+  /* un poco más de énfasis por ser contacto directo */
+  box-shadow:0 0 0 2px rgba(37,211,102,.18) inset, 0 6px 18px rgba(0,0,0,.06);
+}
+.header .social-links a[aria-label="WhatsApp"]:hover{
+  background:#25D366; color:#fff; border-color:#25D366;
+}
+.header .social-links a[aria-label="TikTok"]:hover{
+  background:#000; color:#fff; border-color:#000;
+}
+
+/* Tamaños en móviles */
+@media (max-width: 768px){
+  .header .social-links{ gap:10px; }
+  .header .social-links a{ width:36px; height:36px; font-size:16px; }
+}
+
+/* ——— Estilo sutil para el héroe de contacto ——— */
+.hero-soft{ position:relative; overflow:hidden; isolation:isolate; }
+.hero-soft::before{
+  content:"";
+  position:absolute; inset:-20%;
+  z-index:-1;
+}
+.hero-soft::after{
+  content:"";
+  position:absolute; left:0; right:0; bottom:-1px; height:1px;
+  background:linear-gradient(90deg, transparent, rgba(201,170,113,.45), transparent);
+}
+
+/* Título y acento */
+.hero-title .highlight{
+  background:linear-gradient(90deg, #856d40, #a98940);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* Divisor fino */
+.hero-divider{
+  width:84px; height:3px; margin:10px auto 0; border-radius:999px;
+  background:linear-gradient(90deg, transparent, rgba(201,170,113,.85), transparent);
+  filter:drop-shadow(0 2px 6px rgba(201,170,113,.3));
+}
+
+@media (max-width:768px){
+  .hero-divider{ width:64px; height:2px; }
+}
 
 
 
