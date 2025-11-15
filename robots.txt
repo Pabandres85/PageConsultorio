@@ -2,7 +2,7 @@
 User-agent: *
 Allow: /
 
-# Desallow para rutas innecesarias (opcional)
+# Desallow para rutas innecesarias 
 Disallow: /_*
 Disallow: /admin/
 Disallow: /.env
