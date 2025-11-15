@@ -1,0 +1,12 @@
+# robots.txt para Diamond Smiles
+User-agent: *
+Allow: /
+
+# Desallow para rutas innecesarias (opcional)
+Disallow: /_*
+Disallow: /admin/
+Disallow: /.env
+
+# Sitemap
+Sitemap: https://www.dianamunozsmiles.com/sitemap.xml
+Host: https://www.dianamunozsmiles.com

@@ -1,15 +1,62 @@
-# dependencias y builds
+# ==========================================
+# DEPENDENCIAS Y BUILDS
+# ==========================================
 node_modules/
 dist/
 build/
 .tmp/
 .cache/
+.parcel-cache/
+*.min.js
+*.min.css
 
-# editores/SO
+# ==========================================
+# EDITORES Y SISTEMA OPERATIVO
+# ==========================================
 .vscode/
+.idea/
 .DS_Store
+.AppleDouble
 Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+*~
 
-# env/keys
+# ==========================================
+# VARIABLES DE ENTORNO Y SECRETOS
+# ==========================================
 .env
 .env.*
+!.env.example
+*.key
+*.pem
+
+# ==========================================
+# LOGS Y TEMPORALES
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.pid
+*.seed
+.backup/
+*.tmp
+*.bak
+
+# ==========================================
+# TESTING Y COVERAGE
+# ==========================================
+coverage/
+.nyc_output/
+test-results/
+.mocha/
+
+# ==========================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ==========================================
+# Ignorar backups locales pero no el proyecto
+!assets/
+!pages/
+!index.html
