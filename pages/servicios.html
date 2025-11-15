@@ -65,7 +65,7 @@
     </section>
 
     <!-- SERVICIOS CON PRECIOS -->
-<section class="additional-services" style="padding-block:32px;">
+    <section class="additional-services" style="padding-block:32px;">
   <div class="container">
     <h2 class="section-title" style="margin-bottom:16px;">Servicios Diamond</h2>
 
@@ -77,120 +77,164 @@
            gap:32px;                 /* <-- separación entre bloques */
            align-items:stretch;
          ">
+         
+      <!-- Diamond Smiles Exclusive con video integrado -->
+      <div class="service-card premium featured" style="grid-column: 1 / -1; display: flex; flex-direction: row; gap: 20px; align-items: stretch;">
+        <div class="service-media" aria-hidden="true" style="flex: 0 0 300px; width: 300px; border-radius: 14px; overflow: hidden;">
+          <div class="about-video-container" style="height:100%; width:100%;">
+            <video 
+              id="promoVideo" 
+              autoplay 
+              muted 
+              loop 
+              playsinline 
+              preload="auto"
+              poster="../assets/images/gallery/poster_videpromo1.jpg"
+              style="width: 100%; height: 100%; object-fit: cover; display:block;">
+              <source src="../assets/images/gallery/videocarillasdiamon.mp4" type="video/mp4" />
+              <source src="../assets/images/gallery/videocarillasdiamon.webm" type="video/webm" />
+            </video>
+          </div>
+        </div>
 
-      <!-- Diamond Smiles Exclusive - ocupa todo el ancho -->
-      <div class="service-card premium featured" style="grid-column:1 / -1;">
-        <div class="premium-badge"><i class="fas fa-crown"></i> Exclusivo</div>
-        <div class="service-icon"><i class="fas fa-gem"></i></div>
+        <div class="service-content">
+          <div class="premium-badge"><i class="fas fa-crown"></i> Exclusivo</div>
+          <div class="service-icon"><i class="fas fa-gem"></i></div>
+          <h3>Diamond Smiles Exclusive</h3>
+          <h4 class="subtitle">Diseño de Sonrisa en Resina Impresa</h4>
 
-        <h3>Diamond Smiles Exclusive</h3>
-        <h4 class="subtitle">Diseño de Sonrisa en Resina Impresa</h4>
+          <p class="lead">
+            No todas las sonrisas son <strong>Diamond</strong>. Para quienes se atreven a brillar:
+            una sonrisa que expresa lujo, poder y diferenciación.
+          </p>
 
-        <p class="lead">
-          No todas las sonrisas son <strong>Diamond</strong>. Para quienes se atreven a brillar:
-          una sonrisa que expresa lujo, poder y diferenciación.
-        </p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Proyección previa de tu nueva sonrisa</li>
+            <li>Carillas impresas 3D hechas a tu medida</li>
+            <li>Acabado natural con tecnología de vanguardia</li>
+            <li>Atención VIP</li>
+          </ul>
 
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Proyección previa de tu nueva sonrisa</li>
-          <li>Carillas impresas 3D hechas a tu medida</li>
-          <li>Acabado natural con tecnología de vanguardia</li>
-          <li>Atención VIP</li>
-        </ul>
+          <a href="carillas-diamond.html" class="service-link premium" style="margin-top:12px;">
+            Explorar Diamond <i class="fas fa-crown"></i>
+          </a>
+        </div>
 
-        <a href="carillas-diamond.html" class="service-link premium" style="margin-top:12px;">
-          Explorar Diamond <i class="fas fa-crown"></i>
-        </a>
       </div>
 
       <!-- Valoración Odontológica -->
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-search"></i></div>
-        <h3> Valoración Odontológica</h3>
-        <p>Realizamos una valoración integral que une salud bucal y estética, ofreciendo soluciones personalizadas y tratamientos precisos.¡Tu sonrisa merece lo mejor! </p>
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Evaluación completa</li>
-          <li>Diagnóstico personalizado</li>
-          <li>Plan de tratamiento</li>
-          <li>Ambiente acogedor</li>
-        </ul>
-        <a href="contacto.html" class="service-link" style="margin-top:12px;">Agendar Valoración <i class="fas fa-arrow-right"></i></a>
+        <div class="service-content">
+          <div class="service-icon"><i class="fas fa-search"></i></div>
+          <h3> Valoración Odontológica</h3>
+          <p>Realizamos una valoración integral que une salud bucal y estética, ofreciendo soluciones personalizadas y tratamientos precisos. </p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Evaluación completa</li>
+            <li>Diagnóstico personalizado</li>
+            <li>Plan de tratamiento</li>
+            <li>Ambiente acogedor</li>
+          </ul>
+          <a href="contacto.html" class="service-link" style="margin-top:12px;">Agendar Valoración <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-media" aria-hidden="true"></div>
       </div>
 
       <!-- Limpieza Dental Profunda -->
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-smile"></i></div>
-        <h3>Limpieza Dental Profunda</h3>
-        <p>Nuestra limpieza dental profunda con scaler elimina eficazmente la placa blanda y calcificada, tanto encima como debajo de la línea de las encías</p>
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Scaler ultrasónico</li>
-          <li>Eliminación de placa</li>
-          <li>Prevención periodontal</li>
-          <li>Equipos avanzados</li>
-        </ul>
-        <a href="contacto.html" class="service-link" style="margin-top:12px;">Reservar Limpieza <i class="fas fa-arrow-right"></i></a>
+        <div class="service-content">
+          <div class="service-icon"><i class="fas fa-smile"></i></div>
+          <h3>Limpieza Dental Profunda</h3>
+          <p>Nuestra limpieza dental profunda que elimina eficazmente la placa blanda y calcificada, tanto encima como debajo de la línea de las encías
+          </p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Scaner ultrasónico</li>
+            <li>Eliminación de placa</li>
+            <li>Prevención periodontal</li>
+            <li>Equipos avanzados</li>
+          </ul>
+          <a href="contacto.html" class="service-link" style="margin-top:12px;">Reservar Limpieza <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-media" aria-hidden="true"></div>
       </div>
 
       <!-- Diseño de Sonrisa -->
       <div class="service-card featured">
-        <div class="service-icon"><i class="fas fa-smile-beam"></i></div>
-        <h3> Diseño de Sonrisa</h3>
-        <p>Transforma tu sonrisa con nuestro servicio personalizado en resina o cerámica</p>
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Diseño personalizado</li>
-          <li>Resina o cerámica</li>
-          <li>Resultado natural</li>
-          <li>Laboratorio propio</li>
-        </ul>
-        <a href="contacto.html" class="service-link" style="margin-top:12px;">Diseñar Sonrisa <i class="fas fa-arrow-right"></i></a>
+        <div class="service-content">
+          <div class="service-icon"><i class="fas fa-smile-beam"></i></div>
+          <h3> Diseño de Sonrisa</h3>
+          <p>Transforma tu sonrisa con nuestro servicio personalizado en resina o cerámica</p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Diseño personalizado</li>
+            <li>Resina o cerámica</li>
+            <li>Resultado natural</li>
+            <li>Laboratorio propio</li>
+          </ul>
+          <a href="contacto.html" class="service-link" style="margin-top:12px;">Diseñar Sonrisa <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-media" aria-hidden="true"></div>
       </div>
 
       <!-- Rehabilitación Oral -->
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-tools"></i></div>
-        <h3> Rehabilitación Oral</h3>
-        <p>En nuestro consultorio, la rehabilitación oral restaura la funcionalidad y estética dental</p>
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Tratamiento integral</li>
-          <li>Coronas y puentes</li>
-          <li>Implantes dentales</li>
-          <li>Soluciones duraderas</li>
-        </ul>
-        <a href="contacto.html" class="service-link" style="margin-top:12px;">Consultar Precio <i class="fas fa-arrow-right"></i></a>
+        <div class="service-content">
+          <div class="service-icon"><i class="fas fa-tools"></i></div>
+          <h3> Rehabilitación Oral</h3>
+          <p>En nuestro consultorio, la rehabilitación oral restaura la funcionalidad y estética dental</p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Tratamiento integral</li>
+            <li>Coronas y puentes</li>
+            <li>Implantes dentales</li>
+            <li>Soluciones duraderas</li>
+          </ul>
+          <a href="contacto.html" class="service-link" style="margin-top:12px;">Consultar Precio <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-media" aria-hidden="true"></div>
       </div>
 
        <!-- Diseño de Sonrisa Resina Impresa -->
 <div class="service-card">
-  <div class="service-icon"><i class="fas fa-cubes"></i></div>
-  <h3>Diseño de Sonrisa Resina Impresa</h3>
-  <p>
-    ¡Renueva tu sonrisa con carillas en resinas impresas! Diseñadas a la medida para lograr
-    un acabado natural, estético y duradero. Transforma tu sonrisa de manera rápida y precisa
-    con tecnología de vanguardia. ¡Agenda tu cita y descubre el cambio!
-  </p>
-  <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-    <li>Diseño a la medida</li>
-    <li>Acabado natural y duradero</li>
-    <li>Tecnología de vanguardia</li>
-    <li>Procedimiento rápido y preciso</li>
-  </ul>
-  <a href="contacto.html" class="service-link" style="margin-top:12px;">
-    Agendar Consulta <i class="fas fa-arrow-right"></i>
-  </a>
+  <div class="service-content">
+    <div class="service-icon"><i class="fas fa-cubes"></i></div>
+    <h3>Diseño de Sonrisa Resina Impresa</h3>
+    <p>
+      ¡Renueva tu sonrisa con carillas en resinas impresas! Diseñadas a la medida para lograr
+      un acabado natural, estético y duradero. Transforma tu sonrisa de manera rápida y precisa
+      con tecnología de vanguardia. ¡Agenda tu cita y descubre el cambio!
+    </p>
+    <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+      <li>Diseño a la medida</li>
+      <li>Acabado natural y duradero</li>
+      <li>Tecnología de vanguardia</li>
+      <li>Procedimiento rápido y preciso</li>
+    </ul>
+    <a href="contacto.html" class="service-link" style="margin-top:12px;">
+      Agendar Consulta <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <div class="service-media" aria-hidden="true"></div>
 </div>
 
       <!-- Manejo de Bruxismo TTM -->
       <div class="service-card">
-        <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
-        <h3> Manejo de Bruxismo TTM</h3>
-        <p>¡Recupera el equilibrio y bienestar de tu mandíbula!</p>
-        <ul class="service-list" style="margin:0 0 12px 1.2rem;">
-          <li>Diagnóstico preciso</li>
-          <li>Tratamiento personalizado</li>
-          <li>Alivio del dolor</li>
-          <li>Mejora funcional</li>
-        </ul>
-        <a href="contacto.html" class="service-link" style="margin-top:12px;">Consultar TTM <i class="fas fa-arrow-right"></i></a>
+        <div class="service-content">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3> Manejo de Bruxismo TTM</h3>
+          <p>¡Recupera el equilibrio y bienestar de tu mandíbula!</p>
+          <ul class="service-list" style="margin:0 0 12px 1.2rem;">
+            <li>Diagnóstico preciso</li>
+            <li>Tratamiento personalizado</li>
+            <li>Alivio del dolor</li>
+            <li>Mejora funcional</li>
+          </ul>
+          <a href="contacto.html" class="service-link" style="margin-top:12px;">Consultar TTM <i class="fas fa-arrow-right"></i></a>
+        </div>
+
+        <div class="service-media" aria-hidden="true"></div>
       </div>
 
     </div>

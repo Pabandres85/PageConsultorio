@@ -4241,6 +4241,11 @@ main {
 
 @media (max-width:768px){
   .hero-divider{ width:64px; height:2px; }
+  
+  /* Responsive para tarjeta Exclusive con video */
+  .service-card.premium.featured[style*="flex-direction: row"] {
+    flex-direction: column !important;
+  }
 }
 
 
