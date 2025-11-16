@@ -1,615 +1,604 @@
-
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carillas Diamond Exclusive - Diamond Smiles</title>
-    <meta name="description" content="Descubre nuestras carillas Diamond Exclusive con técnicas especiales de tallado diamante. El tratamiento más lujoso y exclusivo para tu sonrisa perfecta.">
-    <meta name="keywords" content="carillas diamante, carillas exclusivas, sonrisa de lujo, tallado diamante, estética dental premium">
-    <!-- Favicon -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title data-i18n="diamond.meta.title">
+    Carillas Diamond Exclusive - Diamond Smiles
+  </title>
+
+  <meta name="description"
+        data-i18n="diamond.meta.description"
+        data-i18n-attr="content"
+        content="Descubre nuestras carillas Diamond Exclusive con técnicas especiales de tallado diamante. El tratamiento más lujoso y exclusivo para tu sonrisa perfecta.">
+
+  <meta name="keywords"
+        content="carillas diamante, carillas exclusivas, sonrisa de lujo, tallado diamante, estética dental premium">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../smile-luxury-studio/assets/images/gallery/logo.png" />
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
-    
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-     <!-- Favicon -->
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
   <link rel="icon" type="image/x-icon" href="../smile-luxury-studio/assets/images/gallery/logo.png" />
 </head>
 <body class="diamond-carillas-page">
-    
-    <!-- Fondo con video diamante -->
-    <div class="bg-video" aria-hidden="true">
-        <video id="bgVideo" autoplay muted loop playsinline preload="auto"
-            poster="../assets/images/gallery/poster_diamante.jpg">
-            <source src="../assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
-            Tu navegador no soporta videos en HTML5.
-        </video>
-        <div class="bg-vignette"></div>
-        <div class="bg-shine"></div>
+
+  <!-- Fondo con video diamante -->
+  <div class="bg-video" aria-hidden="true">
+    <video id="bgVideo" autoplay muted loop playsinline preload="auto"
+           poster="../assets/images/gallery/poster_diamante.jpg">
+      <source src="../assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
+      Tu navegador no soporta videos en HTML5.
+    </video>
+    <div class="bg-vignette"></div>
+    <div class="bg-shine"></div>
+  </div>
+
+  <!-- HEADER  -->
+  <header class="header" role="banner">
+    <div class="header-container">
+      <a href="../index.html" class="logo" aria-label="Diamond Smiles - Inicio">
+        <i class="fas fa-gem" style="color: #C9AA71; margin-right: 8px;"></i>
+        <span class="brand-name" data-i18n="brand.name">Dra Diana Muñoz</span>
+        <span class="brand-suffix" data-i18n="brand.suffix">Exclusive</span>
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- language toggle -->
+      <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
+        <span class="lang-flag">ES</span>
+        <span class="lang-label">ES</span>
+      </button>
+
+      <a href="#consulta-exclusiva" class="cta-button cta-premium">
+        <i class="fas fa-crown"></i>
+        <span data-i18n="cta.consult">Consulta Exclusiva</span>
+      </a>
+
+      <button class="mobile-menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
+  </header>
 
-    <!-- HEADER  -->
-    <header class="header" role="banner">
-        <div class="header-container">
-            <a href="../index.html" class="logo" aria-label="Diamond Smiles - Inicio">
-                <i class="fas fa-gem" style="color: #C9AA71; margin-right: 8px;"></i>
-                <span class="brand-name" data-i18n="brand.name">Diamond Smiles</span>
-                <span class="brand-suffix" data-i18n="brand.suffix">Exclusive</span>
-            </a>
-            
-            <nav class="nav" role="navigation" aria-label="Navegación principal">
-                <ul class="nav-links">
-                    <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
-                    <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
-                    <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
-                    <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
-                    <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
-                </ul>
-            </nav>
-            
-            <!-- language toggle -->
-            <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
-              <span class="lang-flag">ES</span>
-              <span class="lang-label">ES</span>
-            </button>
-
-            <a href="#consulta-exclusiva" class="cta-button cta-premium">
-                <i class="fas fa-crown"></i>
-                <span data-i18n="cta.consult">Consulta Exclusiva</span>
-            </a>
-            
-            <button class="mobile-menu-toggle" aria-label="Abrir menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <!-- HERO EXCLUSIVO -->
+  <section class="hero premium-hero" aria-label="Carillas Diamond Exclusive">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="premium-badge-hero">
+          <i class="fas fa-crown"></i>
+          <span data-i18n="diamond.hero.badge">Tratamiento Exclusivo</span>
         </div>
-    </header>
 
-    <!-- HERO EXCLUSIVO ) -->
-    <section class="hero premium-hero" aria-label="Carillas Diamond Exclusive">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="premium-badge-hero">
-                    <i class="fas fa-crown"></i>
-                    <span>Tratamiento Exclusivo</span>
-                </div>
-                
-                <h1>
-                    Carillas
-                    <span class="highlight">Diamond Exclusive</span>
-                </h1>
-                
-                <p>La perfección hecha realidad con técnicas especiales de  diseño en diamante. Una sonrisa que refleja la brillantez de un diamante auténtico, creada con la más alta tecnología y precisión.</p>
-                
-               <div class="hero-stats premium-stats" aria-label="Indicadores Premium">
-  <div class="stat premium-stat">
-    <span class="stat-number">100%</span>
-    <span class="stat-label">Brillo Tipo Diamante</span>
-  </div>
-  <div class="stat premium-stat">
-    <span class="stat-number">0%</span>
-    <span class="stat-label">Procedimiento Doloroso</span>
-  </div>
-  <div class="stat premium-stat">
-    <span class="stat-number">24/7</span>
-    <span class="stat-label">Soporte VIP</span>
-  </div>
-</div>
+        <h1>
+          <span data-i18n="diamond.hero.title.word1">Carillas</span>
+          <span class="highlight" data-i18n="diamond.hero.title.highlight">Diamond Exclusive</span>
+        </h1>
 
-                <div class="hero-buttons premium-buttons">
-                    <a href="#proceso-exclusivo" class="btn-primary btn-premium">
-                        <i class="fas fa-play"></i>
-                        Ver Proceso Exclusivo
-                    </a>
-                    <a href="#consulta-exclusiva" class="btn-secondary btn-premium-outline">
-                        <i class="fas fa-calendar-plus"></i>
-                        Consulta VIP
-                    </a>
-                </div>
-                
-                <div class="premium-features-mini">
-                    <div class="feature-mini">
-                        <i class="fas fa-gem"></i>
-                        <span>Diseño de Diamante</span>
-                    </div>
-                    <div class="feature-mini">
-                        <i class="fas fa-award"></i>
-                        <span>Técnica Exclusiva</span>
-                    </div>
-                    <div class="feature-mini">
-                        <i class="fas fa-infinity"></i>
-                        <span>Brillo Eterno</span>
-                    </div>
-                </div>
-            </div>
+        <p data-i18n="diamond.hero.lead">
+          La perfección hecha realidad con técnicas especiales de diseño en diamante. Una sonrisa que refleja la brillantez de un diamante auténtico, creada con la más alta tecnología y precisión.
+        </p>
 
-             <div class="hero-image premium-image">
-                <div class="premium-image-container">
-                    <div class="premium-video-container">
-                        <video 
-                            id="diamondHeroVideo" 
-                            muted 
-                            autoplay 
-                            loop 
-                            playsinline
-                            poster="../assets/images/gallery/poster_diamante.jpg"
-                            preload="metadata"
-                        >
-                            <source src="../assets/images/gallery/diamondVideo1.mp4" type="video/mp4">
-                            Tu navegador no soporta videos HTML5.
-                        </video>
-                        
-                        <!-- Overlay con controles -->
-                        <div class="video-overlay">
-
-                        </div>
-                        
-                        <!-- Indicador de sonido -->
-                        <div class="video-sound-hint">
-                            <i class="fas fa-volume-up"></i>
-                            <span>Toca para activar sonido</span>
-                        </div>
-                        
-                    </div>
-                    <div class="premium-frame"></div>
-                </div>
-            </div>
+        <div class="hero-stats premium-stats" aria-label="Indicadores Premium">
+          <div class="stat premium-stat">
+            <span class="stat-number">100%</span>
+            <span class="stat-label" data-i18n="diamond.hero.stat1.label">Brillo Tipo Diamante</span>
+          </div>
+          <div class="stat premium-stat">
+            <span class="stat-number">0%</span>
+            <span class="stat-label" data-i18n="diamond.hero.stat2.label">Procedimiento Doloroso</span>
+          </div>
+          <div class="stat premium-stat">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label" data-i18n="diamond.hero.stat3.label">Soporte VIP</span>
+          </div>
         </div>
-    </section>
 
-    <!-- SECCIÓN: QUÉ HACE ÚNICAS LAS CARILLAS DIAMOND -->
-    <section class="services-preview premium-section">
-        <div class="container">
-            <div class="premium-section-badge">
-                <i class="fas fa-star"></i>
-                Exclusividad Premium
-            </div>
-            
-            <h2 class="section-title">¿Qué hace únicas nuestras Carillas Diamond Exclusive?</h2>
-            <div class="title-underline premium-underline"></div>
-
-            <div class="services-grid premium-grid">
-                <div class="service-card premium-card">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-gem" aria-hidden="true"></i>
-                    </div>
-                    <h3>Técnica de diseño en Diamante</h3>
-                    <p>Utilizamos técnicas especiales de superficie diamantada, creando múltiples facetas que reflejan la luz de manera excepcional.</p>
-                    <div class="premium-detail">Precisión microscópica</div>
-                </div>
-
-                <div class="service-card premium-card">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-microscope" aria-hidden="true"></i>
-                    </div>
-                    <h3>Precisión Microscópica</h3>
-                    <p>Cada carilla es tallada con precisión microscópica, garantizando un ajuste perfecto y un resultado estéticamente impecable.</p>
-                    <div class="premium-detail">Tecnología avanzada</div>
-                </div>
-
-                <div class="service-card premium-card featured">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-palette" aria-hidden="true"></i>
-                    </div>
-                    <h3>Personalización Absoluta</h3>
-                    <p>Cada sonrisa es única. Creamos carillas completamente personalizadas que complementan perfectamente tus rasgos faciales.</p>
-                    <div class="premium-detail">100% personalizada</div>
-                </div>
-            </div>
+        <div class="hero-buttons premium-buttons">
+          <a href="#proceso-exclusivo" class="btn-primary btn-premium">
+            <i class="fas fa-play"></i>
+            <span data-i18n="diamond.hero.btn_process">Ver Proceso Exclusivo</span>
+          </a>
+          <a href="#consulta-exclusiva" class="btn-secondary btn-premium-outline">
+            <i class="fas fa-calendar-plus"></i>
+            <span data-i18n="diamond.hero.btn_consult">Consulta VIP</span>
+          </a>
         </div>
-    </section>
 
-    <!-- SECCIÓN: VIDEO SHOWCASE -->
-    <section class="premium-video-showcase">
-        <div class="container">
-            <div class="premium-video-section-container">
-                <div class="hero-image premium-image premium-video-featured">
-                    <div class="premium-image-container">
-                        <div class="premium-video-container">
-                            <video 
-                                id="diamondHeroVideo" 
-                                muted 
-                                autoplay 
-                                loop 
-                                playsinline
-                                poster="../assets/images/gallery/poster_diamante.jpg"
-                                preload="metadata"
-                            >
-                                <source src="../assets/images/gallery/diamondVideo3.mp4" type="video/mp4">
-                                Tu navegador no soporta videos HTML5.
-                            </video>
-                            
-                            <!-- Overlay con controles -->
-                            <div class="video-overlay">
-                            </div>
-                            
-                            <!-- Indicador de sonido -->
-                            <div class="video-sound-hint">
-                                <i class="fas fa-volume-up"></i>
-                                <span>Toca para activar sonido</span>
-                            </div>
-                            
-                        </div>
-                        <div class="premium-frame"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SECCIÓN: PROCESO EXCLUSIVO CON VIDEO -->
-    <section id="proceso-exclusivo" class="about about--compact premium-process">
-        <div class="container">
-            <div class="premium-section-badge">
-                <i class="fas fa-cogs"></i>
-                Proceso Exclusivo
-            </div>
-            
-            <h2 class="section-title">El Arte del diseño Diamond</h2>
-            <div class="title-underline premium-underline"></div>
-            
-            <p class="process-intro">
-                te ofrecemos un diseño en Carillas tipo diamante para darle lujo y poder a tu sonrisa
-            </p>
-            
-            <div class="about-container premium-process-container">
-                <!-- Video Exclusivo -->
-                <div class="about-image premium-video-section">
-                    <div class="premium-video-container">
-                        <video 
-                            id="diamondHeroVideo" 
-                            muted 
-                            autoplay 
-                            loop 
-                            playsinline
-                            poster="../assets/images/gallery/poster_diamante.jpg"
-                            preload="metadata"
-                        >
-                            <source src="../assets/images/gallery/diamonVideo2.mp4" type="video/mp4">
-                            Tu navegador no soporta videos HTML5.
-                        </video>
-                        
-                        <!-- Overlay con controles -->
-                        <div class="video-overlay">
-                        </div>
-                        
-                        <!-- Indicador de sonido -->
-                        <div class="video-sound-hint">
-                            <i class="fas fa-volume-up"></i>
-                            <span>Toca para activar sonido</span>
-                        </div>
-                        
-                    </div>
-                </div>
-                
-                <!-- Pasos del Proceso -->
-                <div class="about-content premium-steps-content">
-                    <div class="about-features premium-steps">
-                        <div class="feature premium-step">
-                            <div class="premium-step-number">01</div>
-                            <div>
-                                <h4>Análisis Digital 3D</h4>
-                                <p>Escaneamos tu sonrisa con tecnología 3D de alta precisión.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature premium-step">
-                            <div class="premium-step-number">02</div>
-                            <div>
-                                <h4>Diseño Personalizado</h4>
-                                <p>Nuestros especialistas diseñan cada carilla considerando tus rasgos únicos.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature premium-step">
-                            <div class="premium-step-number">03</div>
-                            <div>
-                                <h4>Diseño Diamond</h4>
-                                <p>Aplicamos técnicas especiales para maximizar el brillo.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature premium-step">
-                            <div class="premium-step-number">04</div>
-                            <div>
-                                <h4>Colocación VIP</h4>
-                                <p>La colocación se realiza en nuestra clinica con confort y privacidad.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: EXPERIENCIA VIP -->
-    <section class="services-preview vip-experience-section">
-        <div class="container">
-            <div class="premium-section-badge">
-                <i class="fas fa-crown"></i>
-                Experiencia VIP
-            </div>
-            
-            <h2 class="section-title">Tratamiento de Lujo Personalizado</h2>
-            <div class="title-underline premium-underline"></div>
-            
-            <div class="services-grid vip-grid">
-                <div class="service-card premium-card">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-user" aria-hidden="true"></i>
-                    </div>
-                    <h3>Atención Personalizada</h3>
-                    <p>Consultas privadas con la Dra. Diana Patricia Muñoz en horarios exclusivos</p>
-                    <div class="premium-detail">Atención 1:1</div>
-                </div>
-                
-                <div class="service-card premium-card">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-spa" aria-hidden="true"></i>
-                    </div>
-                    <h3>Guia paso a paso</h3>
-                    <p>Se te dara capacitación para mantener las carillas de la mejor manera</p>
-                    <div class="premium-detail">Capacitacion exclusiva</div>
-                </div>
-                
-                <div class="service-card premium-card featured">
-                    <div class="service-icon premium-icon">
-                        <i class="fas fa-headset" aria-hidden="true"></i>
-                    </div>
-                    <h3>Soporte Exclusivo</h3>
-                    <p>Línea directa VIP disponible 24/7 para cualquier consulta o emergencia</p>
-                    <div class="premium-detail">24/7 disponible</div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN: CONSULTA EXCLUSIVA -->
-    <section id="consulta-exclusiva" class="cta-section premium-consultation">
-        <div class="container">
-            <div class="cta-content premium-cta-content">
-                <div class="premium-section-badge">
-                    <i class="fas fa-calendar-star"></i>
-                    Consulta VIP
-                </div>
-                
-                <h2>Agenda tu Consulta Exclusiva</h2>
-                <p>Descubre si eres candidato para nuestras Carillas Diamond Exclusive. Evaluación completa sin costo en ambiente VIP.</p>
-                
-                <div class="premium-benefits">
-                    <div class="premium-benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Evaluación completa sin costo</span>
-                    </div>
-                    <div class="premium-benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Simulación 3D de tu nueva sonrisa</span>
-                    </div>
-                    <div class="premium-benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Plan de tratamiento personalizado</span>
-                    </div>
-                    <div class="premium-benefit">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Atención VIP</span>
-                    </div>
-                </div>
-                
-                <div class="cta-buttons premium-cta-buttons">
-                    <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20las%20Carillas%20Diamond%20Exclusive" 
-                       class="btn-primary btn-premium" target="_blank">
-                        <i class="fab fa-whatsapp"></i>
-                            <span data-i18n="cta.whatsapp_vip">WhatsApp VIP</span>
-                    </a>
-                    <a href="tel:+573168866812" class="btn-secondary btn-premium-outline">
-                        <i class="fas fa-phone"></i>
-                            <span data-i18n="cta.call_direct">Llamada Directa</span>
-                    </a>
-                </div>
-                
-                <!-- Garantía Premium -->
-                <div class="premium-guarantee-box">
-                    <div class="guarantee-icon-premium">
-                        <i class="fas fa-shield-check"></i>
-                    </div>
-                    <div class="guarantee-content-premium">
-                        <h3>Garantía Diamond Exclusive</h3>
-                        <p>Garantizamos la excelencia de nuestras Carillas Diamond Exclusive por <strong>6 meses</strong> con seguimiento personalizado.</p>
-                        <div class="guarantee-features">
-                            <span>✓ Tratamiendo exclusivo</span>
-                            <span>✓ Mantenimiento </span>
-                            <span>✓ Seguimiento</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-      <!-- FOOTER EXCLUSIVO -->
-    <footer class="footer" role="contentinfo">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3 data-i18n="footer.brand_title"><i class="fas fa-gem" aria-hidden="true"></i> Diamond Smiles Exclusive</h3>
-                    <p data-i18n="footer.brand_lead">Donde la perfección y el lujo se encuentran para crear sonrisas extraordinarias que brillan como diamantes auténticos.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20las%20Carillas%20Diamond%20Exclusive" aria-label="WhatsApp VIP">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-i18n="footer.services">Tratamientos Exclusivos</h4>
-                    <ul>
-                        <li><a href="#proceso-exclusivo">Carillas Diamond</a></li>
-                        <li><a href="servicios.html#estetica">Estética Premium</a></li>
-                        <li><a href="servicios.html#implantes">Implantología VIP</a></li>
-                        <li><a href="#consulta-exclusiva">Consulta Exclusiva</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-i18n="footer.navigation">Experiencia VIP</h4>
-                    <ul>
-                        <li><a href="#vip-experience">Atención Personalizada</a></li>
-                        <li><a href="equipo.html">Equipo Especializado</a></li>
-                        <li><a href="#diamond-guarantee">Garantía Diamond</a></li>
-                        <li><a href="contacto.html">Contacto VIP</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4 data-i18n="footer.contact">Contacto Exclusivo</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
-                        <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
-                        <p><i class="fas fa-envelope"></i> dra.patriciamunozop@gmail.com</p>
-                        <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles Exclusive. Todos los derechos reservados.</p>
-                <div class="footer-links">
-                    <a href="#">Términos VIP</a>
-                    <a href="#">Política de Privacidad</a>
-                    <a href="#">Garantía Diamond</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- CHATBOT -->
-    <div class="dental-chatbot" id="dentalChatbot">
-        <!-- Botón flotante compacto -->
-        <button class="chatbot-toggle diamond-chatbot" id="chatbotToggle" aria-label="Abrir chat">
+        <div class="premium-features-mini">
+          <div class="feature-mini">
             <i class="fas fa-gem"></i>
-            <i class="fas fa-times"></i>
-            <div class="chatbot-notification" id="chatNotification">VIP</div>
-        </button>
-
-        <!-- Ventana del chat compacta -->
-        <div class="chatbot-window" id="chatbotWindow">
-            <!-- Header compacto -->
-            <div class="chatbot-header diamond-header">
-                <div class="chatbot-avatar diamond-avatar">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <div class="chatbot-info">
-                    <h3>Asesor VIP Diamond</h3>
-                    <div class="chatbot-status">
-                        <div class="status-dot gold"></div>
-                        <span>Exclusivo</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Área de mensajes compacta -->
-            <div class="chatbot-messages" id="chatMessages">
-                <!-- Los mensajes se generan dinámicamente -->
-            </div>
-
-            <!-- Indicador de escritura refinado -->
-            <div class="typing-indicator" id="typingIndicator">
-                <div class="message-avatar">
-                    <i class="fas fa-crown"></i>
-                </div>
-                <div class="typing-dots">
-                    <div class="typing-dot gold"></div>
-                    <div class="typing-dot gold"></div>
-                    <div class="typing-dot gold"></div>
-                </div>
-                <span>Escribiendo...</span>
-            </div>
-
-            <!-- Footer compacto -->
-            <div class="chatbot-footer">
-                <div class="action-buttons">
-                    <button class="action-btn primary diamond" onclick="openContactForm()" data-i18n="premium.consult_vip">
-                        <i class="fas fa-crown"></i>
-                        Consulta VIP
-                    </button>
-                    <button class="action-btn secondary diamond" onclick="openWhatsApp()" data-i18n="cta.whatsapp_vip">
-                        <i class="fab fa-whatsapp"></i>
-                        WhatsApp VIP
-                    </button>
-                </div>
-                <div class="footer-text">
-                    💎 Diamond Exclusive
-                </div>
-            </div>
+            <span data-i18n="diamond.hero.feature1">Diseño de Diamante</span>
+          </div>
+          <div class="feature-mini">
+            <i class="fas fa-award"></i>
+            <span data-i18n="diamond.hero.feature2">Técnica Exclusiva</span>
+          </div>
+          <div class="feature-mini">
+            <i class="fas fa-infinity"></i>
+            <span data-i18n="diamond.hero.feature3">Brillo Eterno</span>
+          </div>
         </div>
+      </div>
+
+      <div class="hero-image premium-image">
+        <div class="premium-image-container">
+          <div class="premium-video-container">
+            <video
+              id="diamondHeroVideo"
+              muted
+              autoplay
+              loop
+              playsinline
+              poster="../assets/images/gallery/poster_diamante.jpg"
+              preload="metadata">
+              <source src="../assets/images/gallery/diamondVideo1.mp4" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="video-overlay"></div>
+
+            <div class="video-sound-hint">
+              <i class="fas fa-volume-up"></i>
+              <span data-i18n="video.sound_hint">Toca para activar sonido</span>
+            </div>
+          </div>
+          <div class="premium-frame"></div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  
-  
+  <!-- SECCIÓN: QUÉ HACE ÚNICAS LAS CARILLAS DIAMOND -->
+  <section class="services-preview premium-section">
+    <div class="container">
+      <div class="premium-section-badge">
+        <i class="fas fa-star"></i>
+        <span data-i18n="diamond.unique.badge">Exclusividad Premium</span>
+      </div>
 
-    <!-- JavaScript -->
-    <script src="../assets/js/translations.js" defer></script>
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/animations.js"></script>
-    
-    <script>
-        // Efectos especiales para la página Diamond
-        document.addEventListener('DOMContentLoaded', function() {
-            // Particles effect
-            createDiamondParticles();
+      <h2 class="section-title" data-i18n="diamond.unique.title">
+        ¿Qué hace únicas nuestras Carillas Diamond Exclusive?
+      </h2>
+      <div class="title-underline premium-underline"></div>
+
+      <div class="services-grid premium-grid">
+        <div class="service-card premium-card">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-gem" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.unique.card1.title">Técnica de diseño en Diamante</h3>
+          <p data-i18n="diamond.unique.card1.desc">
+            Utilizamos técnicas especiales de superficie diamantada, creando múltiples facetas que reflejan la luz de manera excepcional.
+          </p>
+          <div class="premium-detail" data-i18n="diamond.unique.card1.detail">Precisión microscópica</div>
+        </div>
+
+        <div class="service-card premium-card">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-microscope" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.unique.card2.title">Precisión Microscópica</h3>
+          <p data-i18n="diamond.unique.card2.desc">
+            Cada carilla es tallada con precisión microscópica, garantizando un ajuste perfecto y un resultado estéticamente impecable.
+          </p>
+          <div class="premium-detail" data-i18n="diamond.unique.card2.detail">Tecnología avanzada</div>
+        </div>
+
+        <div class="service-card premium-card featured">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-palette" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.unique.card3.title">Personalización Absoluta</h3>
+          <p data-i18n="diamond.unique.card3.desc">
+            Cada sonrisa es única. Creamos carillas completamente personalizadas que complementan perfectamente tus rasgos faciales.
+          </p>
+          <div class="premium-detail" data-i18n="diamond.unique.card3.detail">100% personalizada</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: VIDEO SHOWCASE -->
+  <section class="premium-video-showcase">
+    <div class="container">
+      <div class="premium-video-section-container">
+        <div class="hero-image premium-image premium-video-featured">
+          <div class="premium-image-container">
+            <div class="premium-video-container">
+              <video
+                muted
+                autoplay
+                loop
+                playsinline
+                poster="../assets/images/gallery/poster_diamante.jpg"
+                preload="metadata">
+                <source src="../assets/images/gallery/diamondVideo3.mp4" type="video/mp4">
+                Tu navegador no soporta videos HTML5.
+              </video>
+
+              <div class="video-overlay"></div>
+
+              <div class="video-sound-hint">
+                <i class="fas fa-volume-up"></i>
+                <span data-i18n="video.sound_hint">Toca para activar sonido</span>
+              </div>
+            </div>
+            <div class="premium-frame"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: PROCESO EXCLUSIVO CON VIDEO -->
+  <section id="proceso-exclusivo" class="about about--compact premium-process">
+    <div class="container">
+      <div class="premium-section-badge">
+        <i class="fas fa-cogs"></i>
+        <span data-i18n="diamond.process.badge">Proceso Exclusivo</span>
+      </div>
+
+      <h2 class="section-title" data-i18n="diamond.process.title">El Arte del diseño Diamond</h2>
+      <div class="title-underline premium-underline"></div>
+
+      <p class="process-intro" data-i18n="diamond.process.intro">
+        Te ofrecemos un diseño en Carillas tipo diamante para darle lujo y poder a tu sonrisa.
+      </p>
+
+      <div class="about-container premium-process-container">
+        <div class="about-image premium-video-section">
+          <div class="premium-video-container">
+            <video
+              muted
+              autoplay
+              loop
+              playsinline
+              poster="../assets/images/gallery/poster_diamante.jpg"
+              preload="metadata">
+              <source src="../assets/images/gallery/diamonVideo2.mp4" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>
+
+            <div class="video-overlay"></div>
+
+            <div class="video-sound-hint">
+              <i class="fas fa-volume-up"></i>
+              <span data-i18n="video.sound_hint">Toca para activar sonido</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content premium-steps-content">
+          <div class="about-features premium-steps">
+            <div class="feature premium-step">
+              <div class="premium-step-number">01</div>
+              <div>
+                <h4 data-i18n="diamond.process.step1.title">Análisis Digital 3D</h4>
+                <p data-i18n="diamond.process.step1.desc">Escaneamos tu sonrisa con tecnología 3D de alta precisión.</p>
+              </div>
+            </div>
+
+            <div class="feature premium-step">
+              <div class="premium-step-number">02</div>
+              <div>
+                <h4 data-i18n="diamond.process.step2.title">Diseño Personalizado</h4>
+                <p data-i18n="diamond.process.step2.desc">Nuestros especialistas diseñan cada carilla considerando tus rasgos únicos.</p>
+              </div>
+            </div>
+
+            <div class="feature premium-step">
+              <div class="premium-step-number">03</div>
+              <div>
+                <h4 data-i18n="diamond.process.step3.title">Diseño Diamond</h4>
+                <p data-i18n="diamond.process.step3.desc">Aplicamos técnicas especiales para maximizar el brillo.</p>
+              </div>
+            </div>
+
+            <div class="feature premium-step">
+              <div class="premium-step-number">04</div>
+              <div>
+                <h4 data-i18n="diamond.process.step4.title">Colocación VIP</h4>
+                <p data-i18n="diamond.process.step4.desc">La colocación se realiza en nuestra clínica con confort y privacidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: EXPERIENCIA VIP -->
+  <section id="vip-experience" class="services-preview vip-experience-section">
+    <div class="container">
+      <div class="premium-section-badge">
+        <i class="fas fa-crown"></i>
+        <span data-i18n="diamond.vip.badge">Experiencia VIP</span>
+      </div>
+
+      <h2 class="section-title" data-i18n="diamond.vip.title">Tratamiento de Lujo Personalizado</h2>
+      <div class="title-underline premium-underline"></div>
+
+      <div class="services-grid vip-grid">
+        <div class="service-card premium-card">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-user" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.vip.card1.title">Atención Personalizada</h3>
+          <p data-i18n="diamond.vip.card1.desc">
+            Consultas privadas con la Dra. Diana Patricia Muñoz en horarios exclusivos
+          </p>
+          <div class="premium-detail" data-i18n="diamond.vip.card1.detail">Atención 1:1</div>
+        </div>
+
+        <div class="service-card premium-card">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-spa" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.vip.card2.title">Guia paso a paso</h3>
+          <p data-i18n="diamond.vip.card2.desc">
+            Se te dara capacitación para mantener las carillas de la mejor manera
+          </p>
+          <div class="premium-detail" data-i18n="diamond.vip.card2.detail">Capacitacion exclusiva</div>
+        </div>
+
+        <div class="service-card premium-card featured">
+          <div class="service-icon premium-icon">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+          </div>
+          <h3 data-i18n="diamond.vip.card3.title">Soporte Exclusivo</h3>
+          <p data-i18n="diamond.vip.card3.desc">
+            Línea directa VIP disponible 24/7 para cualquier consulta o emergencia
+          </p>
+          <div class="premium-detail" data-i18n="diamond.vip.card3.detail">24/7 disponible</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN: CONSULTA EXCLUSIVA -->
+  <section id="consulta-exclusiva" class="cta-section premium-consultation">
+    <div class="container">
+      <div class="cta-content premium-cta-content">
+        <div class="premium-section-badge">
+          <i class="fas fa-calendar-star"></i>
+          <span data-i18n="diamond.consult.badge">Consulta VIP</span>
+        </div>
+
+        <h2 data-i18n="diamond.consult.title">Agenda tu Consulta Exclusiva</h2>
+        <p data-i18n="diamond.consult.lead">
+          Descubre si eres candidato para nuestras Carillas Diamond Exclusive. Evaluación completa sin costo en ambiente VIP.
+        </p>
+
+        <div class="premium-benefits">
+          <div class="premium-benefit">
+            <i class="fas fa-check-circle"></i>
+            <span data-i18n="diamond.consult.benefit1">Evaluación completa sin costo</span>
+          </div>
+          <div class="premium-benefit">
+            <i class="fas fa-check-circle"></i>
+            <span data-i18n="diamond.consult.benefit2">Simulación 3D de tu nueva sonrisa</span>
+          </div>
+          <div class="premium-benefit">
+            <i class="fas fa-check-circle"></i>
+            <span data-i18n="diamond.consult.benefit3">Plan de tratamiento personalizado</span>
+          </div>
+          <div class="premium-benefit">
+            <i class="fas fa-check-circle"></i>
+            <span data-i18n="diamond.consult.benefit4">Atención VIP</span>
+          </div>
+        </div>
+
+        <div class="cta-buttons premium-cta-buttons">
+          <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20las%20Carillas%20Diamond%20Exclusive"
+             class="btn-primary btn-premium" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span data-i18n="cta.whatsapp_vip">WhatsApp VIP</span>
+          </a>
+          <a href="tel:+573168866812" class="btn-secondary btn-premium-outline">
+            <i class="fas fa-phone"></i>
+            <span data-i18n="cta.call_direct">Llamada Directa</span>
+          </a>
+        </div>
+
+        <div class="premium-guarantee-box">
+          <div class="guarantee-icon-premium">
+            <i class="fas fa-shield-check"></i>
+          </div>
+          <div class="guarantee-content-premium">
             
-            // Smooth scroll para navegación interna
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-            
-            console.log('💎 Diamond Exclusive page loaded');
+            <div class="guarantee-features">
+              <span data-i18n="diamond.guarantee.feature1">✓ Tratamiendo exclusivo, </span>
+              <span data-i18n="diamond.guarantee.feature2">✓ Mantenimiento, </span>
+              <span data-i18n="diamond.guarantee.feature3">✓ Seguimiento.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER EXCLUSIVO -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>
+            <i class="fas fa-gem" aria-hidden="true"></i>
+            <span data-i18n="footer.brand_title">Diamond Smiles</span> Exclusive
+          </h3>
+          <p data-i18n="footer.brand_lead">
+            Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.
+          </p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20las%20Carillas%20Diamond%20Exclusive" aria-label="WhatsApp VIP">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.exclusive.services_title">Tratamientos Exclusivos</h4>
+          <ul>
+            <li><a href="#proceso-exclusivo" data-i18n="footer.exclusive.link1">Carillas Diamond</a></li>
+            <li><a href="servicios.html#estetica" data-i18n="footer.exclusive.link2">Estética Premium</a></li>
+            <li><a href="servicios.html#implantes" data-i18n="footer.exclusive.link3">Implantología VIP</a></li>
+            <li><a href="#consulta-exclusiva" data-i18n="footer.exclusive.link4">Consulta Exclusiva</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.exclusive.nav_title">Experiencia VIP</h4>
+          <ul>
+            <li><a href="#vip-experience" data-i18n="footer.exclusive.navlink1">Atención Personalizada</a></li>
+            <li><a href="equipo.html" data-i18n="footer.exclusive.navlink2">Equipo Especializado</a></li>
+            <li><a href="#consulta-exclusiva" data-i18n="footer.exclusive.navlink3">Garantía Diamond</a></li>
+            <li><a href="contacto.html" data-i18n="footer.exclusive.navlink4">Contacto VIP</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4 data-i18n="footer.contact">Contacto Exclusivo</h4>
+          <div class="contact-info">
+            <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
+            <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
+            <p><i class="fas fa-envelope"></i> contacto@dianamunozsmiles.com</p>
+            <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
+        <div class="footer-links">
+          <a href="#" data-i18n="footer.links.terms_vip">Términos VIP</a>
+          <a href="#" data-i18n="footer.links.privacy_vip">Política de Privacidad</a>
+          <a href="#" data-i18n="footer.links.guarantee">Garantía Diamond</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CHATBOT -->
+  <div class="dental-chatbot" id="dentalChatbot">
+    <button class="chatbot-toggle diamond-chatbot" id="chatbotToggle" aria-label="Abrir chat">
+      <i class="fas fa-gem"></i>
+      <i class="fas fa-times"></i>
+      <div class="chatbot-notification" id="chatNotification">VIP</div>
+    </button>
+
+    <div class="chatbot-window" id="chatbotWindow">
+      <div class="chatbot-header diamond-header">
+        <div class="chatbot-avatar diamond-avatar">
+          <i class="fas fa-crown"></i>
+        </div>
+        <div class="chatbot-info">
+          <h3 data-i18n="chatbot.vip.title">Asesor VIP Diamond</h3>
+          <div class="chatbot-status">
+            <div class="status-dot gold"></div>
+            <span data-i18n="chatbot.vip.status">Exclusivo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="chatbot-messages" id="chatMessages"></div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="message-avatar">
+          <i class="fas fa-crown"></i>
+        </div>
+        <div class="typing-dots">
+          <div class="typing-dot gold"></div>
+          <div class="typing-dot gold"></div>
+          <div class="typing-dot gold"></div>
+        </div>
+        <span data-i18n="chatbot.typing">Escribiendo...</span>
+      </div>
+
+      <div class="chatbot-footer">
+        <div class="action-buttons">
+          <button class="action-btn primary diamond" onclick="openContactForm()" data-i18n="premium.consult_vip">
+            <i class="fas fa-crown"></i>
+            Consulta VIP
+          </button>
+          <button class="action-btn secondary diamond" onclick="openWhatsApp()" data-i18n="cta.whatsapp_vip">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp VIP
+          </button>
+        </div>
+        <div class="footer-text">
+          💎 Diamond Exclusive
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="../assets/js/translations.js" defer></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/animations.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      createDiamondParticles();
+
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         });
-        
-        function createDiamondParticles() {
-            const particles = document.querySelector('.diamond-particles');
-            if (!particles) return;
-            
-            for (let i = 0; i < 20; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particles.appendChild(particle);
-            }
-        }
-    </script>
+      });
 
-  
+      console.log('💎 Diamond Exclusive page loaded');
+    });
 
+    function createDiamondParticles() {
+      const particles = document.querySelector('.diamond-particles');
+      if (!particles) return;
+
+      for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        particles.appendChild(particle);
+      }
+    }
+  </script>
 </body>
-
-
 </html>

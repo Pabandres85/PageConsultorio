@@ -2189,7 +2189,7 @@ class DentalChatbotRefined {
         this.clinicData = {
             name: 'Diamond Smiles',
             phone: '+573168866812',
-            email: 'dra.patriciamunozop@gmail.com',
+            email: 'contacto@dianamunozsmiles.com',
             address: 'Carrera 55 # 9-88 Camino Real, Cali',
             hours: 'Lun-Vie: 8AM-6PM',
             whatsappMessage: 'Hola, me interesa información sobre sus servicios dentales',
