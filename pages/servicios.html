@@ -15,6 +15,36 @@
     
     <!-- Fuentes de Google -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Estilos responsive para bloque exclusivo -->
+    <style>
+      @media (max-width: 768px) {
+        .service-card.premium.featured[style*="flex-direction: row"] {
+          flex-direction: column !important;
+        }
+        
+        .service-card.premium.featured[style*="flex-direction: row"] .service-media {
+          flex: 0 0 auto !important;
+          width: 100% !important;
+          height: 280px !important;
+          order: -1;
+        }
+        
+        .service-card.premium.featured[style*="flex-direction: row"] .service-content {
+          flex: 1 1 auto !important;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .service-card.premium.featured[style*="flex-direction: row"] .service-media {
+          height: 240px !important;
+        }
+        
+        .service-card.premium.featured[style*="flex-direction: row"] {
+          gap: 16px !important;
+        }
+      }
+    </style>
 </head>
 <body class="servicios-page">
     <!-- Fondo con video diamante -->
@@ -171,7 +201,7 @@
             <li>Resultado natural</li>
             <li>Laboratorio propio</li>
           </ul>
-          <a href="contacto.html" class="service-link" style="margin-top:12px;">Diseñar Sonrisa <i class="fas fa-arrow-right"></i></a>
+          <a href="contacto.html" class="service-link" style="margin-top:39px;">Diseñar Sonrisa <i class="fas fa-arrow-right"></i></a>
         </div>
 
         <div class="service-media" aria-hidden="true"></div>
