@@ -3398,6 +3398,108 @@ main {
     box-shadow: var(--premium-shadow), var(--premium-glow);
 }
 
+/* ================================================
+   SECCIÓN VIDEO SHOWCASE - NUEVA
+   ================================================ */
+.premium-video-showcase {
+    padding: clamp(4rem, 10vw, 7rem) 0;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-video-section-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+.premium-video-featured {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.premium-video-featured .premium-image-container {
+    position: relative;
+}
+
+.premium-video-featured .premium-video-container {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18),
+                0 0 0 1px rgba(201, 170, 113, 0.4);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: #000;
+}
+
+.premium-video-featured .premium-video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.premium-video-featured .premium-video-container:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 35px 80px rgba(0, 0, 0, 0.22),
+                0 0 0 2px rgba(201, 170, 113, 0.6);
+}
+
+.premium-video-featured .premium-frame {
+    position: absolute;
+    inset: -6px;
+    border: 3px solid rgba(201, 170, 113, 0.2);
+    border-radius: 28px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.premium-video-featured .premium-video-container:hover ~ .premium-frame {
+    opacity: 1;
+}
+
+/* Responsive para tablet */
+@media (max-width: 768px) {
+    .premium-video-showcase {
+        padding: clamp(3rem, 8vw, 5rem) 0;
+    }
+
+    .premium-video-featured {
+        max-width: 100%;
+        padding: 0 var(--space-lg);
+    }
+
+    .premium-video-featured .premium-video-container {
+        aspect-ratio: 16 / 9;
+        border-radius: 20px;
+    }
+}
+
+/* Responsive para móvil */
+@media (max-width: 480px) {
+    .premium-video-showcase {
+        padding: clamp(2rem, 6vw, 4rem) 0;
+    }
+
+    .premium-video-featured {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+
+    .premium-video-featured .premium-video-container {
+        aspect-ratio: 16 / 9;
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+}
+
 .premium-video-placeholder .placeholder-content h3 {
     font-size: var(--font-size-xl);
     font-weight: 700;
