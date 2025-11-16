@@ -1,387 +1,422 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestro Equipo - Diamond Smiles</title>
-    <meta name="description" content="Conoce a nuestro equipo de especialistas dentales altamente calificados. Profesionales con años de experiencia y formación internacional.">
-    <!-- Favicon -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title data-i18n="team.meta.title">Nuestro Equipo - Diamond Smiles</title>
+
+  <meta name="description"
+        data-i18n="team.meta.description"
+        data-i18n-attr="content"
+        content="Conoce a nuestro equipo de especialistas dentales altamente calificados. Profesionales con años de experiencia y formación internacional.">
+
+  <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../smile-luxury-studio/assets/images/gallery/logo.png" />
-    <!-- Estilos CSS -->
-    <link rel="stylesheet" href="../assets/css/main.css">
-    <link rel="stylesheet" href="../assets/css/components.css">
-    
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <!-- Fuentes de Google -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Fuentes de Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="equipo-page">
-      <!-- Fondo con video diamante -->
+
+  <!-- Fondo con video diamante -->
   <div class="bg-video" aria-hidden="true">
     <video id="bgVideo" autoplay muted loop playsinline preload="auto"
-      poster="../assets/images/gallery/poster_diamante.jpg">
+           poster="../assets/images/gallery/poster_diamante.jpg">
       <source src="../assets/images/gallery/video_diamante3.mp4" type="video/mp4" />
       Tu navegador no soporta videos en HTML5.
     </video>
     <div class="bg-vignette"></div>
     <div class="bg-shine"></div>
   </div>
-    <!-- HEADER Y NAVEGACIÓN -->
-   <header class="header">
+
+  <!-- HEADER Y NAVEGACIÓN -->
+  <header class="header">
     <div class="header-container">
-        <a href="../index.html" class="logo">Dra Diana Muñoz</a>
-        
-     <nav class="nav">
-  <ul class="nav-links">
-    <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
-    <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
-    <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
-    <li><a href="equipo.html" class="active" data-i18n="nav.team">Equipo</a></li>
-    <li><a href="../index.html#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
-    <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
-  </ul>
-</nav>
-        
-        <!-- language toggle -->
-        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
-          <span class="lang-flag">ES</span>
-          <span class="lang-label">ES</span>
-        </button>
+      <a href="../index.html" class="logo">
+        <span data-i18n="brand.name">Dra Diana Muñoz</span>
+      </a>
 
-        <a href="#contacto" class="cta-button" data-i18n="cta.reserve">Reservar Cita</a>
-        
-        <button class="mobile-menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
+          <li><a href="equipo.html" class="active" data-i18n="nav.team">Equipo</a></li>
+          <li><a href="../index.html#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
+          <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- language toggle -->
+      <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
+        <span class="lang-flag">ES</span>
+        <span class="lang-label">ES</span>
+      </button>
+
+      <a href="#contacto" class="cta-button" data-i18n="cta.reserve">Reservar Cita</a>
+
+      <button class="mobile-menu-toggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
-</header>
+  </header>
 
-  <!-- ====== HERO EQUIPO (puedes dejar el tuyo si ya está) ====== -->
-<section class="page-hero" style="padding:clamp(36px,7vw,96px) 0; margin-bottom: clamp(20px,4vw,40px);">
-  <div class="container">
-    <div class="page-hero-content" style="max-width:920px;margin:0 auto;text-align:center;">
-  <h1 data-i18n="team.title">Nuestro <span class="highlight">Equipo</span></h1>
-  <p data-i18n="team.lead">Más que un Equipo de expertos, somos una Familia apasionada por crear sonrisas únicas, combinando Funcionalidad, Estética, y Precisión en cada detalle, de la mano contigo en el proceso,  para ofrecerte resultados únicos y una experiencia cercana, segura y personalizada.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ====== EQUIPO ====== -->
-<section class="team-section">
-  <div class="container">
-
-    <!-- Equipo Diamond Smiles -->
-    <div class="team-group">
-      <h2 class="group-title">Equipo</h2>
-      <div class="team-grid">
-
-        <!-- Equipo Diamond Smiles -->
-        <div class="member-card">
-          <div class="member-photo" title="Equipo Diamond Smiles" role="img" aria-label="Equipo Diamond Smiles" style="background-image: url('../assets/images/gallery/gurponav.jpg'); background-size: cover; background-position: center;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Equipo General</h3>
-            <p class="member-role">Profesionales</p>
-            <div class="member-tags">
-              <span class="tag">Atención al Paciente</span>
-              <span class="tag">Estética</span>
-              <span class="tag">Apoyo Clínico</span>
-            </div>
-          </div>
-        </div>
-
+  <!-- HERO EQUIPO -->
+  <section class="page-hero" style="padding:clamp(36px,7vw,96px) 0; margin-bottom: clamp(20px,4vw,40px);">
+    <div class="container">
+      <div class="page-hero-content" style="max-width:920px;margin:0 auto;text-align:center;">
+        <h1>
+          <span data-i18n="team.hero.title.part1">Nuestro </span>
+          <span class="highlight" data-i18n="team.hero.title.highlight">Equipo</span>
+        </h1>
+        <p data-i18n="team.lead">
+          Más que un Equipo de expertos, somos una Familia apasionada por crear sonrisas únicas, combinando Funcionalidad, Estética, y Precisión en cada detalle, de la mano contigo en el proceso,  para ofrecerte resultados únicos y una experiencia cercana, segura y personalizada.
+        </p>
       </div>
     </div>
+  </section>
 
-    <!-- Odontólogas -->
-    <div class="team-group">
-      <h2 class="group-title">Odontólogas y Auxiliar</h2>
-      <div class="team-grid">
+  <!-- EQUIPO -->
+  <section class="team-section">
+    <div class="container">
 
-        <!-- Dra. Diana Muñoz -->
-        <div class="member-card">
-          <div class="member-photo" title="Dra. Diana Muñoz" role="img" aria-label="Dra. Diana Muñoz" style="background-image: url('../assets/images/gallery/diana2.jpg'); background-size: cover; background-position: center top;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Dra. Diana Muñoz</h3>
-            <p class="member-role">Odontóloga • Estética y Rehabilitación</p>
-            <div class="member-tags">
-              <span class="tag">Diseño de Sonrisa</span>
-              <span class="tag">Carillas</span>
-              <span class="tag">Rehabilitación</span>
+      <!-- Equipo Diamond Smiles -->
+      <div class="team-group">
+        <h2 class="group-title" data-i18n="team.group.main">Equipo</h2>
+        <div class="team-grid">
+
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Equipo Diamond Smiles"
+                 role="img"
+                 aria-label="Equipo Diamond Smiles"
+                 style="background-image: url('../assets/images/gallery/gurponav.jpg'); background-size: cover; background-position: center;">
+            </div>
+            <div class="member-body">
+              <h3 class="member-name" data-i18n="team.member.general.name">Equipo General</h3>
+              <p class="member-role" data-i18n="team.member.general.role">Profesionales</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.patient_care">Atención al Paciente</span>
+                <span class="tag" data-i18n="team.tag.aesthetics">Estética</span>
+                <span class="tag" data-i18n="team.tag.clinical_support">Apoyo Clínico</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Dra. Anny Muñoz -->
-        <div class="member-card">
-          <div class="member-photo" title="Dra. Anny Muñoz">
-            <div class="ph">AM</div>
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Dra. Anny Muñoz</h3>
-            <p class="member-role">Odontóloga • Estética y Restauradora</p>
-            <div class="member-tags">
-              <span class="tag">Estética</span>
-              <span class="tag">Resinas</span>
-              <span class="tag">Cuidado Integral</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Nicol Cortez -->
-        <div class="member-card">
-           <div class="member-photo" title="Nicol role="img" aria-label="Nicol" style="background-image: url('../assets/images/gallery/nicol.jpg'); background-size: cover; background-position: center top;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Nicol Cortez</h3>
-            <p class="member-role">Auxiliar de Odontología</p>
-            <div class="member-tags">
-              <span class="tag">Atención al Paciente</span>
-              <span class="tag">Bioseguridad</span>
-              <span class="tag">Apoyo Clínico</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    
-
-    <!-- Laboratorio Dental -->
-    <div class="team-group">
-      <h2 class="group-title">Laboratorio Dental</h2>
-      <div class="team-grid">
-
-        <!-- Técnico principal -->
-        <div class="member-card">
-            <div class="member-photo" title="Andres" role="img" aria-label="Nicol" style="background-image: url('../assets/images/gallery/andres.jpg'); background-size: cover; background-position: center top;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Andrés Guarnizo</h3>
-            <p class="member-role">Técnico Dental Principal</p>
-            <div class="member-tags">
-              <span class="tag">CAD/CAM</span>
-              <span class="tag">Carillas</span>
-              <span class="tag">Cerámica</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Técnico auxiliar: Willy Llamos -->
-       <div class="member-card">
-            <div class="member-photo" title="Willy" role="img" aria-label="Nicol" style="background-image: url('../assets/images/gallery/willy.jpg'); background-size: cover; background-position: center top;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Willy Llanos</h3>
-            <p class="member-role">Técnico Dental Auxiliar</p>
-            <div class="member-tags">
-              <span class="tag">Impresión 3D</span>
-              <span class="tag">Resina</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Técnico auxiliar: Mayra Parra -->
-        <div class="member-card">
-            <div class="member-photo" title="Mayra" role="img" aria-label="Nicol" style="background-image: url('../assets/images/gallery/mayra.jpg'); background-size: cover; background-position: center top;">
-          </div>
-          <div class="member-body">
-            <h3 class="member-name">Mayra Parra</h3>
-            <p class="member-role">Técnica Dental Auxiliar</p>
-            <div class="member-tags">
-              <span class="tag">Acabados</span>
-              <span class="tag">Colorimetría</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Valores del Equipo (RESUMIDOS) -->
-    <div class="values-section">
-      <h2 class="group-title">Nuestros Valores</h2>
-      <div class="values-grid">
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-heart"></i></div>
-          <div>
-            <h3>Compromiso</h3>
-            <p>Resultados consistentes, trato humano.</p>
-          </div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-handshake"></i></div>
-          <div>
-            <h3>Confianza</h3>
-            <p>Transparencia y comunicación clara.</p>
-          </div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-rocket"></i></div>
-          <div>
-            <h3>Innovación</h3>
-            <p>Tecnología y materiales de vanguardia.</p>
-          </div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
-          <div>
-            <h3>Seguridad</h3>
-            <p>Protocolos y bioseguridad estricta.</p>
-          </div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
-          <div>
-            <h3>Formación</h3>
-            <p>Mejora continua del equipo.</p>
-          </div>
-        </div>
-        <div class="value-card">
-          <div class="value-icon"><i class="fas fa-users"></i></div>
-          <div>
-            <h3>Trabajo en Equipo</h3>
-            <p>Clínica + laboratorio, misma visión.</p>
-          </div>
         </div>
       </div>
-    </div>
 
-  </div>
-</section>
+      <!-- Odontólogas -->
+      <div class="team-group">
+        <h2 class="group-title" data-i18n="team.group.doctors">Odontólogas y Auxiliar</h2>
+        <div class="team-grid">
 
-    <!-- CTA SECTION -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>¿Quieres conocer a nuestro equipo?</h2>
-                <p>Agenda una consulta y conoce personalmente a nuestros especialistas</p>
-                <div class="cta-buttons">
-                    <a href="contacto.html" class="btn-primary" data-i18n="cta.book">Agendar Consulta</a>
-                    <a href="tel:+1234567890" class="btn-secondary">
-                        <i class="fas fa-phone"></i> Llamar Ahora
-                    </a>
-                </div>
+          <!-- Dra. Diana Muñoz -->
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Dra. Diana Muñoz"
+                 role="img"
+                 aria-label="Dra. Diana Muñoz"
+                 style="background-image: url('../assets/images/gallery/diana2.jpg'); background-size: cover; background-position: center top;">
             </div>
-        </div>
-    </section>
+            <div class="member-body">
+              <h3 class="member-name">Dra. Diana Muñoz</h3>
+              <p class="member-role" data-i18n="team.member.diana.role">Odontóloga • Estética y Rehabilitación</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.smile_design">Diseño de Sonrisa</span>
+                <span class="tag" data-i18n="team.tag.veneers">Carillas</span>
+                <span class="tag" data-i18n="team.tag.rehabilitation">Rehabilitación</span>
+              </div>
+            </div>
+          </div>
 
-     <!-- CHATBOT -->
+          <!-- Dra. Anny Muñoz -->
+          <div class="member-card">
+            <div class="member-photo" title="Dra. Anny Muñoz">
+              <div class="ph">AM</div>
+            </div>
+            <div class="member-body">
+              <h3 class="member-name">Dra. Anny Muñoz</h3>
+              <p class="member-role" data-i18n="team.member.anny.role">Odontóloga • Estética y Restauradora</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.aesthetics">Estética</span>
+                <span class="tag" data-i18n="team.tag.resins">Resinas</span>
+                <span class="tag" data-i18n="team.tag.integral_care">Cuidado Integral</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Nicol Cortez -->
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Nicol"
+                 role="img"
+                 aria-label="Nicol"
+                 style="background-image: url('../assets/images/gallery/nicol.jpg'); background-size: cover; background-position: center top;">
+            </div>
+            <div class="member-body">
+              <h3 class="member-name">Nicol Cortez</h3>
+              <p class="member-role" data-i18n="team.member.nicol.role">Auxiliar de Odontología</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.patient_care">Atención al Paciente</span>
+                <span class="tag" data-i18n="team.tag.biosafety">Bioseguridad</span>
+                <span class="tag" data-i18n="team.tag.clinical_support">Apoyo Clínico</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Laboratorio Dental -->
+      <div class="team-group">
+        <h2 class="group-title" data-i18n="team.group.lab">Laboratorio Dental</h2>
+        <div class="team-grid">
+
+          <!-- Técnico principal -->
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Andres"
+                 role="img"
+                 aria-label="Andres"
+                 style="background-image: url('../assets/images/gallery/andres.jpg'); background-size: cover; background-position: center top;">
+            </div>
+            <div class="member-body">
+              <h3 class="member-name">Andrés Guarnizo</h3>
+              <p class="member-role" data-i18n="team.member.andres.role">Técnico Dental Principal</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.cadcam">CAD/CAM</span>
+                <span class="tag" data-i18n="team.tag.veneers">Carillas</span>
+                <span class="tag" data-i18n="team.tag.ceramic">Cerámica</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnico auxiliar: Willy -->
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Willy"
+                 role="img"
+                 aria-label="Willy"
+                 style="background-image: url('../assets/images/gallery/willy.jpg'); background-size: cover; background-position: center top;">
+            </div>
+            <div class="member-body">
+              <h3 class="member-name">Willy Llanos</h3>
+              <p class="member-role" data-i18n="team.member.willy.role">Técnico Dental Auxiliar</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.print3d">Impresión 3D</span>
+                <span class="tag" data-i18n="team.tag.resin">Resina</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Técnico auxiliar: Mayra -->
+          <div class="member-card">
+            <div class="member-photo"
+                 title="Mayra"
+                 role="img"
+                 aria-label="Mayra"
+                 style="background-image: url('../assets/images/gallery/mayra.jpg'); background-size: cover; background-position: center top;">
+            </div>
+            <div class="member-body">
+              <h3 class="member-name">Mayra Parra</h3>
+              <p class="member-role" data-i18n="team.member.mayra.role">Técnica Dental Auxiliar</p>
+              <div class="member-tags">
+                <span class="tag" data-i18n="team.tag.finishing">Acabados</span>
+                <span class="tag" data-i18n="team.tag.colorimetry">Colorimetría</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Valores del Equipo -->
+      <div class="values-section">
+        <h2 class="group-title" data-i18n="team.values.title">Nuestros Valores</h2>
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-heart"></i></div>
+            <div>
+              <h3 data-i18n="team.values.commitment.title">Compromiso</h3>
+              <p data-i18n="team.values.commitment.desc">Resultados consistentes, trato humano.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-handshake"></i></div>
+            <div>
+              <h3 data-i18n="team.values.trust.title">Confianza</h3>
+              <p data-i18n="team.values.trust.desc">Transparencia y comunicación clara.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-rocket"></i></div>
+            <div>
+              <h3 data-i18n="team.values.innovation.title">Innovación</h3>
+              <p data-i18n="team.values.innovation.desc">Tecnología y materiales de vanguardia.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+            <div>
+              <h3 data-i18n="team.values.safety.title">Seguridad</h3>
+              <p data-i18n="team.values.safety.desc">Protocolos y bioseguridad estricta.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div>
+              <h3 data-i18n="team.values.training.title">Formación</h3>
+              <p data-i18n="team.values.training.desc">Mejora continua del equipo.</p>
+            </div>
+          </div>
+          <div class="value-card">
+            <div class="value-icon"><i class="fas fa-users"></i></div>
+            <div>
+              <h3 data-i18n="team.values.teamwork.title">Trabajo en Equipo</h3>
+              <p data-i18n="team.values.teamwork.desc">Clínica + laboratorio, misma visión.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-content">
+        <h2 data-i18n="team.cta.title">¿Quieres conocer a nuestro equipo?</h2>
+        <p data-i18n="team.cta.lead">Agenda una consulta y conoce personalmente a nuestros especialistas</p>
+        <div class="cta-buttons">
+          <a href="contacto.html" class="btn-primary" data-i18n="cta.book">Agendar Consulta</a>
+          <a href="tel:+573168866812" class="btn-secondary">
+            <i class="fas fa-phone"></i>
+            <span data-i18n="cta.call_now">Llamar Ahora</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHATBOT -->
   <div class="dental-chatbot" id="dentalChatbot">
-    <!-- Botón flotante compacto -->
     <button class="chatbot-toggle" id="chatbotToggle" aria-label="Abrir chat">
-        <i class="fas fa-comments"></i>
-        <i class="fas fa-times"></i>
-        <div class="chatbot-notification" id="chatNotification">1</div>
+      <i class="fas fa-comments"></i>
+      <i class="fas fa-times"></i>
+      <div class="chatbot-notification" id="chatNotification">1</div>
     </button>
 
-    <!-- Ventana del chat compacta -->
     <div class="chatbot-window" id="chatbotWindow">
-        <!-- Header compacto -->
-        <div class="chatbot-header">
-            <div class="chatbot-avatar">
-                <i class="fas fa-tooth"></i>
-            </div>
-            <div class="chatbot-info">
-                <h3>Dra. Diana Patricia Muñoz</h3>
-                <div class="chatbot-status">
-                    <div class="status-dot"></div>
-                    <span>En línea</span>
-                </div>
-            </div>
+      <div class="chatbot-header">
+        <div class="chatbot-avatar">
+          <i class="fas fa-tooth"></i>
         </div>
-
-        <!-- Área de mensajes compacta -->
-        <div class="chatbot-messages" id="chatMessages">
-            <!-- Los mensajes se generan dinámicamente -->
+        <div class="chatbot-info">
+          <h3 data-i18n="chatbot.name">Dra. Diana Patricia Muñoz</h3>
+          <div class="chatbot-status">
+            <div class="status-dot"></div>
+            <span data-i18n="chatbot.status">En línea</span>
+          </div>
         </div>
-
-        <!-- Indicador de escritura refinado -->
-        <div class="typing-indicator" id="typingIndicator">
-            <div class="message-avatar">
-                <i class="fas fa-tooth"></i>
-            </div>
-            <div class="typing-dots">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-            <span>Escribiendo...</span>
-        </div>
-
-        <!-- Footer compacto -->
-        <div class="chatbot-footer">
-      <div class="action-buttons">
-        <button class="action-btn primary" onclick="openContactForm()" data-i18n="chatbot.book">
-          <i class="fas fa-calendar-alt"></i>
-          Agendar
-        </button>
-        <button class="action-btn secondary" onclick="openWhatsApp()" data-i18n="chatbot.whatsapp">
-          <i class="fab fa-whatsapp"></i>
-          WhatsApp
-        </button>
       </div>
-            <div class="footer-text">
-                🦷 Diamond Smiles
-            </div>
+
+      <div class="chatbot-messages" id="chatMessages">
+        <!-- Mensajes dinámicos -->
+      </div>
+
+      <div class="typing-indicator" id="typingIndicator">
+        <div class="message-avatar">
+          <i class="fas fa-tooth"></i>
         </div>
+        <div class="typing-dots">
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+          <div class="typing-dot"></div>
+        </div>
+        <span data-i18n="chatbot.typing">Escribiendo...</span>
+      </div>
+
+      <div class="chatbot-footer">
+        <div class="action-buttons">
+          <button class="action-btn primary" onclick="openContactForm()" data-i18n="chatbot.book">
+            <i class="fas fa-calendar-alt"></i>
+            Agendar
+          </button>
+          <button class="action-btn secondary" onclick="openWhatsApp()" data-i18n="chatbot.whatsapp">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </button>
+        </div>
+        <div class="footer-text">
+          🦷 Diamond Smiles
+        </div>
+      </div>
     </div>
-</div>
-    <!-- FOOTER -->
+  </div>
+
+  <!-- FOOTER -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3 data-i18n="footer.brand_title"><i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles</h3>
-          <p data-i18n="footer.brand_lead">Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
+          <h3 data-i18n="footer.brand_title">
+            <i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles
+          </h3>
+          <p data-i18n="footer.brand_lead">
+            Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.
+          </p>
           <div class="social-links">
-            <div class="social-links">
-                <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
-                  <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
-                  <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales" aria-label="WhatsApp">
-                  <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
-                  <i class="fab fa-tiktok"></i>
-                </a>
-              </div>
+            <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://www.instagram.com/dradianamunoz?igsh=MXZhOTlvbXQ4YzF5bA==" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://tiktok.com/@dradianamunoz" aria-label="TikTok">
+              <i class="fab fa-tiktok"></i>
+            </a>
           </div>
         </div>
 
         <div class="footer-section">
           <h4 data-i18n="footer.services">Servicios</h4>
           <ul>
-            <li><a href="pages/servicios.html#general">Odontología General</a></li>
-            <li><a href="pages/servicios.html#estetica">Estética Dental</a></li>
-            <li><a href="pages/servicios.html#ortodoncia">Ortodoncia</a></li>
-            <li><a href="pages/servicios.html#implantes">Implantología</a></li>
+            <li><a href="servicios.html#general" data-i18n="footer.service.general">Odontología General</a></li>
+            <li><a href="servicios.html#estetica" data-i18n="footer.service.estetica">Estética Dental</a></li>
+            <li><a href="servicios.html#ortodoncia" data-i18n="footer.service.ortodoncia">Ortodoncia</a></li>
+            <li><a href="servicios.html#implantes" data-i18n="footer.service.implantes">Implantología</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
           <h4 data-i18n="footer.navigation">Navegación</h4>
           <ul>
-            <li><a href="#nosotros">Sobre nosotros</a></li>
-            <li><a href="pages/equipo.html">Nuestro equipo</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
+            <li><a href="../index.html#nosotros" data-i18n="footer.nav.about">Sobre nosotros</a></li>
+            <li><a href="equipo.html" data-i18n="footer.nav.team">Nuestro equipo</a></li>
+            <li><a href="../index.html#testimonios" data-i18n="footer.nav.testimonials">Testimonios</a></li>
+            <li><a href="contacto.html" data-i18n="footer.nav.contact">Contacto</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
           <h4 data-i18n="footer.contact">Contacto</h4>
           <div class="contact-info">
-           <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
+            <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
             <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
             <p><i class="fas fa-envelope"></i> contacto@dianamunozsmiles.com</p>
             <p><i class="fas fa-clock"></i> Lun-Vie: 8AM-6PM </p>
@@ -392,8 +427,8 @@
       <div class="footer-bottom">
         <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
         <div class="footer-links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
+          <a href="#" data-i18n="footer.terms">Términos y Condiciones</a>
+          <a href="#" data-i18n="footer.privacy">Política de Privacidad</a>
         </div>
       </div>
     </div>

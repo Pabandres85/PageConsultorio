@@ -83,16 +83,24 @@
   ">
   <div class="container">
     <div class="page-hero-content" style="max-width:920px; margin:0 auto; text-align:center;">
-      <h1 class="hero-title" style="margin:0 0 10px; font-weight:800;">
-        Contáctanos y <span class="highlight">Agenda tu Cita</span>
-      </h1>
-      <div class="hero-divider" aria-hidden="true"></div>
-      <p class="hero-sub" style="margin:12px auto 0; max-width:740px;">
-        Estamos aquí para atenderte. Agenda tu consulta y da el primer paso hacia la sonrisa que siempre has soñado.
-      </p>
+     <h1 class="hero-title" style="margin:0 0 10px; font-weight:800;">
+  <span data-i18n="contact.hero.title.part1">Contáctanos y </span>
+  <span class="highlight" data-i18n="contact.hero.title.highlight">Agenda tu Cita</span>
+  <span data-i18n="contact.hero.title.part2"></span>
+</h1>
+
+<div class="hero-divider" aria-hidden="true"></div>
+
+<p class="hero-sub"
+   style="margin:12px auto 0; max-width:740px;"
+   data-i18n="contact.hero.lead">
+  Estamos aquí para atenderte. Agenda tu consulta y da el primer paso hacia la sonrisa que siempre has soñado.
+</p>
+
     </div>
   </div>
 </section>
+
 
     <!-- FORMULARIO DE CONTACTO Y MAPA -->
     <section class="contact-main">
@@ -172,10 +180,13 @@
                             Enviar Mensaje
                         </button>
                         
-                        <div class="form-note">
-                            <i class="fas fa-info-circle"></i>
-                            <p>* Campos obligatorios. Al enviar, se abrirá tu programa de correo para confirmar el envío.</p>
+                       <div class="form-note">
+                        <i class="fas fa-info-circle"></i>
+                        <p data-i18n="contact.form_note">
+                            * Campos obligatorios. Al enviar, se abrirá tu programa de correo para confirmar el envío.
+                        </p>
                         </div>
+
                     </form>
                 </div>
                 
@@ -183,7 +194,11 @@
 <div class="contact-info-section">
   <!-- Ubicación + Mapa -->
   <div class="info-card">
-    <h3><i class="fas fa-map-marker-alt"></i> Nuestra Ubicación</h3>
+   <h3>
+  <i class="fas fa-map-marker-alt"></i>
+  <span data-i18n="contact.location_title">Nuestra Ubicación</span>
+</h3>
+
     <div class="location-info">
       <p class="address">
         <strong>Carrera 55 # 9-88 Camino Real</strong><br>
@@ -237,26 +252,33 @@
   </div>
 
   <!-- Otros medios -->
-  <div class="info-card">
-    <h3><i class="fas fa-headset"></i> Otros Medios de Contacto</h3>
-    <div class="contact-methods">
-      <a href="mailto:contacto@dianamunozsmiles.com" class="contact-method">
-        <i class="fas fa-envelope"></i>
-        <div>
-          <strong>Email</strong>
-          <span>contacto@dianamunozsmiles.com</span>
-        </div>
-      </a>
+ <div class="info-card">
+ <h3>
+  <i class="fas fa-headset"></i>
+  <span data-i18n="contact.other_title">Otros Medios de Contacto</span>
+</h3>
 
-      <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales" class="contact-method whatsapp" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i>
-        <div>
-          <strong>WhatsApp</strong>
-          <span>+57 (316) 886-6812</span>
-        </div>
-      </a>
-    </div>
+  <div class="contact-methods">
+    <a href="mailto:contacto@dianamunozsmiles.com" class="contact-method">
+      <i class="fas fa-envelope"></i>
+      <div>
+        <strong data-i18n="contact.other.email_label">Email</strong>
+        <span>contacto@dianamunozsmiles.com</span>
+      </div>
+    </a>
+
+    <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20dentales"
+       class="contact-method whatsapp" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <div>
+        <strong data-i18n="contact.other.whatsapp_label">WhatsApp</strong>
+        <span>+57 (316) 886-6812</span>
+      </div>
+    </a>
   </div>
+</div>
+
+
 </div>
 </div>
 </div>
