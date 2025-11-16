@@ -33,18 +33,24 @@
     <!-- HEADER Y NAVEGACIÓN -->
     <header class="header">
         <div class="header-container">
-            <a href="../index.html" class="logo">Dra Diana Muñoz</a>
+            <a href="../index.html" class="logo" data-i18n="header.logo">Dra Diana Muñoz</a>
             
             <nav class="nav">
                 <ul class="nav-links">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="servicios.html">Servicios</a></li>
-                    <li><a href="../index.html#nosotros">Nosotros</a></li>
-                    <li><a href="equipo.html">Equipo</a></li>
-                    <li><a href="../index.html#testimonios">Testimonios</a></li>
-                    <li><a href="contacto.html" class="active">Contacto</a></li>
+                    <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+                    <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
+                    <li><a href="equipo.html" data-i18n="nav.team">Equipo</a></li>
+                    <li><a href="../index.html#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
+                    <li><a href="contacto.html" class="active" data-i18n="nav.contact">Contacto</a></li>
                 </ul>
             </nav>
+            
+            <!-- Language toggle (EN/ES) -->
+            <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Cambiar idioma">
+                <span class="lang-flag" aria-hidden="true">EN</span>
+                <span class="lang-label">EN / ES</span>
+            </button>
              <div class="social-links">
                         <a href= "https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
                             <i class="fab fa-facebook"></i>
@@ -96,39 +102,43 @@
                 <!-- FORMULARIO DE CONTACTO SIMPLIFICADO -->
                 <div class="contact-form-section">
                     <div class="form-header">
-                        <h2 id="contacto">Envíanos un Mensaje</h2>
-                        <p>Completa el formulario y te enviaremos la información directamente a tu correo electrónico.</p>
+                        <h2 id="contacto" data-i18n="contact.form.title">Envíanos un Mensaje</h2>
+                        <p data-i18n="contact.form.lead">Completa el formulario y te enviaremos la información directamente a tu correo electrónico.</p>
                     </div>
                     
                     <form class="contact-form-simple" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="fullName">
-                                    <i class="fas fa-user"></i> Nombre Completo *
+                                    <i class="fas fa-user"></i>
+                                    <span data-i18n="form.fullName">Nombre Completo *</span>
                                 </label>
-                                <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo">
+                                <input type="text" id="fullName" name="fullName" required placeholder="Tu nombre completo" data-i18n="form.fullName.placeholder" data-i18n-attr="placeholder">
                             </div>
                             <div class="form-group">
                                 <label for="phone">
-                                    <i class="fas fa-phone"></i> Teléfono *
+                                    <i class="fas fa-phone"></i>
+                                    <span data-i18n="form.phone">Teléfono *</span>
                                 </label>
-                                <input type="tel" id="phone" name="phone" required placeholder="+57 316 886 6812">
+                                <input type="tel" id="phone" name="phone" required placeholder="+57 316 886 6812" data-i18n="form.phone.placeholder" data-i18n-attr="placeholder">
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="email">
-                                <i class="fas fa-envelope"></i> Correo Electrónico *
+                                <i class="fas fa-envelope"></i>
+                                <span data-i18n="form.email">Correo Electrónico *</span>
                             </label>
-                            <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                            <input type="email" id="email" name="email" required placeholder="tu@email.com" data-i18n="form.email.placeholder" data-i18n-attr="placeholder">
                         </div>
                         
                         <div class="form-group">
                             <label for="service">
-                                <i class="fas fa-tooth"></i> Servicio de Interés
+                                <i class="fas fa-tooth"></i>
+                                <span data-i18n="form.service">Servicio de Interés</span>
                             </label>
                             <select id="service" name="service">
-  <option value="">Seleccionar servicio (opcional)</option>
+  <option value="" data-i18n="form.service.placeholder">Seleccionar servicio (opcional)</option>
   <option value="diamond-smiles-exclusive">Diamond Smiles Exclusive</option>
   <option value="diseno-resina-impresa">Diseño de Sonrisa en Resina Impresa</option>
   <option value="valoracion-odontologica">Valoración Odontológica</option>
@@ -143,20 +153,21 @@
                         
                         <div class="form-group">
                             <label for="message">
-                                <i class="fas fa-comment"></i> Mensaje *
+                                <i class="fas fa-comment"></i>
+                                <span data-i18n="form.message">Mensaje *</span>
                             </label>
-                            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos qué necesitas, si tienes algún dolor o molestia, y cuándo te gustaría agendar tu cita..."></textarea>
+                            <textarea id="message" name="message" rows="5" required placeholder="Cuéntanos qué necesitas, si tienes algún dolor o molestia, y cuándo te gustaría agendar tu cita..." data-i18n="form.message.placeholder" data-i18n-attr="placeholder"></textarea>
                         </div>
                         
                         <div class="form-group checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="terms" name="terms" required>
                                 <span class="checkmark"></span>
-                                Acepto el tratamiento de mis datos personales según la política de privacidad *
+                                <span data-i18n="form.terms">Acepto el tratamiento de mis datos personales según la política de privacidad *</span>
                             </label>
                         </div>
                         
-                        <button type="submit" class="btn-primary submit-btn">
+                        <button type="submit" class="btn-primary submit-btn" data-i18n="form.submit">
                             <i class="fas fa-paper-plane"></i>
                             Enviar Mensaje
                         </button>
@@ -191,19 +202,19 @@
       </iframe>
 
       <div class="map-actions">
-        <a href="https://maps.google.com/?q=Carrera+55+9-88+Camino+Real,+Cali,+Colombia" target="_blank" class="map-button">
-          <i class="fas fa-directions"></i> Cómo llegar
-        </a>
-        <a href="https://maps.google.com/?q=Carrera+55+9-88+Camino+Real,+Cali,+Colombia" target="_blank" class="map-button">
-          <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
-        </a>
+                <a href="https://maps.google.com/?q=Carrera+55+9-88+Camino+Real,+Cali,+Colombia" target="_blank" class="map-button" data-i18n="contact.directions">
+                    <i class="fas fa-directions"></i> Cómo llegar
+                </a>
+                <a href="https://maps.google.com/?q=Carrera+55+9-88+Camino+Real,+Cali,+Colombia" target="_blank" class="map-button" data-i18n="contact.view_map">
+                    <i class="fas fa-map-marker-alt"></i> Ver en Google Maps
+                </a>
       </div>
     </div>
   </div>
 
   <!-- Horarios + Urgencias -->
   <div class="info-card">
-    <h3><i class="fas fa-clock"></i> Horarios de Atención</h3>
+        <h3 data-i18n="contact.hours_title"><i class="fas fa-clock"></i> Horarios de Atención</h3>
     <div class="schedule">
       <div class="schedule-item">
         <span class="day">Lunes - Viernes</span>
@@ -216,12 +227,12 @@
     </div>
 
     <div class="emergency-info">
-      <h4><i class="fas fa-exclamation-triangle"></i> Urgencias</h4>
-      <p>Para urgencias dentales fuera del horario de atención:</p>
-      <a href="tel:+573168866812" class="emergency-phone">
-        <i class="fas fa-phone"></i> +57 (316) 886-6812
-      </a>
-      <small>Disponible para emergencias</small>
+                <h4 data-i18n="contact.emergency"><i class="fas fa-exclamation-triangle"></i> Urgencias</h4>
+                <p data-i18n="contact.emergency_lead">Para urgencias dentales fuera del horario de atención:</p>
+                <a href="tel:+573168866812" class="emergency-phone">
+                    <i class="fas fa-phone"></i> +57 (316) 886-6812
+                </a>
+                <small data-i18n="contact.emergency_note">Disponible para emergencias</small>
     </div>
   </div>
 
@@ -317,8 +328,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-tooth" aria-hidden="true"></i> Smile Luxury Studio</h3>
-                    <p>Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
+                    <h3 data-i18n="footer.brand_title"><i class="fas fa-tooth" aria-hidden="true"></i> Smile Luxury Studio</h3>
+                    <p data-i18n="footer.brand_lead">Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
                             <i class="fab fa-facebook"></i>
@@ -336,7 +347,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Servicios</h4>
+                    <h4 data-i18n="footer.services">Servicios</h4>
                     <ul>
                         <li><a href="servicios.html#general">Odontología General</a></li>
                         <li><a href="servicios.html#estetica">Estética Dental</a></li>
@@ -346,7 +357,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Navegación</h4>
+                    <h4 data-i18n="footer.navigation">Navegación</h4>
                     <ul>
                         <li><a href="../index.html#nosotros">Sobre nosotros</a></li>
                         <li><a href="equipo.html">Nuestro equipo</a></li>
@@ -356,7 +367,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Contacto</h4>
+                    <h4 data-i18n="footer.contact">Contacto</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali, Colombia</p>
                         <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
@@ -367,7 +378,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
+                <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
                 <div class="footer-links">
                     <a href="#">Términos y Condiciones</a>
                     <a href="#">Política de Privacidad</a>
@@ -377,6 +388,7 @@
     </footer>
 
     <!-- JavaScript -->
+    <script defer src="../assets/js/translations.js"></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/animations.js"></script>
     

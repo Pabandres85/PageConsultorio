@@ -2225,6 +2225,31 @@ class DentalChatbotRefined {
             }
         };
 
+        // Localize knowledge and dynamic strings when translations are available
+        this.localizeKnowledge = function(){
+            try{
+                var t = (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t : function(k, f){ return f || k; };
+                // clinic data
+                this.clinicData.whatsappMessage = t('chatbot.whatsapp_message', this.clinicData.whatsappMessage);
+
+                // iterate known sections and replace response/options if translations present
+                for(var k in this.knowledge){
+                    if(!this.knowledge.hasOwnProperty(k)) continue;
+                    var baseKey = 'chatbot.knowledge.' + k;
+                    var resp = t(baseKey + '.response', this.knowledge[k].response);
+                    var opts = t(baseKey + '.options', null);
+                    this.knowledge[k].response = resp;
+                    if(Array.isArray(opts)) this.knowledge[k].options = opts;
+                }
+
+            }catch(e){ console.warn('i18n localizeKnowledge failed', e); }
+        };
+
+        // If translations are already loaded, localize now
+        try{ if(window.SiteI18n && window.SiteI18n.t){ this.localizeKnowledge(); } }catch(e){}
+        // Re-localize when translations become available/loaded
+        document.addEventListener('i18n:loaded', function(){ try{ if(window.dentalChatbotRefined) window.dentalChatbotRefined.localizeKnowledge(); }catch(e){} });
+
         this.init();
     }
 
@@ -2297,7 +2322,7 @@ class DentalChatbotRefined {
     showWelcomeMessage() {
         const welcomeMessage = {
             type: 'bot',
-            text: '¡Hola! 👋 Asistente virtual de Diamond Smiles.\n\n¿En qué puedo ayudarte?',
+            text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.welcome','¡Hola! 👋 Asistente virtual de Diamond Smiles.\n\n¿En qué puedo ayudarte?') : '¡Hola! 👋 Asistente virtual de Diamond Smiles.\n\n¿En qué puedo ayudarte?',
             time: this.getCurrentTime()
         };
 
@@ -2307,13 +2332,8 @@ class DentalChatbotRefined {
     showInitialOptions() {
         const optionsMessage = {
             type: 'bot',
-            text: 'Pregúntame sobre:',
-            options: [
-                'Servicios',
-                'Agendar cita',
-                'Precios',
-                'Ubicación'
-            ],
+            text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.initial.lead','Pregúntame sobre:') : 'Pregúntame sobre:',
+            options: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.initial.options',['Servicios','Agendar cita','Precios','Ubicación']) : ['Servicios','Agendar cita','Precios','Ubicación'],
             time: this.getCurrentTime()
         };
 
@@ -2382,8 +2402,8 @@ class DentalChatbotRefined {
                 window.open(this.clinicData.googleMapsUrl, '_blank');
                 this.addMessage({
                     type: 'bot',
-                    text: '🗺️ Abriendo Google Maps...\n\n¿Necesitas algo más?',
-                    options: ['WhatsApp', 'Llamar', 'Página de Contacto', 'Más servicios'],
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.maps.opening','🗺️ Abriendo Google Maps...') : '🗺️ Abriendo Google Maps...',
+                    options: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.knowledge.ubicacion.options',['Ver en Google Maps','Página de Contacto','Indicaciones WhatsApp','Llamar']) : ['WhatsApp','Llamar','Página de Contacto','Más servicios'],
                     time: this.getCurrentTime()
                 });
                 console.log('🗺️ Google Maps abierto');
@@ -2399,8 +2419,8 @@ class DentalChatbotRefined {
                 }
                 this.addMessage({
                     type: 'bot',
-                    text: '📋 Abriendo página de contacto con mapa interactivo...\n\n¿Te ayudo con algo más?',
-                    options: ['WhatsApp', 'Llamar', 'Más servicios'],
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.contact.opening','📋 Abriendo página de contacto con mapa interactivo...\n\n¿Te ayudo con algo más?') : '📋 Abriendo página de contacto con mapa interactivo...\n\n¿Te ayudo con algo más?',
+                    options: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.default.options',['WhatsApp','Llamar','Más servicios']) : ['WhatsApp','Llamar','Más servicios'],
                     time: this.getCurrentTime()
                 });
                 console.log('📋 Página de contacto abierta');
@@ -2413,8 +2433,8 @@ class DentalChatbotRefined {
                 window.open(whatsappUrl, '_blank');
                 this.addMessage({
                     type: 'bot',
-                    text: '📱 Enviando ubicación por WhatsApp...\n\n¿Algo más en lo que pueda ayudarte?',
-                    options: ['Agendar cita', 'Más servicios'],
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.location.sent','📱 Enviando ubicación por WhatsApp...\n\n¿Algo más en lo que pueda ayudarte?') : '📱 Enviando ubicación por WhatsApp...\n\n¿Algo más en lo que pueda ayudarte?',
+                    options: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.default.options',['WhatsApp','Llamar','Más servicios']) : ['Agendar cita','Más servicios'],
                     time: this.getCurrentTime()
                 });
                 console.log('📍 Ubicación solicitada por WhatsApp');
@@ -2426,7 +2446,7 @@ class DentalChatbotRefined {
                 window.open(wUrl, '_blank');
                 this.addMessage({
                     type: 'bot',
-                    text: '💬 Abriendo WhatsApp...\n\nTe atenderemos enseguida!',
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.whatsapp.opening','💬 Abriendo WhatsApp...\n\nTe atenderemos enseguida!') : '💬 Abriendo WhatsApp...\n\nTe atenderemos enseguida!',
                     time: this.getCurrentTime()
                 });
                 console.log('📱 WhatsApp abierto');
@@ -2438,7 +2458,7 @@ class DentalChatbotRefined {
                 window.location.href = `tel:${this.clinicData.phone}`;
                 this.addMessage({
                     type: 'bot',
-                    text: '📞 Iniciando llamada...\n\nTe esperamos!',
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.call.opening','📞 Iniciando llamada...\n\nTe esperamos!') : '📞 Iniciando llamada...\n\nTe esperamos!',
                     time: this.getCurrentTime()
                 });
                 console.log('📞 Iniciando llamada');
@@ -2453,7 +2473,7 @@ class DentalChatbotRefined {
                 }
                 this.addMessage({
                     type: 'bot',
-                    text: '📝 Abriendo formulario de contacto...',
+                    text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.form.opening','📝 Abriendo formulario de contacto...') : '📝 Abriendo formulario de contacto...',
                     time: this.getCurrentTime()
                 });
                 console.log('📝 Formulario abierto');
@@ -2549,8 +2569,8 @@ class DentalChatbotRefined {
         if (!response) {
             response = {
                 type: 'bot',
-                text: '🤔 Te conecto con nuestro equipo para mejor información.\n\n¿Prefieres WhatsApp o llamada?',
-                options: ['WhatsApp', 'Llamar', 'Más servicios'],
+                text: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.default.response','🤔 Te conecto con nuestro equipo para mejor información.\n\n¿Prefieres WhatsApp o llamada?') : '🤔 Te conecto con nuestro equipo para mejor información.\n\n¿Prefieres WhatsApp o llamada?',
+                options: (window.SiteI18n && window.SiteI18n.t) ? window.SiteI18n.t('chatbot.default.options',['WhatsApp','Llamar','Más servicios']) : ['WhatsApp','Llamar','Más servicios'],
                 time: this.getCurrentTime()
             };
         }

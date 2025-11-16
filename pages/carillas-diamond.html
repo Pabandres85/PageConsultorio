@@ -54,7 +54,13 @@
                 </ul>
             </nav>
             
-            <a href="#consulta-exclusiva" class="cta-button cta-premium">
+            <!-- language toggle -->
+            <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
+              <span class="lang-flag">ES</span>
+              <span class="lang-label">ES</span>
+            </button>
+
+            <a href="#consulta-exclusiva" class="cta-button cta-premium" data-i18n="cta.consult">
                 <i class="fas fa-crown"></i>
                 Consulta Exclusiva
             </a>
@@ -393,7 +399,7 @@
                     </div>
                     <div class="premium-benefit">
                         <i class="fas fa-check-circle"></i>
-                        <span>Atención en sala VIP exclusiva</span>
+                        <span>Atención VIP</span>
                     </div>
                 </div>
                 
@@ -401,11 +407,11 @@
                     <a href="https://wa.me/573168866812?text=Hola,%20me%20interesa%20información%20sobre%20las%20Carillas%20Diamond%20Exclusive" 
                        class="btn-primary btn-premium" target="_blank">
                         <i class="fab fa-whatsapp"></i>
-                        WhatsApp VIP
+                            <span data-i18n="cta.whatsapp_vip">WhatsApp VIP</span>
                     </a>
                     <a href="tel:+573168866812" class="btn-secondary btn-premium-outline">
                         <i class="fas fa-phone"></i>
-                        Llamada Directa
+                            <span data-i18n="cta.call_direct">Llamada Directa</span>
                     </a>
                 </div>
                 
@@ -433,8 +439,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3><i class="fas fa-gem" aria-hidden="true"></i> Diamond Smiles Exclusive</h3>
-                    <p>Donde la perfección y el lujo se encuentran para crear sonrisas extraordinarias que brillan como diamantes auténticos.</p>
+                    <h3 data-i18n="footer.brand_title"><i class="fas fa-gem" aria-hidden="true"></i> Diamond Smiles Exclusive</h3>
+                    <p data-i18n="footer.brand_lead">Donde la perfección y el lujo se encuentran para crear sonrisas extraordinarias que brillan como diamantes auténticos.</p>
                     <div class="social-links">
                         <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
                             <i class="fab fa-facebook"></i>
@@ -452,7 +458,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Tratamientos Exclusivos</h4>
+                    <h4 data-i18n="footer.services">Tratamientos Exclusivos</h4>
                     <ul>
                         <li><a href="#proceso-exclusivo">Carillas Diamond</a></li>
                         <li><a href="servicios.html#estetica">Estética Premium</a></li>
@@ -462,7 +468,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Experiencia VIP</h4>
+                    <h4 data-i18n="footer.navigation">Experiencia VIP</h4>
                     <ul>
                         <li><a href="#vip-experience">Atención Personalizada</a></li>
                         <li><a href="equipo.html">Equipo Especializado</a></li>
@@ -472,7 +478,7 @@
                 </div>
 
                 <div class="footer-section">
-                    <h4>Contacto Exclusivo</h4>
+                    <h4 data-i18n="footer.contact">Contacto Exclusivo</h4>
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
                         <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
@@ -483,7 +489,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2025 Diamond Smiles Exclusive. Todos los derechos reservados.</p>
+                <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles Exclusive. Todos los derechos reservados.</p>
                 <div class="footer-links">
                     <a href="#">Términos VIP</a>
                     <a href="#">Política de Privacidad</a>
@@ -539,11 +545,11 @@
             <!-- Footer compacto -->
             <div class="chatbot-footer">
                 <div class="action-buttons">
-                    <button class="action-btn primary diamond" onclick="openContactForm()">
+                    <button class="action-btn primary diamond" onclick="openContactForm()" data-i18n="premium.consult_vip">
                         <i class="fas fa-crown"></i>
                         Consulta VIP
                     </button>
-                    <button class="action-btn secondary diamond" onclick="openWhatsApp()">
+                    <button class="action-btn secondary diamond" onclick="openWhatsApp()" data-i18n="cta.whatsapp_vip">
                         <i class="fab fa-whatsapp"></i>
                         WhatsApp VIP
                     </button>
@@ -559,6 +565,7 @@
   
 
     <!-- JavaScript -->
+    <script src="../assets/js/translations.js" defer></script>
     <script src="../assets/js/main.js"></script>
     <script src="../assets/js/animations.js"></script>
     

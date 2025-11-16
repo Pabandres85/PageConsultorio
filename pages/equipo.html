@@ -34,17 +34,23 @@
         <a href="../index.html" class="logo">Dra Diana Muñoz</a>
         
      <nav class="nav">
-    <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="servicios.html">Servicios</a></li>
-        <li><a href="../index.html#nosotros">Nosotros</a></li>
-        <li><a href="equipo.html" class="active">Equipo</a></li>
-        <li><a href="../index.html#testimonios">Testimonios</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-    </ul>
+  <ul class="nav-links">
+    <li><a href="../index.html" data-i18n="nav.home">Inicio</a></li>
+    <li><a href="servicios.html" data-i18n="nav.services">Servicios</a></li>
+    <li><a href="../index.html#nosotros" data-i18n="nav.about">Nosotros</a></li>
+    <li><a href="equipo.html" class="active" data-i18n="nav.team">Equipo</a></li>
+    <li><a href="../index.html#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
+    <li><a href="contacto.html" data-i18n="nav.contact">Contacto</a></li>
+  </ul>
 </nav>
         
-        <a href="#contacto" class="cta-button">Reservar Cita</a>
+        <!-- language toggle -->
+        <button id="langToggle" class="lang-toggle" aria-label="Cambiar idioma" title="Language" data-lang="es">
+          <span class="lang-flag">ES</span>
+          <span class="lang-label">ES</span>
+        </button>
+
+        <a href="#contacto" class="cta-button" data-i18n="cta.reserve">Reservar Cita</a>
         
         <button class="mobile-menu-toggle">
             <span></span>
@@ -58,8 +64,8 @@
 <section class="page-hero" style="padding:clamp(36px,7vw,96px) 0; margin-bottom: clamp(20px,4vw,40px);">
   <div class="container">
     <div class="page-hero-content" style="max-width:920px;margin:0 auto;text-align:center;">
-      <h1>Nuestro <span class="highlight">Equipo</span></h1>
-      <p>Más que un Equipo de expertos, somos una Familia apasionada por crear sonrisas únicas, combinando Funcionalidad, Estética, y Precisión en cada detalle, de la mano contigo en el proceso,  para ofrecerte resultados únicos y una experiencia cercana, segura y personalizada.</p>
+  <h1 data-i18n="team.title">Nuestro <span class="highlight">Equipo</span></h1>
+  <p data-i18n="team.lead">Más que un Equipo de expertos, somos una Familia apasionada por crear sonrisas únicas, combinando Funcionalidad, Estética, y Precisión en cada detalle, de la mano contigo en el proceso,  para ofrecerte resultados únicos y una experiencia cercana, segura y personalizada.</p>
     </div>
   </div>
 </section>
@@ -257,7 +263,7 @@
                 <h2>¿Quieres conocer a nuestro equipo?</h2>
                 <p>Agenda una consulta y conoce personalmente a nuestros especialistas</p>
                 <div class="cta-buttons">
-                    <a href="contacto.html" class="btn-primary">Agendar Consulta</a>
+                    <a href="contacto.html" class="btn-primary" data-i18n="cta.book">Agendar Consulta</a>
                     <a href="tel:+1234567890" class="btn-secondary">
                         <i class="fas fa-phone"></i> Llamar Ahora
                     </a>
@@ -311,16 +317,16 @@
 
         <!-- Footer compacto -->
         <div class="chatbot-footer">
-            <div class="action-buttons">
-                <button class="action-btn primary" onclick="openContactForm()">
-                    <i class="fas fa-calendar-alt"></i>
-                    Agendar
-                </button>
-                <button class="action-btn secondary" onclick="openWhatsApp()">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp
-                </button>
-            </div>
+      <div class="action-buttons">
+        <button class="action-btn primary" onclick="openContactForm()" data-i18n="chatbot.book">
+          <i class="fas fa-calendar-alt"></i>
+          Agendar
+        </button>
+        <button class="action-btn secondary" onclick="openWhatsApp()" data-i18n="chatbot.whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </button>
+      </div>
             <div class="footer-text">
                 🦷 Diamond Smiles
             </div>
@@ -332,8 +338,8 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3><i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles</h3>
-          <p>Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
+          <h3 data-i18n="footer.brand_title"><i class="fas fa-tooth" aria-hidden="true"></i> Diamond Smiles</h3>
+          <p data-i18n="footer.brand_lead">Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
           <div class="social-links">
             <div class="social-links">
                 <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
@@ -353,7 +359,7 @@
         </div>
 
         <div class="footer-section">
-          <h4>Servicios</h4>
+          <h4 data-i18n="footer.services">Servicios</h4>
           <ul>
             <li><a href="pages/servicios.html#general">Odontología General</a></li>
             <li><a href="pages/servicios.html#estetica">Estética Dental</a></li>
@@ -363,7 +369,7 @@
         </div>
 
         <div class="footer-section">
-          <h4>Navegación</h4>
+          <h4 data-i18n="footer.navigation">Navegación</h4>
           <ul>
             <li><a href="#nosotros">Sobre nosotros</a></li>
             <li><a href="pages/equipo.html">Nuestro equipo</a></li>
@@ -373,7 +379,7 @@
         </div>
 
         <div class="footer-section">
-          <h4>Contacto</h4>
+          <h4 data-i18n="footer.contact">Contacto</h4>
           <div class="contact-info">
            <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
             <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
@@ -384,7 +390,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
+        <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
         <div class="footer-links">
           <a href="#">Términos y Condiciones</a>
           <a href="#">Política de Privacidad</a>
@@ -393,8 +399,9 @@
     </div>
   </footer>
 
-    <!-- JavaScript -->
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/animations.js"></script>
+  <!-- JavaScript -->
+  <script src="../assets/js/translations.js" defer></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/animations.js"></script>
 </body>
 </html>

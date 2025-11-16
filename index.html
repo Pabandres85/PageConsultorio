@@ -38,22 +38,28 @@
   <!-- HEADER Y NAVEGACIÓN -->
   <header class="header" role="banner">
     <div class="header-container">
-      <a href="#inicio" class="logo" aria-label="Diamond Smiles - Inicio">Dra Diana Muñoz</a>
+  <a href="#inicio" class="logo" data-i18n="brand.name" aria-label="Diamond Smiles - Inicio">Dra Diana Muñoz</a>
       
       <nav class="nav" role="navigation" aria-label="Navegación principal">
         <ul class="nav-links">
-          <li><a href="#inicio" class="active">Inicio</a></li>
-          <li><a href="pages/servicios.html">Servicios</a></li>
-          <li><a href="../index.html#Carillas">Diamond</a></li>
-          <li><a href="pages/equipo.html">Equipo</a></li>
-          <li><a href="../index.html#testimonios">Testimonios</a></li>
-          <li><a href="pages/contacto.html">Contacto</a></li>
+          <li><a href="#inicio" class="active" data-i18n="nav.home">Inicio</a></li>
+          <li><a href="pages/servicios.html" data-i18n="nav.services">Servicios</a></li>
+          <li><a href="../index.html#Carillas" data-i18n="nav.diamond">Diamond</a></li>
+          <li><a href="pages/equipo.html" data-i18n="nav.team">Equipo</a></li>
+          <li><a href="../index.html#testimonios" data-i18n="nav.testimonials">Testimonios</a></li>
+          <li><a href="pages/contacto.html" data-i18n="nav.contact">Contacto</a></li>
         </ul>
       </nav>
       
-      <a href="pages/contacto.html" class="cta-button">Reservar Cita</a>
+      <!-- language toggle -->
+      <button id="langToggle" class="lang-toggle" data-i18n-attr="aria-label" data-i18n="aria.lang_toggle" title="Language" data-lang="es" aria-pressed="true">
+        <span class="lang-flag">ES</span>
+        <span class="lang-label">ES</span>
+      </button>
+
+      <a href="pages/contacto.html" class="cta-button" data-i18n="cta.reserve">Reservar Cita</a>
       
-      <button class="mobile-menu-toggle" aria-label="Abrir menú">
+      <button class="mobile-menu-toggle" data-i18n-attr="aria-label" data-i18n="nav.mobile_toggle" aria-label="Abrir menú">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -63,28 +69,32 @@
   <section id="inicio" class="hero" aria-label="Sección principal">
     <div class="hero-container">
       <div class="hero-content">
-        <h1>Tu <span class="highlight">Sonrisa Perfecta</span> Nos Define</h1>
-        <p>En Functional and Aesthetic Smiles transformamos tu sonrisa con arte, precisión y tecnología de última generación.
-            Resultados rápidos, naturales y personalizados, en un lugar donde la salud y la estética se encuentran con el confort.</p>
+    <h1>
+      <span data-i18n="hero.title.part1">Tu </span>
+      <span class="highlight" data-i18n="hero.title.highlight">Sonrisa Perfecta</span>
+      <span data-i18n="hero.title.part2"> Nos Define</span>
+    </h1>
+    <p data-i18n="hero.lead">En Functional and Aesthetic Smiles transformamos tu sonrisa con arte, precisión y tecnología de última generación.
+      Resultados rápidos, naturales y personalizados, en un lugar donde la salud y la estética se encuentran con el confort.</p>
 
         <div class="hero-stats" aria-label="Indicadores">
           <div class="stat">
             <span class="stat-number">100+</span>
-            <span class="stat-label">Pacientes Felices</span>
+            <span class="stat-label" data-i18n="stats.patients">Pacientes Felices</span>
           </div>
           <div class="stat">
             <span class="stat-number">10+</span>
-            <span class="stat-label">Años de Experiencia</span>
+            <span class="stat-label" data-i18n="stats.years">Años de Experiencia</span>
           </div>
           <div class="stat">
             <span class="stat-number">98%</span>
-            <span class="stat-label">Satisfacción</span>
+            <span class="stat-label" data-i18n="stats.satisfaction">Satisfacción</span>
           </div>
         </div>
 
         <div class="hero-buttons">
-          <a href="pages/contacto.html" class="btn-primary">Reserva tu consulta ya</a>
-          <a href="pages/servicios.html" class="btn-secondary">Nuestros servicios</a>
+          <a href="pages/contacto.html" class="btn-primary" data-i18n="hero.cta_book">Reserva tu consulta ya</a>
+          <a href="pages/servicios.html" class="btn-secondary" data-i18n="hero.cta_services">Nuestros servicios</a>
         </div>
       </div>
 
@@ -94,6 +104,7 @@
         <img 
           src="assets/images/gallery/dianainicio.jpg" 
           alt="foto portada" 
+          data-i18n-attr="alt" data-i18n="hero.image_alt"
           class="hero-image-main" 
           loading="lazy"
         />
@@ -107,14 +118,18 @@
 <section id="Carillas" class="hero" aria-label="Sección principal">
   <div class="hero-container">
     <div class="hero-content">
-      <h1>Tus <span class="highlight">Luxe Diamond Smiles</span> La perfección hecha sonrisa.</h1>
-      <p>
-        Un diseño exclusivo y personalizado, creado con cortes tipo diamante que reflejan poder, lujo y distinción.
-      </p>
+        <h1>
+          <span data-i18n="hero2.title.part1">Tus </span>
+          <span class="highlight" data-i18n="hero2.title.highlight">Luxe Diamond Smiles</span>
+          <span data-i18n="hero2.title.part2"> La perfección hecha sonrisa.</span>
+        </h1>
+        <p data-i18n="hero2.lead">
+          Un diseño exclusivo y personalizado, creado con cortes tipo diamante que reflejan poder, lujo y distinción.
+        </p>
 
       <div class="hero-buttons">
-        <a href="pages/contacto.html" class="btn-primary">Descubre tu luxe Diamond Smiles ya </a>
-        <a href="pages/carillas-diamond.html" class="btn-secondary">Ver Servicio Exclusivo</a>
+        <a href="pages/contacto.html" class="btn-primary" data-i18n="hero2.cta_discuss">Descubre tu luxe Diamond Smiles ya </a>
+        <a href="pages/carillas-diamond.html" class="btn-secondary" data-i18n="hero2.cta_view">Ver Servicio Exclusivo</a>
       </div>
     </div>
 
@@ -135,34 +150,34 @@
   <!-- SECCIÓN SERVICIOS DESTACADOS -->
   <section id="servicios-preview" class="services-preview">
     <div class="container">
-      <h2 class="section-title">Nuestros Servicios Principales</h2>
+  <h2 class="section-title" data-i18n="services.preview_title">Nuestros Servicios Principales</h2>
       <div class="title-underline"></div>
 
       <div class="services-grid">
         <div class="service-card featured">
           <div class="service-icon"><i class="fas fa-smile" aria-hidden="true"></i></div>
-          <h3>Estética Dental</h3>
-          <p>Diseño de sonrisa, blanqueamientos y carillas de porcelana para lograr la sonrisa que siempre has soñado.</p>
-          <a href="pages/servicios.html#estetica" class="service-link">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <h3 data-i18n="service.estetica.title">Estética Dental</h3>
+          <p data-i18n="service.estetica.desc">Diseño de sonrisa, blanqueamientos y carillas de porcelana para lograr la sonrisa que siempre has soñado.</p>
+          <a href="pages/servicios.html#estetica" class="service-link" data-i18n="service.more">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-tools" aria-hidden="true"></i></div>
-          <h3>Implantología</h3>
-          <p>Reemplazo de piezas dentales con implantes de última generación y técnicas mínimamente invasivas.</p>
-          <a href="pages/servicios.html#implantes" class="service-link">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <h3 data-i18n="service.implantes.title">Implantología</h3>
+          <p data-i18n="service.implantes.desc">Reemplazo de piezas dentales con implantes de última generación y técnicas mínimamente invasivas.</p>
+          <a href="pages/servicios.html#implantes" class="service-link" data-i18n="service.more">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
 
         <div class="service-card">
           <div class="service-icon"><i class="fas fa-user-md" aria-hidden="true"></i></div>
-          <h3>Ortodoncia</h3>
-          <p>Brackets invisibles, estéticos y tradicionales para corregir la posición de tus dientes.</p>
-          <a href="pages/servicios.html#ortodoncia" class="service-link">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+          <h3 data-i18n="service.ortodoncia.title">Ortodoncia</h3>
+          <p data-i18n="service.ortodoncia.desc">Brackets invisibles, estéticos y tradicionales para corregir la posición de tus dientes.</p>
+          <a href="pages/servicios.html#ortodoncia" class="service-link" data-i18n="service.more">Ver más <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
         </div>
       </div>
 
       <div class="services-cta">
-        <a href="pages/servicios.html" class="btn-primary">Ver Todos los Servicios</a>
+        <a href="pages/servicios.html" class="btn-primary" data-i18n="services.view_all">Ver Todos los Servicios</a>
       </div>
     </div>
   </section>
@@ -188,14 +203,14 @@
             <div class="video-fallback">
               <div class="placeholder-content">
                 <i class="fas fa-play-circle fa-4x" aria-hidden="true"></i>
-                <p>Tour Virtual<br />de Nuestra Clínica</p>
+                <p data-i18n="video.fallback">Tour Virtual de Nuestra Clínica</p>
               </div>
             </div>
           </video>
           
           <!-- Overlay opcional con controles -->
           <div class="video-overlay">
-            <button class="video-play-pause" aria-label="Reproducir/Pausar video">
+            <button class="video-play-pause" data-i18n-attr="aria-label" data-i18n="video.toggle">
               <i class="fas fa-play"></i>
             </button>
           </div>
@@ -203,72 +218,72 @@
           <!-- Indicador de "Tap para sonido" -->
           <div class="video-sound-hint">
             <i class="fas fa-volume-up"></i>
-            <span>Toca para activar sonido</span>
+            <span data-i18n="video.sound_hint">Toca para activar sonido</span>
           </div>
         </div>
       </div>
 
       <div class="about-content">
-        <h2>¿Por qué elegir consulta con la Dra Diana Muñoz?</h2>
-        <p>Con más de <strong>15 años de trayectoria</strong>, Functional and Aesthetic Smiles by Diana Muñoz, se ha convertido en sinónimo de excelencia, confianza y exclusividad. Aquí no solo transformamos sonrisas, sino que ofrecemos una experiencia única donde la seguridad, la tranquilidad y el cuidado personalizado son nuestra prioridad, cuidamos cada detalle de tu Salud y tu Sonrisa, porque prevenir es la clave para conservar la elegancia y confianza que te define.</p>
+      <h2 data-i18n="about.heading">¿Por qué elegir consulta con la Dra Diana Muñoz?</h2>
+        <p data-i18n="about.lead">Con más de <strong>15 años de trayectoria</strong>, Functional and Aesthetic Smiles by Diana Muñoz, se ha convertido en sinónimo de excelencia, confianza y exclusividad. Aquí no solo transformamos sonrisas, sino que ofrecemos una experiencia única donde la seguridad, la tranquilidad y el cuidado personalizado son nuestra prioridad, cuidamos cada detalle de tu Salud y tu Sonrisa, porque prevenir es la clave para conservar la elegancia y confianza que te define.</p>
 
         <div class="about-features">
           <div class="feature">
             <i class="fas fa-microscope" aria-hidden="true"></i>
             <div>
-              <h4>Tecnología Avanzada</h4>
-              <p>Equipos de última generación para diagnósticos precisos y tratamientos efectivos. Rayos X digitales, escáneres 3D y tecnología láser, que aseguran tratamientos confiables y resultados impecables.</p>
+              <h4 data-i18n="features.tech.title">Tecnología Avanzada</h4>
+              <p data-i18n="features.tech.desc">Equipos de última generación para diagnósticos precisos y tratamientos efectivos. Rayos X digitales, escáneres 3D y tecnología láser, que aseguran tratamientos confiables y resultados impecables.</p>
             </div>
           </div>
           
           <div class="feature">
             <i class="fas fa-certificate" aria-hidden="true"></i>
             <div>
-              <h4> Confianza Absoluta</h4>
-              <p>Atención cercana y transparente que genera tranquilidad desde el primer contacto. Cada detalle está pensado para que te sientas acompañado y seguro en todo momento.</p>
+              <h4 data-i18n="features.trust.title">Confianza Absoluta</h4>
+              <p data-i18n="features.trust.desc">Atención cercana y transparente que genera tranquilidad desde el primer contacto. Cada detalle está pensado para que te sientas acompañado y seguro en todo momento.</p>
             </div>
           </div>
           
           <div class="feature">
             <i class="fas fa-user-md" aria-hidden="true"></i>
             <div>
-              <h4>Especialistas Certificados</h4>
-              <p>Equipo de odontólogos especializados con certificaciones y formación continua.</p>
+              <h4 data-i18n="features.certified.title">Especialistas Certificados</h4>
+              <p data-i18n="features.certified.desc">Equipo de odontólogos especializados con certificaciones y formación continua.</p>
             </div>
           </div>
           
           <div class="feature">
             <i class="fas fa-heart" aria-hidden="true"></i>
             <div>
-              <h4>Atención Personalizada</h4>
-              <p>Cada paciente recibe un plan de tratamiento único y personalizado, adaptado a sus necesidades específicas.</p>
+              <h4 data-i18n="features.personal.title">Atención Personalizada</h4>
+              <p data-i18n="features.personal.desc">Cada paciente recibe un plan de tratamiento único y personalizado, adaptado a sus necesidades específicas.</p>
             </div>
           </div>
           
           <div class="feature">
             <i class="fas fa-clock" aria-hidden="true"></i>
             <div>
-              <h4>Expertos a tu Lado</h4>
-              <p>Un equipo de especialistas certificados, apasionados por la excelencia estética y funcional, que cuidan tu sonrisa con precisión y dedicación.</p>
+              <h4 data-i18n="features.experts.title">Expertos a tu Lado</h4>
+              <p data-i18n="features.experts.desc">Un equipo de especialistas certificados, apasionados por la excelencia estética y funcional, que cuidan tu sonrisa con precisión y dedicación.</p>
             </div>
           </div>
           
           <div class="feature">
             <i class="fas fa-spa" aria-hidden="true"></i>
             <div>
-              <h4>Ambiente de Lujo</h4>
-              <p>Espacios diseñados para que vivas una experiencia de confort y relajación, disfrutando de un entorno exclusivo que convierte cada cita en un momento agradable.</p>
+              <h4 data-i18n="features.luxury.title">Ambiente de Lujo</h4>
+              <p data-i18n="features.luxury.desc">Espacios diseñados para que vivas una experiencia de confort y relajación, disfrutando de un entorno exclusivo que convierte cada cita en un momento agradable.</p>
             </div>
           </div>
         </div>
 
         <!-- Botones de acción -->
         <div class="about-actions">
-          <a href="pages/equipo.html" class="btn-primary">
+          <a href="pages/equipo.html" class="btn-primary" data-i18n="about.cta_team">
             <i class="fas fa-users" aria-hidden="true"></i>
             Conoce Nuestro Equipo
           </a>
-          <a href="#contacto" class="btn-secondary">
+          <a href="#contacto" class="btn-secondary" data-i18n="about.cta_book">
             <i class="fas fa-calendar-alt" aria-hidden="true"></i>
             Agendar Consulta
           </a>
@@ -281,7 +296,7 @@
   <!-- SECCIÓN TESTIMONIOS -->
   <section id="testimonios" class="testimonials">
   <div class="container">
-    <h2 class="section-title">Lo que dicen nuestros pacientes</h2>
+  <h2 class="section-title" data-i18n="testimonials.title">Lo que dicen nuestros pacientes</h2>
     <div class="title-underline"></div>
     
     <div class="testimonials-slider">
@@ -516,8 +531,8 @@
       </div>
     </div>
     
-    <div class="testimonials-controls">
-      <button class="prev-btn" aria-label="Testimonio anterior">
+      <div class="testimonials-controls">
+      <button class="prev-btn" data-i18n-attr="aria-label" data-i18n="testimonials.prev" aria-label="Testimonio anterior">
         <i class="fas fa-chevron-left"></i>
       </button>
       <div class="testimonial-dots">
@@ -528,7 +543,7 @@
         <div class="dot" aria-label="Testimonio 5"></div>
         <div class="dot" aria-label="Testimonio 6"></div>
       </div>
-      <button class="next-btn" aria-label="Siguiente testimonio">
+      <button class="next-btn" data-i18n-attr="aria-label" data-i18n="testimonials.next" aria-label="Siguiente testimonio">
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
@@ -539,11 +554,11 @@
   <section class="cta-section">
     <div class="container">
       <div class="cta-content">
-        <h2>¿Listo para tu nueva sonrisa?</h2>
-        <p>Agenda tu consulta gratuita y descubre cómo podemos transformar tu sonrisa</p>
+  <h2 data-i18n="cta.title">¿Listo para tu nueva sonrisa?</h2>
+  <p data-i18n="cta.lead">Agenda tu consulta gratuita y descubre cómo podemos transformar tu sonrisa</p>
         <div class="cta-buttons">
-          <a href="pages/contacto.html" class="btn-primary">Agendar Consulta Gratuita</a>
-          <a href="tel:+573168866812" class="btn-secondary"><i class="fas fa-phone" aria-hidden="true"></i> Llamar Ahora</a>
+          <a href="pages/contacto.html" class="btn-primary" data-i18n="cta.book_free">Agendar Consulta Gratuita</a>
+          <a href="tel:+573168866812" class="btn-secondary"><i class="fas fa-phone" aria-hidden="true"></i> <span data-i18n="cta.call_now">Llamar Ahora</span></a>
         </div>
       </div>
     </div>
@@ -555,7 +570,7 @@
       <div class="footer-content">
         <div class="footer-section">
           <h3><i class="fas fa-tooth" aria-hidden="true"></i>Diamond Smiles</h3>
-          <p>Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
+          <p data-i18n="footer.brand_lead">Tu clínica dental de confianza donde la excelencia y el lujo se encuentran para crear sonrisas perfectas.</p>
           <div class="social-links">
             <div class="social-links">
                 <a href="https://www.facebook.com/share/14RPoEaz1yd/" aria-label="Facebook">
@@ -575,27 +590,27 @@
         </div>
 
         <div class="footer-section">
-          <h4>Servicios</h4>
+          <h4 data-i18n="footer.services">Servicios</h4>
           <ul>
-            <li><a href="pages/servicios.html#general">Odontología General</a></li>
-            <li><a href="pages/servicios.html#estetica">Estética Dental</a></li>
-            <li><a href="pages/servicios.html#ortodoncia">Ortodoncia</a></li>
-            <li><a href="pages/servicios.html#implantes">Implantología</a></li>
+            <li><a href="pages/servicios.html#general" data-i18n="footer.service.general">Odontología General</a></li>
+            <li><a href="pages/servicios.html#estetica" data-i18n="footer.service.estetica">Estética Dental</a></li>
+            <li><a href="pages/servicios.html#ortodoncia" data-i18n="footer.service.ortodoncia">Ortodoncia</a></li>
+            <li><a href="pages/servicios.html#implantes" data-i18n="footer.service.implantes">Implantología</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h4>Navegación</h4>
+          <h4 data-i18n="footer.navigation">Navegación</h4>
           <ul>
-            <li><a href="#nosotros">Sobre nosotros</a></li>
-            <li><a href="pages/equipo.html">Nuestro equipo</a></li>
-            <li><a href="#testimonios">Testimonios</a></li>
-            <li><a href="pages/contacto.html">Contacto</a></li>
+            <li><a href="#nosotros" data-i18n="footer.nav.about">Sobre nosotros</a></li>
+            <li><a href="pages/equipo.html" data-i18n="footer.nav.team">Nuestro equipo</a></li>
+            <li><a href="#testimonios" data-i18n="footer.nav.testimonials">Testimonios</a></li>
+            <li><a href="pages/contacto.html" data-i18n="footer.nav.contact">Contacto</a></li>
           </ul>
         </div>
 
         <div class="footer-section">
-          <h4>Contacto</h4>
+          <h4 data-i18n="footer.contact">Contacto</h4>
           <div class="contact-info">
            <p><i class="fas fa-map-marker-alt"></i> Carrera 55 # 9-88 Camino Real<br>Cali-Colombia</p>
             <p><i class="fas fa-phone"></i> +57 (316) 886-6812</p>
@@ -606,16 +621,17 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
+        <p data-i18n="footer.copy">&copy; 2025 Diamond Smiles. Todos los derechos reservados.</p>
         <div class="footer-links">
-          <a href="#">Términos y Condiciones</a>
-          <a href="#">Política de Privacidad</a>
+          <a href="#" data-i18n="footer.terms">Términos y Condiciones</a>
+          <a href="#" data-i18n="footer.privacy">Política de Privacidad</a>
         </div>
       </div>
     </div>
   </footer>
 
   <!-- JavaScript -->
+  <script defer src="assets/js/translations.js"></script>
   <script defer src="assets/js/main.js"></script>
   <script defer src="assets/js/animations.js"></script>
 
@@ -854,13 +870,13 @@
             <div class="chatbot-avatar">
                 <i class="fas fa-tooth"></i>
             </div>
-            <div class="chatbot-info">
-                <h3>Dra. Diana Patricia Muñoz</h3>
-                <div class="chatbot-status">
-                    <div class="status-dot"></div>
-                    <span>En línea</span>
-                </div>
-            </div>
+      <div class="chatbot-info">
+        <h3 data-i18n="chatbot.name">Dra. Diana Patricia Muñoz</h3>
+        <div class="chatbot-status">
+          <div class="status-dot"></div>
+          <span data-i18n="chatbot.status">En línea</span>
+        </div>
+      </div>
         </div>
 
         <!-- Área de mensajes compacta -->
@@ -878,21 +894,21 @@
                 <div class="typing-dot"></div>
                 <div class="typing-dot"></div>
             </div>
-            <span>Escribiendo...</span>
+      <span data-i18n="chatbot.typing">Escribiendo...</span>
         </div>
 
         <!-- Footer compacto -->
         <div class="chatbot-footer">
-            <div class="action-buttons">
-                <button class="action-btn primary" onclick="openContactForm()">
-                    <i class="fas fa-calendar-alt"></i>
-                    Agendar
-                </button>
-                <button class="action-btn secondary" onclick="openWhatsApp()">
-                    <i class="fab fa-whatsapp"></i>
-                    WhatsApp
-                </button>
-            </div>
+      <div class="action-buttons">
+        <button class="action-btn primary" onclick="openContactForm()" data-i18n="chatbot.book">
+          <i class="fas fa-calendar-alt"></i>
+          Agendar
+        </button>
+        <button class="action-btn secondary" onclick="openWhatsApp()" data-i18n="chatbot.whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          WhatsApp
+        </button>
+      </div>
             <div class="footer-text">
                 🦷 Diamond Smiles
             </div>

@@ -400,6 +400,36 @@
   background: rgba(255,255,255,0.95);
 }
 
+/* Language toggle button in header */
+.lang-toggle{
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem .6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(201,170,113,0.2);
+  background: rgba(255,255,255,0.9);
+  font-weight:700;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: transform .15s ease, box-shadow .15s ease;
+  position: relative; /* keep in flow but above other elements */
+  z-index: 9999; /* ensure it doesn't get overlapped by hero elements */
+}
+.lang-toggle:active{ transform: translateY(1px); }
+.lang-toggle .lang-flag{ font-size: .9rem; font-weight:900; color:var(--text-dark); }
+.lang-toggle .lang-label{ font-size: .85rem; color:var(--text-muted); }
+
+.lang-toggle[aria-pressed="true"]{
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 600px){
+  .lang-toggle .lang-label{ display: none; }
+  .lang-toggle{ padding: .35rem .5rem; }
+}
+
 .form-group textarea {
   resize: vertical;
   min-height: 140px;
