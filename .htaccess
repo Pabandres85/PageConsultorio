@@ -130,7 +130,18 @@
   Deny from all
 </FilesMatch>
 
-<FilesMatch "\.(env|json)$">
+<FilesMatch "\.(env)$">
   Order allow,deny
   Deny from all
 </FilesMatch>
+
+# Permitir JSON públicos necesarios (p. ej. translations.json)
+<Files "translations.json">
+  <IfModule mod_authz_core.c>
+    Require all granted
+  </IfModule>
+  <IfModule !mod_authz_core.c>
+    Order allow,deny
+    Allow from all
+  </IfModule>
+</Files>
