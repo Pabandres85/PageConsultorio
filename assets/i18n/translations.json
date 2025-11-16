@@ -15,7 +15,8 @@
   "hero.title.part2": " Defines Us",
     "hero.lead": "At Diamond Smiles we combine cutting-edge technology with the experience of our specialists to give you the best dental care in a luxurious and comfortable environment.",
     "cta.consult": "VIP Consultation",
-    "services.title": "Our Dental Services",
+    "services.title": "Our",
+     "services.hero.title.highlight": "Dental Services",
     "services.lead": "We offer a wide range of dental treatments with top quality and advanced technology to care for your oral health and improve your smile."  
     ,"team.title": "Our Team",
     "team.lead": "More than a team of experts, we're a family passionate about creating unique smiles — combining functionality, aesthetics, and precision in every detail.",
@@ -373,7 +374,8 @@
     "hero.title": "Tu Sonrisa Perfecta Nos Define",
     "hero.lead": "En Diamond Smiles combinamos tecnología de vanguardia con la experiencia de nuestros especialistas para brindarte el mejor cuidado dental en un ambiente de lujo y confort.",
     "cta.consult": "Consulta VIP",
-    "services.title": "Nuestros Servicios Dentales",
+    "services.title": "Nuestros ",
+     "services.hero.title.highlight": "Servicios Dentales",
     "services.lead": "Ofrecemos una amplia gama de tratamientos dentales con la más alta calidad y tecnología de vanguardia para cuidar tu salud bucal y mejorar tu sonrisa."  
     ,"team.title": "Nuestro Equipo",
     "team.lead": "Más que un equipo de expertos, somos una familia apasionada por crear sonrisas únicas, combinando funcionalidad, estética y precisión en cada detalle.",
