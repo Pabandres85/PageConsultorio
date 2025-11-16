@@ -1964,9 +1964,18 @@ main {
 
 /* Responsive para móviles */
 @media (max-width: 768px) {
+    .about.about--compact .about-container {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-md) !important;
+        align-items: start !important;
+    }
+
     .about-video-container {
-        max-width: 200px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 240px !important;
         aspect-ratio: 9 / 16 !important; /* Mantener formato reel */
+        margin: 0 auto !important;
     }
     
     .video-play-pause {
@@ -1985,9 +1994,16 @@ main {
 }
 
 @media (max-width: 480px) {
+    .about.about--compact .about-container {
+        grid-template-columns: 1fr !important;
+    }
+
     .about-video-container {
-        max-width: 180px !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        max-width: 220px !important;
         aspect-ratio: 9 / 16 !important;
+        margin: 0 auto !important;
     }
     
     .video-play-pause {
