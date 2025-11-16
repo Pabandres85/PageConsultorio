@@ -18,7 +18,11 @@
     return 'assets/i18n/';
   }
 
-  var base = getBasePath();
+  // allow an application-level override for where translations are served from.
+  // e.g. set window.__I18N_BASE = '/assets/i18n/' before this script runs
+  var base = (typeof window !== 'undefined' && window.__I18N_BASE) ? window.__I18N_BASE : getBasePath();
+  // normalize base to ensure it ends with '/'
+  if(base && base.slice(-1) !== '/') base = base + '/';
   var url = base + 'translations.json';
   var storeKey = 'site_lang';
   var translations = null;
@@ -84,8 +88,45 @@
     }catch(e){}
   }
 
+  function loadFrom(u){
+    console.info('[i18n] attempting to load translations from:', u);
+    return fetch(u, { cache: 'no-cache' }).then(function(r){
+      if(!r.ok){
+        var err = new Error('HTTP ' + r.status + ' ' + r.statusText);
+        err.response = r;
+        err.status = r.status;
+        throw err;
+      }
+      return r.text().then(function(text){
+        try{
+          return JSON.parse(text);
+        }catch(e){
+          var snippet = (text || '').slice(0, 512);
+          var pe = new Error('Invalid JSON received from ' + u);
+          pe.type = 'parse';
+          pe.snippet = snippet;
+          pe.originalError = e;
+          throw pe;
+        }
+      });
+    });
+  }
+
   function init(){
-    fetch(url).then(function(r){ return r.json(); }).then(function(json){
+    // Try primary (script-relative/override) URL first, then retry an absolute path as a fallback.
+    loadFrom(url).catch(function(err){
+      console.warn('[i18n] primary load failed for', url, err && (err.status || err.type) || err);
+      // fallback to absolute path at site root
+      var fallback = '/assets/i18n/translations.json';
+      // if the base looks like an absolute origin, also try origin-based path
+      try{
+        if(window && window.location && url.indexOf(window.location.origin) === 0){
+          fallback = window.location.origin + '/assets/i18n/translations.json';
+        }
+      }catch(e){}
+      console.info('[i18n] retrying with fallback URL:', fallback);
+      return loadFrom(fallback);
+    }).then(function(json){
       translations = json;
       var lang = localStorage.getItem(storeKey) || (navigator.language && navigator.language.indexOf('en')===0 ? 'en' : 'es');
       if(!translations[lang]) lang = Object.keys(translations)[0];
@@ -117,7 +158,20 @@
         try{ document.dispatchEvent(new CustomEvent('i18n:loaded', { detail: { lang: currentLang } })); }catch(e){}
       }catch(e){/* noop */}
 
-    }).catch(function(err){ console.warn('Could not load translations', err); });
+    }).catch(function(finalErr){
+      // If we reach here, both primary and fallback failed. Provide clear diagnostics in console.
+      console.error('[i18n] Failed to load translations. See details below.');
+      console.error(finalErr && finalErr.stack ? finalErr.stack : finalErr);
+      if(finalErr && finalErr.snippet) console.error('[i18n] response snippet (truncated):\n', finalErr.snippet);
+      // graceful fallback: expose a minimal SiteI18n that returns key/fallback so other scripts don't break
+      try{
+        window.SiteI18n = {
+          t: function(key, fallback){ return fallback || key; },
+          lang: function(){ return currentLang || (localStorage.getItem(storeKey) || 'es'); }
+        };
+        try{ document.dispatchEvent(new CustomEvent('i18n:loaded', { detail: { lang: window.SiteI18n.lang() } })); }catch(e){}
+      }catch(e){}
+    });
   }
 
   if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
